@@ -6,11 +6,8 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
-    public enum  EnumRole
+    public enum EnumRole
     {
-        Admin, 
-        Teacher, 
-        Gatherer
-
+        Admin,Teacher,Gatherer
     }
 }

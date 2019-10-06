@@ -9,7 +9,7 @@ namespace AssetsManagement
     /// <summary>
     /// This class will be resposible of handling 
     /// the logic of various reports which can be called
-    /// globally in the app.
+    /// globally in the app
     /// </summary>
     static class Reports
     {

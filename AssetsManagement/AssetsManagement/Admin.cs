@@ -6,31 +6,54 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
-    public class Admin : Users
+    class Admin : User
     {
-        public void CreateUser()
-        {
 
+        public bool CreateUser(User user)
+        {
+            return false;
         }
 
-        public void EditUser()
+        public bool EditUser(User user)
         {
-
+            return false;
         }
 
-        public void ChangePassword()
+        public bool DeleteUser(User user)
         {
-
+            return false;
         }
 
-        public void GetUserById()
+        public bool EditAsset(AssetEntity asset)
         {
-
+            return false;
         }
 
-        public void DeleteUser()
+        public bool CreateAsset(AssetEntity asset)
         {
+            return false;
+        }
 
+        public bool DeleteAsset(AssetEntity asset)
+        {
+            return false;
+        }
+
+        public override bool ChangePassword()
+        {
+            return false;
+        }
+
+        /// <summary>
+        /// This method maps the properties in User base
+        /// class and matches 
+        /// them in UserEntity
+        /// </summary>
+        /// <param name="user"></param>
+        /// <returns>UserEntity</returns>
+        private UserEntity MapUserToEntity(User user)
+        {
+            return null;
         }
     }
 }

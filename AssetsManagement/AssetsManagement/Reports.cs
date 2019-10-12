@@ -11,20 +11,20 @@ namespace AssetsManagement
     /// the logic of various reports which can be called
     /// globally in the app.
     /// </summary>
-    static class Reports
+    public class Reports
     {
 
-        public static Asset GetAssetById(int id)
+        public AssetEntity GetAssetById(int id)
         {
             return null;
         }
 
-        public static List<Asset> GetAssetsByLabId(int id)
+        public List<AssetEntity> GetAssetsByLabId(int id)
         {
             return null;
         }
 
-        public static List<Asset> GetAssetsGeneralReport()
+        public List<AssetEntity> GetAssetsGeneralReport()
         {
             return null;
         }

@@ -1,44 +1,27 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
-    public class User
+    public abstract class User : Reports
     {
-        [Key]
-        public int Id { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public int username { get; set; }
+        public string password { get; set; }
 
-        public string Name { get; set; }
+        public abstract bool ChangePassword();
 
-        public EnumRole Role { get; set; }
-
-        public void CreateUser()
+        public User GetUserById(int id)
         {
-
+            return null;
         }
-
-        public void EditUser()
+        public UserEntity GetUserEntityById(int id)
         {
-
-        }
-
-        public void ChangePassword()
-        {
-
-        }
-
-        public void GetUserById()
-        {
-
-        }
-
-        public void DeleteUser()
-        {
-
+            return null;
         }
     }
 }

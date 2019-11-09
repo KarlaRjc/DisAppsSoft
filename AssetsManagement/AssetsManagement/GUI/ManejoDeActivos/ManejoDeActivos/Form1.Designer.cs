@@ -246,7 +246,7 @@
             this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(803, 302);
+            this.button7.Location = new System.Drawing.Point(803, 303);
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(130, 44);
             this.button7.TabIndex = 2;

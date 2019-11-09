@@ -91,7 +91,7 @@
             this.label1.Size = new System.Drawing.Size(165, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Manejo de Activos";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // panel3
             // 

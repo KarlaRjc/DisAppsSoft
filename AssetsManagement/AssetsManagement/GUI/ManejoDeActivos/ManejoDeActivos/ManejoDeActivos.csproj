@@ -81,10 +81,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\icons8-computer-support-80.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\icons8-user-64.png" />
+    <Folder Include="Resources\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -32,29 +32,37 @@ namespace ManejoDeActivos
 
         }
 
-        private void label10_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void label11_Click(object sender, EventArgs e)
+        private void assestManagmentBtn_Click(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void label12_Click(object sender, EventArgs e)
+        private void openUserManagment(object childForm) 
         {
-
+            if (this.homePanel.Controls.Count > 0)
+                this.homePanel.Controls.RemoveAt(0);
+            Form fh = childForm as Form;
+            fh.TopLevel = false;
+            fh.Dock = DockStyle.Fill;
+            this.homePanel.Controls.Add(fh);
+            this.homePanel.Tag = fh;
+            fh.Show();
+            
         }
 
-        private void button7_Click_1(object sender, EventArgs e)
+        private void userManagmentBtn_Click(object sender, EventArgs e)
         {
-
+            openUserManagment(new UserManagment());
         }
 
-        private void label14_Click(object sender, EventArgs e)
+        private void transferAssestBtn_Click(object sender, EventArgs e)
         {
-
+            openUserManagment(new TransferAssest());
         }
     }
 }

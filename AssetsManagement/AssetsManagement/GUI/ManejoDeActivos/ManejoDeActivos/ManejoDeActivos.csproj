@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AssetManagment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AssetManagment.Designer.cs">
+      <DependentUpon>AssetManagment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -60,12 +66,21 @@
     <Compile Include="TransferAssest.Designer.cs">
       <DependentUpon>TransferAssest.cs</DependentUpon>
     </Compile>
+    <Compile Include="TransferHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TransferHistory.Designer.cs">
+      <DependentUpon>TransferHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserManagment.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UserManagment.Designer.cs">
       <DependentUpon>UserManagment.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AssetManagment.resx">
+      <DependentUpon>AssetManagment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -76,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransferAssest.resx">
       <DependentUpon>TransferAssest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TransferHistory.resx">
+      <DependentUpon>TransferHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManagment.resx">
       <DependentUpon>UserManagment.cs</DependentUpon>

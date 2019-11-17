@@ -39,7 +39,7 @@ namespace ManejoDeActivos
 
         private void assestManagmentBtn_Click(object sender, EventArgs e)
         {
-            
+            openUserManagment(new AssetManagment());
         }
 
         private void openUserManagment(object childForm) 
@@ -63,6 +63,11 @@ namespace ManejoDeActivos
         private void transferAssestBtn_Click(object sender, EventArgs e)
         {
             openUserManagment(new TransferAssest());
+        }
+
+        private void transferHisotryBtn_Click(object sender, EventArgs e)
+        {
+            openUserManagment(new TransferHistory());
         }
     }
 }

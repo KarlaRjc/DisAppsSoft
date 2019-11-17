@@ -31,15 +31,15 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.homePanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.reportsBtn = new System.Windows.Forms.Button();
+            this.transferHisotryBtn = new System.Windows.Forms.Button();
             this.transferAssestBtn = new System.Windows.Forms.Button();
             this.userManagmentBtn = new System.Windows.Forms.Button();
             this.assestManagmentBtn = new System.Windows.Forms.Button();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -67,8 +67,8 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
             this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.button5);
-            this.panel3.Controls.Add(this.button4);
+            this.panel3.Controls.Add(this.reportsBtn);
+            this.panel3.Controls.Add(this.transferHisotryBtn);
             this.panel3.Controls.Add(this.transferAssestBtn);
             this.panel3.Controls.Add(this.userManagmentBtn);
             this.panel3.Controls.Add(this.assestManagmentBtn);
@@ -77,42 +77,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(329, 912);
             this.panel3.TabIndex = 1;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
-            this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.label1);
-            this.panel2.Location = new System.Drawing.Point(1, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1539, 86);
-            this.panel2.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(1356, 25);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(162, 29);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Administrador";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(49, 25);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(209, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Manejo de Activos";
-            this.label1.Click += new System.EventHandler(this.Label1_Click);
             // 
             // button6
             // 
@@ -126,30 +90,31 @@
             this.button6.TabIndex = 5;
             this.button6.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // reportsBtn
             // 
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Image = global::ManejoDeActivos.Properties.Resources.ReportesBtn;
-            this.button5.Location = new System.Drawing.Point(17, 447);
-            this.button5.Margin = new System.Windows.Forms.Padding(4);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(289, 98);
-            this.button5.TabIndex = 2;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.reportsBtn.FlatAppearance.BorderSize = 0;
+            this.reportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportsBtn.Image = global::ManejoDeActivos.Properties.Resources.ReportesBtn;
+            this.reportsBtn.Location = new System.Drawing.Point(17, 447);
+            this.reportsBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.reportsBtn.Name = "reportsBtn";
+            this.reportsBtn.Size = new System.Drawing.Size(289, 98);
+            this.reportsBtn.TabIndex = 2;
+            this.reportsBtn.UseVisualStyleBackColor = true;
+            this.reportsBtn.Click += new System.EventHandler(this.button5_Click);
             // 
-            // button4
+            // transferHisotryBtn
             // 
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Image = global::ManejoDeActivos.Properties.Resources.HistorialTransferenciasBtn;
-            this.button4.Location = new System.Drawing.Point(17, 341);
-            this.button4.Margin = new System.Windows.Forms.Padding(4);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(287, 98);
-            this.button4.TabIndex = 4;
-            this.button4.UseVisualStyleBackColor = true;
+            this.transferHisotryBtn.FlatAppearance.BorderSize = 0;
+            this.transferHisotryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.transferHisotryBtn.Image = global::ManejoDeActivos.Properties.Resources.HistorialTransferenciasBtn;
+            this.transferHisotryBtn.Location = new System.Drawing.Point(17, 341);
+            this.transferHisotryBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.transferHisotryBtn.Name = "transferHisotryBtn";
+            this.transferHisotryBtn.Size = new System.Drawing.Size(287, 98);
+            this.transferHisotryBtn.TabIndex = 4;
+            this.transferHisotryBtn.UseVisualStyleBackColor = true;
+            this.transferHisotryBtn.Click += new System.EventHandler(this.transferHisotryBtn_Click);
             // 
             // transferAssestBtn
             // 
@@ -190,6 +155,42 @@
             this.assestManagmentBtn.UseVisualStyleBackColor = true;
             this.assestManagmentBtn.Click += new System.EventHandler(this.assestManagmentBtn_Click);
             // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(143)))), ((int)(((byte)(149)))), ((int)(((byte)(191)))));
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Location = new System.Drawing.Point(1, 2);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1539, 86);
+            this.panel2.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(1356, 25);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(162, 29);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Administrador";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(49, 25);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(209, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Manejo de Activos";
+            this.label1.Click += new System.EventHandler(this.Label1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -216,8 +217,8 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button reportsBtn;
+        private System.Windows.Forms.Button transferHisotryBtn;
         private System.Windows.Forms.Button transferAssestBtn;
         private System.Windows.Forms.Button userManagmentBtn;
         private System.Windows.Forms.Button assestManagmentBtn;

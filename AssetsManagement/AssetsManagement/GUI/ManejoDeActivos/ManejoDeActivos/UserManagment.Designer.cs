@@ -36,14 +36,19 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.usersTable = new System.Windows.Forms.DataGridView();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.errorNameUserLbl = new System.Windows.Forms.Label();
+            this.errorUsernameLbl = new System.Windows.Forms.Label();
+            this.errorPasswordLbl = new System.Windows.Forms.Label();
+            this.errorUserTypeLbl = new System.Windows.Forms.Label();
+            this.otputUserLbl = new System.Windows.Forms.Label();
             this.removeUserBtn = new System.Windows.Forms.Button();
             this.editUserBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersTable)).BeginInit();
             this.SuspendLayout();
             // 
             // nameUserTxt
@@ -131,19 +136,19 @@
             this.label4.Text = "Tipo";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
-            // dataGridView1
+            // usersTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.usersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.usersTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Nombre,
             this.Usuario,
             this.Tipo});
-            this.dataGridView1.Location = new System.Drawing.Point(72, 91);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(570, 430);
-            this.dataGridView1.TabIndex = 10;
+            this.usersTable.Location = new System.Drawing.Point(72, 91);
+            this.usersTable.Name = "usersTable";
+            this.usersTable.RowHeadersWidth = 51;
+            this.usersTable.RowTemplate.Height = 24;
+            this.usersTable.Size = new System.Drawing.Size(570, 430);
+            this.usersTable.TabIndex = 10;
             // 
             // Nombre
             // 
@@ -165,6 +170,57 @@
             this.Tipo.MinimumWidth = 6;
             this.Tipo.Name = "Tipo";
             this.Tipo.Width = 125;
+            // 
+            // errorNameUserLbl
+            // 
+            this.errorNameUserLbl.AutoSize = true;
+            this.errorNameUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorNameUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.errorNameUserLbl.Location = new System.Drawing.Point(783, 149);
+            this.errorNameUserLbl.Name = "errorNameUserLbl";
+            this.errorNameUserLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorNameUserLbl.TabIndex = 14;
+            // 
+            // errorUsernameLbl
+            // 
+            this.errorUsernameLbl.AutoSize = true;
+            this.errorUsernameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorUsernameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.errorUsernameLbl.Location = new System.Drawing.Point(783, 238);
+            this.errorUsernameLbl.Name = "errorUsernameLbl";
+            this.errorUsernameLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorUsernameLbl.TabIndex = 15;
+            // 
+            // errorPasswordLbl
+            // 
+            this.errorPasswordLbl.AutoSize = true;
+            this.errorPasswordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorPasswordLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.errorPasswordLbl.Location = new System.Drawing.Point(783, 328);
+            this.errorPasswordLbl.Name = "errorPasswordLbl";
+            this.errorPasswordLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorPasswordLbl.TabIndex = 16;
+            // 
+            // errorUserTypeLbl
+            // 
+            this.errorUserTypeLbl.AutoSize = true;
+            this.errorUserTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorUserTypeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.errorUserTypeLbl.Location = new System.Drawing.Point(783, 422);
+            this.errorUserTypeLbl.Name = "errorUserTypeLbl";
+            this.errorUserTypeLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorUserTypeLbl.TabIndex = 17;
+            // 
+            // otputUserLbl
+            // 
+            this.otputUserLbl.AutoSize = true;
+            this.otputUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.otputUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.otputUserLbl.Location = new System.Drawing.Point(863, 555);
+            this.otputUserLbl.Name = "otputUserLbl";
+            this.otputUserLbl.Size = new System.Drawing.Size(0, 20);
+            this.otputUserLbl.TabIndex = 18;
+            this.otputUserLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // removeUserBtn
             // 
@@ -205,9 +261,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(1212, 792);
+            this.Controls.Add(this.otputUserLbl);
+            this.Controls.Add(this.errorUserTypeLbl);
+            this.Controls.Add(this.errorPasswordLbl);
+            this.Controls.Add(this.errorUsernameLbl);
+            this.Controls.Add(this.errorNameUserLbl);
             this.Controls.Add(this.removeUserBtn);
             this.Controls.Add(this.editUserBtn);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.usersTable);
             this.Controls.Add(this.addUserBtn);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -220,7 +281,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserManagment";
             this.Text = "UserManagment";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usersTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,11 +297,16 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button addUserBtn;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView usersTable;
         private System.Windows.Forms.Button editUserBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.Button removeUserBtn;
+        private System.Windows.Forms.Label errorNameUserLbl;
+        private System.Windows.Forms.Label errorUsernameLbl;
+        private System.Windows.Forms.Label errorPasswordLbl;
+        private System.Windows.Forms.Label errorUserTypeLbl;
+        private System.Windows.Forms.Label otputUserLbl;
     }
 }

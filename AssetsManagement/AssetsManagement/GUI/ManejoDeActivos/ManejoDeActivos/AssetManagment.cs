@@ -34,6 +34,7 @@ namespace ManejoDeActivos
             ErrorEmptyField(assestIdNumberTxt.Text);
          
             ErrorNumberField(assestIdNumberTxt.Text);
+            //CHECKEAR QUE SE REPITEN LOS ERRORES SI LLAMO LOS METODOS DE LOS DEMÁS FIELDS
         }
 
         public void ErrorEmptyField(string error)

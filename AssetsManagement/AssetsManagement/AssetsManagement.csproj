@@ -60,6 +60,23 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Gatherer.cs" />
+    <Compile Include="Migrations\201911180132197_InitialCreate.cs" />
+    <Compile Include="Migrations\201911180132197_InitialCreate.designer.cs">
+      <DependentUpon>201911180132197_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911180308114_AssetEntity.cs" />
+    <Compile Include="Migrations\201911180308114_AssetEntity.designer.cs">
+      <DependentUpon>201911180308114_AssetEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911180336171_AssetEntity1.cs" />
+    <Compile Include="Migrations\201911180336171_AssetEntity1.designer.cs">
+      <DependentUpon>201911180336171_AssetEntity1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201911180417573_LabEntity.cs" />
+    <Compile Include="Migrations\201911180417573_LabEntity.designer.cs">
+      <DependentUpon>201911180417573_LabEntity.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AssetEntity.cs" />
     <Compile Include="Model\AssetTransferHistoryEntity.cs" />
     <Compile Include="Model\DbModel.cs" />
@@ -79,6 +96,18 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911180132197_InitialCreate.resx">
+      <DependentUpon>201911180132197_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911180308114_AssetEntity.resx">
+      <DependentUpon>201911180308114_AssetEntity.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911180336171_AssetEntity1.resx">
+      <DependentUpon>201911180336171_AssetEntity1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201911180417573_LabEntity.resx">
+      <DependentUpon>201911180417573_LabEntity.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

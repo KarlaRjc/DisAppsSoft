@@ -32,12 +32,8 @@ namespace ManejoDeActivos
             button1WasClicked = true;
            
             ErrorEmptyField(assestIdNumberTxt.Text);
-            ErrorEmptyField(assestDescriptionTxt.Text);
-            ErrorEmptyField(assestIdNumberTxt.Text);
-            ErrorEmptyField(assestBrandTxt.Text);
-            ErrorEmptyField(assestLocationCbx.Text);
-            ErrorEmptyField(assestSerialNumberTxt.Text);
-            ErrorEmptyField(assestStateCbx.Text);
+         
+            ErrorNumberField(assestIdNumberTxt.Text);
         }
 
         public void ErrorEmptyField(string error)
@@ -48,9 +44,14 @@ namespace ManejoDeActivos
                 MessageBox.Show("Por favor rellene todos los campos");
             }
 
-        }public void ErrorNumberFile()
+        }public void ErrorNumberField(string error)
         {
 
+            if (button1WasClicked == true && !int.TryParse(error, out int i))
+            {
+                MessageBox.Show("Por favor agrege solo números");
+              
+            }
 
         }
     }

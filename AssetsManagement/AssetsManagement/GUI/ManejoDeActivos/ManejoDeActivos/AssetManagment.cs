@@ -77,5 +77,10 @@ namespace ManejoDeActivos
         {
             button1WasClicked = true;
         }
+
+        private void removeAssetBtn_Click(object sender, EventArgs e)
+        {
+            //¿En eliminar se tienen que agregar toda la información?
+        }
     }
 }

@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.nameUserTxt = new System.Windows.Forms.TextBox();
-            this.userTypeCbx = new System.Windows.Forms.ComboBox();
+            this.userRolCbx = new System.Windows.Forms.ComboBox();
             this.passwordTxt = new System.Windows.Forms.TextBox();
             this.usernameTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,8 +43,8 @@
             this.errorNameUserLbl = new System.Windows.Forms.Label();
             this.errorUsernameLbl = new System.Windows.Forms.Label();
             this.errorPasswordLbl = new System.Windows.Forms.Label();
-            this.errorUserTypeLbl = new System.Windows.Forms.Label();
-            this.otputUserLbl = new System.Windows.Forms.Label();
+            this.errorUserRoleLbl = new System.Windows.Forms.Label();
+            this.outputUserLbl = new System.Windows.Forms.Label();
             this.removeUserBtn = new System.Windows.Forms.Button();
             this.editUserBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
@@ -59,18 +59,18 @@
             this.nameUserTxt.Size = new System.Drawing.Size(286, 30);
             this.nameUserTxt.TabIndex = 1;
             // 
-            // userTypeCbx
+            // userRolCbx
             // 
-            this.userTypeCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.userTypeCbx.FormattingEnabled = true;
-            this.userTypeCbx.Items.AddRange(new object[] {
+            this.userRolCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.userRolCbx.FormattingEnabled = true;
+            this.userRolCbx.Items.AddRange(new object[] {
             "Administrador",
             "Profesor",
             "Observador"});
-            this.userTypeCbx.Location = new System.Drawing.Point(779, 386);
-            this.userTypeCbx.Name = "userTypeCbx";
-            this.userTypeCbx.Size = new System.Drawing.Size(286, 33);
-            this.userTypeCbx.TabIndex = 4;
+            this.userRolCbx.Location = new System.Drawing.Point(779, 386);
+            this.userRolCbx.Name = "userRolCbx";
+            this.userRolCbx.Size = new System.Drawing.Size(286, 33);
+            this.userRolCbx.TabIndex = 4;
             // 
             // passwordTxt
             // 
@@ -131,9 +131,9 @@
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(892, 358);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 25);
+            this.label4.Size = new System.Drawing.Size(40, 25);
             this.label4.TabIndex = 8;
-            this.label4.Text = "Tipo";
+            this.label4.Text = "Rol";
             this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // usersTable
@@ -201,26 +201,26 @@
             this.errorPasswordLbl.Size = new System.Drawing.Size(0, 20);
             this.errorPasswordLbl.TabIndex = 16;
             // 
-            // errorUserTypeLbl
+            // errorUserRoleLbl
             // 
-            this.errorUserTypeLbl.AutoSize = true;
-            this.errorUserTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorUserTypeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorUserTypeLbl.Location = new System.Drawing.Point(783, 422);
-            this.errorUserTypeLbl.Name = "errorUserTypeLbl";
-            this.errorUserTypeLbl.Size = new System.Drawing.Size(0, 20);
-            this.errorUserTypeLbl.TabIndex = 17;
+            this.errorUserRoleLbl.AutoSize = true;
+            this.errorUserRoleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorUserRoleLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.errorUserRoleLbl.Location = new System.Drawing.Point(783, 422);
+            this.errorUserRoleLbl.Name = "errorUserRoleLbl";
+            this.errorUserRoleLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorUserRoleLbl.TabIndex = 17;
             // 
-            // otputUserLbl
+            // outputUserLbl
             // 
-            this.otputUserLbl.AutoSize = true;
-            this.otputUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otputUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.otputUserLbl.Location = new System.Drawing.Point(863, 555);
-            this.otputUserLbl.Name = "otputUserLbl";
-            this.otputUserLbl.Size = new System.Drawing.Size(0, 20);
-            this.otputUserLbl.TabIndex = 18;
-            this.otputUserLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.outputUserLbl.AutoSize = true;
+            this.outputUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.outputUserLbl.Location = new System.Drawing.Point(827, 555);
+            this.outputUserLbl.Name = "outputUserLbl";
+            this.outputUserLbl.Size = new System.Drawing.Size(0, 20);
+            this.outputUserLbl.TabIndex = 18;
+            this.outputUserLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // removeUserBtn
             // 
@@ -254,6 +254,7 @@
             this.addUserBtn.Size = new System.Drawing.Size(141, 50);
             this.addUserBtn.TabIndex = 9;
             this.addUserBtn.UseVisualStyleBackColor = true;
+            this.addUserBtn.Click += new System.EventHandler(this.addUserBtn_Click);
             // 
             // UserManagment
             // 
@@ -261,8 +262,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(1212, 792);
-            this.Controls.Add(this.otputUserLbl);
-            this.Controls.Add(this.errorUserTypeLbl);
+            this.Controls.Add(this.outputUserLbl);
+            this.Controls.Add(this.errorUserRoleLbl);
             this.Controls.Add(this.errorPasswordLbl);
             this.Controls.Add(this.errorUsernameLbl);
             this.Controls.Add(this.errorNameUserLbl);
@@ -274,7 +275,7 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.userTypeCbx);
+            this.Controls.Add(this.userRolCbx);
             this.Controls.Add(this.passwordTxt);
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.nameUserTxt);
@@ -289,7 +290,7 @@
 
         #endregion
         private System.Windows.Forms.TextBox nameUserTxt;
-        private System.Windows.Forms.ComboBox userTypeCbx;
+        private System.Windows.Forms.ComboBox userRolCbx;
         private System.Windows.Forms.TextBox passwordTxt;
         private System.Windows.Forms.TextBox usernameTxt;
         private System.Windows.Forms.Label label1;
@@ -306,7 +307,7 @@
         private System.Windows.Forms.Label errorNameUserLbl;
         private System.Windows.Forms.Label errorUsernameLbl;
         private System.Windows.Forms.Label errorPasswordLbl;
-        private System.Windows.Forms.Label errorUserTypeLbl;
-        private System.Windows.Forms.Label otputUserLbl;
+        private System.Windows.Forms.Label errorUserRoleLbl;
+        private System.Windows.Forms.Label outputUserLbl;
     }
 }

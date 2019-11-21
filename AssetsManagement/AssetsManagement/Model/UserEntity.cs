@@ -48,7 +48,7 @@ namespace AssetsManagement
             using (DbModel db = new DbModel())
             {
                 UserEntity user = db.User.SingleOrDefault(d => d.id == id);
-                user.name = "Nuevo Nombre";
+                user.name = "New name";
                 db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }

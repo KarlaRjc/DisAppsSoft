@@ -18,11 +18,11 @@ namespace AssetsManagement
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Form1());
 
-            /*UserEntity user = User.CreateUser(7, "Nuevo", EnumRole.Admin, "user", "password");
-            UserEntity.CreateUserToDB(user);
-            Console.WriteLine(User.GetUserRole(user));
-            UserEntity.ModifyUserToDB(1);
-            UserEntity.DeleteUserToDB(3);*/
+            //UserEntity user = User.CreateUser(7, "Prueba", EnumRole.Admin, "user", "password");
+            //UserEntity.CreateUserToDB(user);
+            //Console.WriteLine(UserEntity.GetUserRole(user));
+            //UserEntity.ModifyUserToDB(5);
+            //UserEntity.DeleteUserToDB(8);
 
             /*AssetEntity asset = AssetEntity.CreateAsset(7, "Descripcion", "Marca", "Modelo", "Serie", "Estado");
             AssetEntity.CreateAssetToDB(asset);

@@ -22,44 +22,65 @@ namespace AssetsManagement
 
         public string state { get; set; }
 
-        public static void CreateAssetToDB(AssetEntity asset)
+
+        /// <summary>
+        /// Adds a new AssetEntity to the Database
+        /// </summary>
+        /// <param name="assetentity"></param>
+        public static void CreateAssetToDB(AssetEntity assetentity)
         {
+            //Opens a conection with the DB
             using (DbModel db = new DbModel())
             {
-                db.Asset.Add(asset);
+                //Adds an Asset
+                db.Asset.Add(assetentity);
+
+                //Saves the changes
                 db.SaveChanges();
             }
         }
 
-        public static AssetEntity CreateAsset(int id, string description, string brand, string model, string series, string state)
-        {
-            AssetEntity asset = new AssetEntity();
-            asset.id = id;
-            asset.description = description;
-            asset.brand = brand;
-            asset.model = model;
-            asset.series = series;
-            asset.state = state;
-            return asset;
-        }
 
-        public static void ModifyAssetToDB(int id)
+        /// <summary>
+        /// Modifies an existing AssetEntity in the Database, searches for the corresponding AssetEntity and modifies it
+        /// </summary>
+        /// <param name="asset"></param>
+        public static void ModifyAssetToDB(Asset asset)
         {
+            //Opens a conection with the DB
             using (DbModel db = new DbModel())
             {
-                AssetEntity asset = db.Asset.SingleOrDefault(a => a.id == id);
-                asset.description = "Nueva Descripción";
-                db.Entry(asset).State = System.Data.Entity.EntityState.Modified;
+                //Searches for the assetentity related to that asset id
+                AssetEntity assetentity = db.Asset.SingleOrDefault(a => a.id == asset.id);
+
+                //Calls ModifyAsset function, assigns to Assetentity the new parameters
+                assetentity = Asset.ModifyAsset(asset, assetentity);
+
+                //Modifies the record in the DB
+                db.Entry(assetentity).State = System.Data.Entity.EntityState.Modified;
+
+                //Saves the changes
                 db.SaveChanges();
             }
         }
 
-        public static void DeleteAssetToDB(int id)
+
+        /// <summary>
+        /// Deletes an AssetEntity from the Database, searches for the corresponding AssetEntity and deletes it
+        /// </summary>
+        /// <param name="asset"></param>
+        public static void DeleteAssetToDB(Asset asset)
         {
+            //Opens a conection with the DB
             using (DbModel db = new DbModel())
             {
-                AssetEntity asset = db.Asset.SingleOrDefault(a => a.id == id);
-                db.Asset.Remove(asset);
+                //Searches for the assetentity related to that asset id
+                AssetEntity assetentity = db.Asset.SingleOrDefault(a => a.id == asset.id);
+
+                //Removes the Assetentity from the DB
+                db.Asset.Remove(assetentity);
+
+                //Saves the changes
                 db.SaveChanges();
             }
         }

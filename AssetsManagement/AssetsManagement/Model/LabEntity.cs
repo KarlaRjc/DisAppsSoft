@@ -17,40 +17,66 @@ namespace AssetsManagement
 
         public List<AssetEntity> Assets {get; set;}
 
-        public static void CreateLabToDB(LabEntity lab)
+
+
+        /// <summary>
+        /// Adds a new LabEntity to the Database
+        /// </summary>
+        /// <param name="labentity"></param>
+        public static void CreateLabToDB(LabEntity labentity)
         {
+            //Opens a conection with the DB
             using (DbModel db = new DbModel())
             {
-                db.Lab.Add(lab);
+                //Adds a Lab
+                db.Lab.Add(labentity);
+
+                //Saves the changes
                 db.SaveChanges();
             }
         }
 
-        public static LabEntity CreateLab(int id, string name)
-        {
-            LabEntity lab = new LabEntity();
-            lab.id = id;
-            lab.name = name;
-            return lab;
-        }
 
-        public static void ModifyLabToDB(int id)
+        /// <summary>
+        /// Modifies an existing LabEntity in the Database, searches for the corresponding LabEntity and modifies it
+        /// </summary>
+        /// <param name="lab"></param>
+        public static void ModifyLabToDB(Lab lab)
         {
+            //Opens a conection with the DB
             using (DbModel db = new DbModel())
             {
-                LabEntity lab = db.Lab.SingleOrDefault(l => l.id == id);
-                lab.name = "Nuevo Nombre";
-                db.Entry(lab).State = System.Data.Entity.EntityState.Modified;
+                //Searches for the labentity related to that lab id
+                LabEntity labentity = db.Lab.SingleOrDefault(l => l.id == lab.id);
+
+                //Calls ModifyLab function, assigns to labentity the new parameters
+                labentity = Lab.ModifyLab(lab, labentity);
+
+                //Modifies the record in the DB
+                db.Entry(labentity).State = System.Data.Entity.EntityState.Modified;
+
+                //Saves the changes
                 db.SaveChanges();
             }
         }
 
-        public static void DeleteLabToDB(int id)
+
+        /// <summary>
+        /// Deletes a LabEntity from the Database, searches for the corresponding LabEntity and deletes it
+        /// </summary>
+        /// <param name="lab"></param>
+        public static void DeleteLabToDB(Lab lab)
         {
+            //Opens a conection with the DB
             using (DbModel db = new DbModel())
             {
-                LabEntity lab = db.Lab.SingleOrDefault(l => l.id == id);
-                db.Lab.Remove(lab);
+                //Searches for the labentity related to that lab id
+                LabEntity labentity = db.Lab.SingleOrDefault(l => l.id == lab.id);
+
+                //Removes the labentty from the DB
+                db.Lab.Remove(labentity);
+
+                //Saves the changes
                 db.SaveChanges();
             }
         }

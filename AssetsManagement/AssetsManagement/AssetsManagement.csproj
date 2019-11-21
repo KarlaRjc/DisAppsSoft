@@ -59,7 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="Asset.cs" />
     <Compile Include="Gatherer.cs" />
+    <Compile Include="Lab.cs" />
     <Compile Include="Migrations\201911180132197_InitialCreate.cs" />
     <Compile Include="Migrations\201911180132197_InitialCreate.designer.cs">
       <DependentUpon>201911180132197_InitialCreate.cs</DependentUpon>

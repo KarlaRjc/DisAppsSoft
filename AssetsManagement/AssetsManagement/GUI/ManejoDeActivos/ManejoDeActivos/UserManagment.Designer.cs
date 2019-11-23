@@ -54,9 +54,10 @@
             // nameUserTxt
             // 
             this.nameUserTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nameUserTxt.Location = new System.Drawing.Point(779, 116);
+            this.nameUserTxt.Location = new System.Drawing.Point(584, 94);
+            this.nameUserTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nameUserTxt.Name = "nameUserTxt";
-            this.nameUserTxt.Size = new System.Drawing.Size(286, 30);
+            this.nameUserTxt.Size = new System.Drawing.Size(216, 26);
             this.nameUserTxt.TabIndex = 1;
             // 
             // userTypeCbx
@@ -67,25 +68,28 @@
             "Administrador",
             "Profesor",
             "Observador"});
-            this.userTypeCbx.Location = new System.Drawing.Point(779, 386);
+            this.userTypeCbx.Location = new System.Drawing.Point(584, 314);
+            this.userTypeCbx.Margin = new System.Windows.Forms.Padding(2);
             this.userTypeCbx.Name = "userTypeCbx";
-            this.userTypeCbx.Size = new System.Drawing.Size(286, 33);
+            this.userTypeCbx.Size = new System.Drawing.Size(216, 28);
             this.userTypeCbx.TabIndex = 4;
             // 
             // passwordTxt
             // 
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.passwordTxt.Location = new System.Drawing.Point(779, 295);
+            this.passwordTxt.Location = new System.Drawing.Point(584, 240);
+            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTxt.Name = "passwordTxt";
-            this.passwordTxt.Size = new System.Drawing.Size(286, 30);
+            this.passwordTxt.Size = new System.Drawing.Size(216, 26);
             this.passwordTxt.TabIndex = 3;
             // 
             // usernameTxt
             // 
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernameTxt.Location = new System.Drawing.Point(779, 205);
+            this.usernameTxt.Location = new System.Drawing.Point(584, 167);
+            this.usernameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTxt.Name = "usernameTxt";
-            this.usernameTxt.Size = new System.Drawing.Size(286, 30);
+            this.usernameTxt.Size = new System.Drawing.Size(216, 26);
             this.usernameTxt.TabIndex = 2;
             // 
             // label1
@@ -93,9 +97,10 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(862, 88);
+            this.label1.Location = new System.Drawing.Point(646, 72);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(81, 25);
+            this.label1.Size = new System.Drawing.Size(65, 20);
             this.label1.TabIndex = 5;
             this.label1.Text = "Nombre";
             this.label1.Click += new System.EventHandler(this.label1_Click);
@@ -105,9 +110,10 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(878, 177);
+            this.label2.Location = new System.Drawing.Point(658, 144);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(79, 25);
+            this.label2.Size = new System.Drawing.Size(64, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Usuario";
             this.label2.Click += new System.EventHandler(this.label2_Click);
@@ -117,9 +123,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(862, 267);
+            this.label3.Location = new System.Drawing.Point(646, 217);
+            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 25);
+            this.label3.Size = new System.Drawing.Size(92, 20);
             this.label3.TabIndex = 7;
             this.label3.Text = "Contraseña";
             this.label3.Click += new System.EventHandler(this.label3_Click);
@@ -129,9 +136,10 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(892, 358);
+            this.label4.Location = new System.Drawing.Point(669, 291);
+            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(51, 25);
+            this.label4.Size = new System.Drawing.Size(39, 20);
             this.label4.TabIndex = 8;
             this.label4.Text = "Tipo";
             this.label4.Click += new System.EventHandler(this.label4_Click);
@@ -143,11 +151,12 @@
             this.Nombre,
             this.Usuario,
             this.Tipo});
-            this.usersTable.Location = new System.Drawing.Point(72, 91);
+            this.usersTable.Location = new System.Drawing.Point(54, 74);
+            this.usersTable.Margin = new System.Windows.Forms.Padding(2);
             this.usersTable.Name = "usersTable";
             this.usersTable.RowHeadersWidth = 51;
             this.usersTable.RowTemplate.Height = 24;
-            this.usersTable.Size = new System.Drawing.Size(570, 430);
+            this.usersTable.Size = new System.Drawing.Size(428, 349);
             this.usersTable.TabIndex = 10;
             // 
             // Nombre
@@ -176,9 +185,10 @@
             this.errorNameUserLbl.AutoSize = true;
             this.errorNameUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorNameUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorNameUserLbl.Location = new System.Drawing.Point(783, 149);
+            this.errorNameUserLbl.Location = new System.Drawing.Point(587, 121);
+            this.errorNameUserLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorNameUserLbl.Name = "errorNameUserLbl";
-            this.errorNameUserLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorNameUserLbl.Size = new System.Drawing.Size(0, 17);
             this.errorNameUserLbl.TabIndex = 14;
             // 
             // errorUsernameLbl
@@ -186,9 +196,10 @@
             this.errorUsernameLbl.AutoSize = true;
             this.errorUsernameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorUsernameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorUsernameLbl.Location = new System.Drawing.Point(783, 238);
+            this.errorUsernameLbl.Location = new System.Drawing.Point(587, 193);
+            this.errorUsernameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorUsernameLbl.Name = "errorUsernameLbl";
-            this.errorUsernameLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorUsernameLbl.Size = new System.Drawing.Size(0, 17);
             this.errorUsernameLbl.TabIndex = 15;
             // 
             // errorPasswordLbl
@@ -196,9 +207,10 @@
             this.errorPasswordLbl.AutoSize = true;
             this.errorPasswordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorPasswordLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorPasswordLbl.Location = new System.Drawing.Point(783, 328);
+            this.errorPasswordLbl.Location = new System.Drawing.Point(587, 266);
+            this.errorPasswordLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorPasswordLbl.Name = "errorPasswordLbl";
-            this.errorPasswordLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorPasswordLbl.Size = new System.Drawing.Size(0, 17);
             this.errorPasswordLbl.TabIndex = 16;
             // 
             // errorUserTypeLbl
@@ -206,9 +218,10 @@
             this.errorUserTypeLbl.AutoSize = true;
             this.errorUserTypeLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorUserTypeLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorUserTypeLbl.Location = new System.Drawing.Point(783, 422);
+            this.errorUserTypeLbl.Location = new System.Drawing.Point(587, 343);
+            this.errorUserTypeLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorUserTypeLbl.Name = "errorUserTypeLbl";
-            this.errorUserTypeLbl.Size = new System.Drawing.Size(0, 20);
+            this.errorUserTypeLbl.Size = new System.Drawing.Size(0, 17);
             this.errorUserTypeLbl.TabIndex = 17;
             // 
             // otputUserLbl
@@ -216,9 +229,10 @@
             this.otputUserLbl.AutoSize = true;
             this.otputUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.otputUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.otputUserLbl.Location = new System.Drawing.Point(863, 555);
+            this.otputUserLbl.Location = new System.Drawing.Point(647, 451);
+            this.otputUserLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.otputUserLbl.Name = "otputUserLbl";
-            this.otputUserLbl.Size = new System.Drawing.Size(0, 20);
+            this.otputUserLbl.Size = new System.Drawing.Size(0, 17);
             this.otputUserLbl.TabIndex = 18;
             this.otputUserLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
@@ -227,20 +241,23 @@
             this.removeUserBtn.FlatAppearance.BorderSize = 0;
             this.removeUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EliminarBtn;
-            this.removeUserBtn.Location = new System.Drawing.Point(288, 555);
+            this.removeUserBtn.Location = new System.Drawing.Point(216, 451);
+            this.removeUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.removeUserBtn.Name = "removeUserBtn";
-            this.removeUserBtn.Size = new System.Drawing.Size(141, 50);
+            this.removeUserBtn.Size = new System.Drawing.Size(106, 41);
             this.removeUserBtn.TabIndex = 13;
             this.removeUserBtn.UseVisualStyleBackColor = true;
+            this.removeUserBtn.Click += new System.EventHandler(this.removeUserBtn_Click);
             // 
             // editUserBtn
             // 
             this.editUserBtn.FlatAppearance.BorderSize = 0;
             this.editUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
-            this.editUserBtn.Location = new System.Drawing.Point(779, 466);
+            this.editUserBtn.Location = new System.Drawing.Point(584, 379);
+            this.editUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editUserBtn.Name = "editUserBtn";
-            this.editUserBtn.Size = new System.Drawing.Size(141, 50);
+            this.editUserBtn.Size = new System.Drawing.Size(106, 41);
             this.editUserBtn.TabIndex = 12;
             this.editUserBtn.UseVisualStyleBackColor = true;
             // 
@@ -249,18 +266,19 @@
             this.addUserBtn.FlatAppearance.BorderSize = 0;
             this.addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
-            this.addUserBtn.Location = new System.Drawing.Point(924, 466);
+            this.addUserBtn.Location = new System.Drawing.Point(693, 379);
+            this.addUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addUserBtn.Name = "addUserBtn";
-            this.addUserBtn.Size = new System.Drawing.Size(141, 50);
+            this.addUserBtn.Size = new System.Drawing.Size(106, 41);
             this.addUserBtn.TabIndex = 9;
             this.addUserBtn.UseVisualStyleBackColor = true;
             // 
             // UserManagment
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
-            this.ClientSize = new System.Drawing.Size(1212, 792);
+            this.ClientSize = new System.Drawing.Size(909, 642);
             this.Controls.Add(this.otputUserLbl);
             this.Controls.Add(this.errorUserTypeLbl);
             this.Controls.Add(this.errorPasswordLbl);
@@ -279,6 +297,7 @@
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.nameUserTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserManagment";
             this.Text = "UserManagment";
             ((System.ComponentModel.ISupportInitialize)(this.usersTable)).EndInit();

@@ -131,7 +131,6 @@
             this.Serie,
             this.Estado,
             this.Ubicación});
-            this.assetsManagmentTable.Enabled = false;
             this.assetsManagmentTable.Location = new System.Drawing.Point(42, 60);
             this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2);
             this.assetsManagmentTable.Name = "assetsManagmentTable";

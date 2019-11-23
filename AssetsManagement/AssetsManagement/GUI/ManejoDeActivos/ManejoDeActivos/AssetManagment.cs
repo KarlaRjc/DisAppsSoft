@@ -81,6 +81,7 @@ namespace ManejoDeActivos
         private void removeAssetBtn_Click(object sender, EventArgs e)
         {
             //¿En eliminar se tienen que agregar toda la información?
+            assetsManagmentTable.Rows.RemoveAt(assetsManagmentTable.CurrentRow.Index);
         }
     }
 }

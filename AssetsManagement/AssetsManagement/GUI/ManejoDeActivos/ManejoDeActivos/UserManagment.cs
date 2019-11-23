@@ -41,5 +41,10 @@ namespace ManejoDeActivos
         {
 
         }
+
+        private void removeUserBtn_Click(object sender, EventArgs e)
+        {
+            usersTable.Rows.Remove(usersTable.CurrentRow);
+        }
     }
 }

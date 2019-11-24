@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
-    class Teacher : User
+    public class Teacher : User
     {
 
         public bool TransferAsset()

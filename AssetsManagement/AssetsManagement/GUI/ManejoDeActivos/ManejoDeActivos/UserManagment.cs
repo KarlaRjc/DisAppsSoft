@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssetsManagement;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,11 +60,6 @@ namespace ManejoDeActivos
                 errorNameUserLbl.Text = "Nombre vacío";
                 formFilledOut = false;
             }
-            else if (Regex.IsMatch(nameUserTxt.Text, @"^[\p{L}]+$"))
-            {
-                errorNameUserLbl.Text = "Solo se permiten letras";
-                formFilledOut = false;
-            }
             else 
             {
                 errorNameUserLbl.Text = "";
@@ -110,12 +106,59 @@ namespace ManejoDeActivos
                 errorUserRoleLbl.Text = "";
             }
 
+            if (formFilledOut) 
+            {
+                switch (userRole) 
+                {
+                    case "Administrador":
+                        UserEntity userentityAdmin = User.CreateUser(7, nameUser, EnumRole.Admin, username, password);
 
+                        //Así se agrega ese user a la DB
+                        UserEntity.CreateUserToDB(userentityAdmin);
 
+                        MessageBox.Show("Usuario Agregado Correctamente");
+
+                        Clear();
+                        break;
+                    case "Profesor":
+                        UserEntity userentityTeacher = User.CreateUser(7, nameUser, EnumRole.Teacher, username, password);
+
+                        //Así se agrega ese user a la DB
+                        UserEntity.CreateUserToDB(userentityTeacher);
+
+                        MessageBox.Show("Usuario Agregado Correctamente");
+                        Clear();
+                        break;
+                    case "Observador":
+                        UserEntity userentityGatherer = User.CreateUser(7, nameUser, EnumRole.Gatherer, username, password);
+
+                        //Así se agrega ese user a la DB
+                        UserEntity.CreateUserToDB(userentityGatherer);
+
+                        MessageBox.Show("Usuario Agregado Correctamente");
+                        Clear();
+                        break;
+                }
+            }
 
         }
 
+        private void Clear()
+        {
+            nameUserTxt.Text = "";
+            usernameTxt.Text = "";
+            passwordTxt.Text = "";
+            userRolCbx.SelectedItem = "";
 
-        
+            usersTable.Update();
+            usersTable.Refresh();
+        }
+
+        private void UserManagment_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_AssetsManagement_DbModelDataSet.UserEntities' table. You can move, or remove it, as needed.
+            this.userEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet.UserEntities);
+
+        }
     }
 }

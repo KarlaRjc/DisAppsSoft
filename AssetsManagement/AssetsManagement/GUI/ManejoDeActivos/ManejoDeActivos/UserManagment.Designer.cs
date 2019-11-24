@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.nameUserTxt = new System.Windows.Forms.TextBox();
             this.userRolCbx = new System.Windows.Forms.ComboBox();
             this.passwordTxt = new System.Windows.Forms.TextBox();
@@ -37,9 +38,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.usersTable = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.errorNameUserLbl = new System.Windows.Forms.Label();
             this.errorUsernameLbl = new System.Windows.Forms.Label();
             this.errorPasswordLbl = new System.Windows.Forms.Label();
@@ -48,7 +46,19 @@
             this.removeUserBtn = new System.Windows.Forms.Button();
             this.editUserBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
+            this._AssetsManagement_DbModelDataSet = new ManejoDeActivos._AssetsManagement_DbModelDataSet();
+            this.userEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userEntitiesTableAdapter = new ManejoDeActivos._AssetsManagement_DbModelDataSetTableAdapters.UserEntitiesTableAdapter();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.passwordDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secretQuestionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.secretAnswerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.usersTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userEntitiesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nameUserTxt
@@ -138,38 +148,23 @@
             // 
             // usersTable
             // 
+            this.usersTable.AutoGenerateColumns = false;
             this.usersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Usuario,
-            this.Tipo});
+            this.idDataGridViewTextBoxColumn,
+            this.nameDataGridViewTextBoxColumn,
+            this.roleDataGridViewTextBoxColumn,
+            this.usernameDataGridViewTextBoxColumn,
+            this.passwordDataGridViewTextBoxColumn,
+            this.secretQuestionDataGridViewTextBoxColumn,
+            this.secretAnswerDataGridViewTextBoxColumn});
+            this.usersTable.DataSource = this.userEntitiesBindingSource;
             this.usersTable.Location = new System.Drawing.Point(72, 91);
             this.usersTable.Name = "usersTable";
             this.usersTable.RowHeadersWidth = 51;
             this.usersTable.RowTemplate.Height = 24;
             this.usersTable.Size = new System.Drawing.Size(570, 430);
             this.usersTable.TabIndex = 10;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
-            // 
-            // Usuario
-            // 
-            this.Usuario.HeaderText = "Usuario";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Width = 125;
-            // 
-            // Tipo
-            // 
-            this.Tipo.HeaderText = "Tipo";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 125;
             // 
             // errorNameUserLbl
             // 
@@ -256,6 +251,77 @@
             this.addUserBtn.UseVisualStyleBackColor = true;
             this.addUserBtn.Click += new System.EventHandler(this.addUserBtn_Click);
             // 
+            // _AssetsManagement_DbModelDataSet
+            // 
+            this._AssetsManagement_DbModelDataSet.DataSetName = "_AssetsManagement_DbModelDataSet";
+            this._AssetsManagement_DbModelDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // userEntitiesBindingSource
+            // 
+            this.userEntitiesBindingSource.DataMember = "UserEntities";
+            this.userEntitiesBindingSource.DataSource = this._AssetsManagement_DbModelDataSet;
+            // 
+            // userEntitiesTableAdapter
+            // 
+            this.userEntitiesTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // roleDataGridViewTextBoxColumn
+            // 
+            this.roleDataGridViewTextBoxColumn.DataPropertyName = "role";
+            this.roleDataGridViewTextBoxColumn.HeaderText = "role";
+            this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
+            this.roleDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "username";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // passwordDataGridViewTextBoxColumn
+            // 
+            this.passwordDataGridViewTextBoxColumn.DataPropertyName = "password";
+            this.passwordDataGridViewTextBoxColumn.HeaderText = "password";
+            this.passwordDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.passwordDataGridViewTextBoxColumn.Name = "passwordDataGridViewTextBoxColumn";
+            this.passwordDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // secretQuestionDataGridViewTextBoxColumn
+            // 
+            this.secretQuestionDataGridViewTextBoxColumn.DataPropertyName = "secretQuestion";
+            this.secretQuestionDataGridViewTextBoxColumn.HeaderText = "secretQuestion";
+            this.secretQuestionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.secretQuestionDataGridViewTextBoxColumn.Name = "secretQuestionDataGridViewTextBoxColumn";
+            this.secretQuestionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // secretAnswerDataGridViewTextBoxColumn
+            // 
+            this.secretAnswerDataGridViewTextBoxColumn.DataPropertyName = "secretAnswer";
+            this.secretAnswerDataGridViewTextBoxColumn.HeaderText = "secretAnswer";
+            this.secretAnswerDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.secretAnswerDataGridViewTextBoxColumn.Name = "secretAnswerDataGridViewTextBoxColumn";
+            this.secretAnswerDataGridViewTextBoxColumn.Width = 125;
+            // 
             // UserManagment
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -282,7 +348,10 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "UserManagment";
             this.Text = "UserManagment";
+            this.Load += new System.EventHandler(this.UserManagment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.usersTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userEntitiesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,14 +369,21 @@
         private System.Windows.Forms.Button addUserBtn;
         private System.Windows.Forms.DataGridView usersTable;
         private System.Windows.Forms.Button editUserBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.Button removeUserBtn;
         private System.Windows.Forms.Label errorNameUserLbl;
         private System.Windows.Forms.Label errorUsernameLbl;
         private System.Windows.Forms.Label errorPasswordLbl;
         private System.Windows.Forms.Label errorUserRoleLbl;
         private System.Windows.Forms.Label outputUserLbl;
+        private _AssetsManagement_DbModelDataSet _AssetsManagement_DbModelDataSet;
+        private System.Windows.Forms.BindingSource userEntitiesBindingSource;
+        private _AssetsManagement_DbModelDataSetTableAdapters.UserEntitiesTableAdapter userEntitiesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn passwordDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secretQuestionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn secretAnswerDataGridViewTextBoxColumn;
     }
 }

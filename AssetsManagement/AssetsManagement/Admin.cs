@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
-    class Admin : User
+    public class Admin : User
     {
 
         public bool CreateUser(User user)

@@ -63,5 +63,6 @@ namespace AssetsManagement
 
             return userentity;
         }
+
     }
 }

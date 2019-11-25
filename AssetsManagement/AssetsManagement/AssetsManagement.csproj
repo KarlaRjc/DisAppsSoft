@@ -60,6 +60,7 @@
   <ItemGroup>
     <Compile Include="Admin.cs" />
     <Compile Include="Gatherer.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AssetEntity.cs" />
     <Compile Include="Model\AssetTransferHistoryEntity.cs" />
     <Compile Include="Model\DbModel.cs" />

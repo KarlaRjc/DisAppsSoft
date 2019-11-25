@@ -26,7 +26,7 @@ namespace ManejoDeActivos.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-R14B3QO;Initial Catalog=AssetsManagement.DbModel;Integrated S" +
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=(local);Initial Catalog=AssetsManagement.DbModel;Integrated S" +
             "ecurity=True")]
         public string AssetsManagement_DbModelConnectionString {
             get {

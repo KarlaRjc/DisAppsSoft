@@ -133,5 +133,10 @@ namespace ManejoDeActivos
 
 
         }
+
+        private void UserNameInput_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

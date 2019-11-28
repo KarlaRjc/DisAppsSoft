@@ -30,7 +30,7 @@ namespace AssetsManagement
             //Console.WriteLine(UserEntity.GetUserRole(userentity));
 
             //Para usar el Modify y el delete, se reciben parámetros user, no user entity entonces hay que tener un usuario
-            //El usuario no se puede instanciar, hay que darle un tipo
+            //El usuario no se puede instanciar, hay que darle un tipojjj
             //Gatherer user = new Gatherer();
             //user.id = 10;
             //user.name = "Esteban";

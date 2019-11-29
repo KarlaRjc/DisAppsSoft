@@ -61,7 +61,8 @@
             this.transferedFromLabidDataGridViewTextBoxColumn,
             this.transferedToLabidDataGridViewTextBoxColumn});
             this.assetsTransferTable.DataSource = this.assetTransferHistoryEntitiesBindingSource;
-            this.assetsTransferTable.Location = new System.Drawing.Point(63, 126);
+            this.assetsTransferTable.Enabled = false;
+            this.assetsTransferTable.Location = new System.Drawing.Point(64, 94);
             this.assetsTransferTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assetsTransferTable.Name = "assetsTransferTable";
             this.assetsTransferTable.RowHeadersWidth = 51;

@@ -159,6 +159,7 @@
             this.roleDataGridViewTextBoxColumn,
             this.usernameDataGridViewTextBoxColumn});
             this.usersTable.DataSource = this.userEntitiesBindingSource;
+            this.usersTable.Enabled = false;
             this.usersTable.Location = new System.Drawing.Point(54, 74);
             this.usersTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.usersTable.Name = "usersTable";

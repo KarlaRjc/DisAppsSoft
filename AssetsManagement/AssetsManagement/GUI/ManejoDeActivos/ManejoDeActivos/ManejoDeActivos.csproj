@@ -100,6 +100,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_AssetsManagement_DbModelDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_AssetsManagement_DbModelDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AssetsManagement_DbModelDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_AssetsManagement_DbModelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AssetManagment.resx">
       <DependentUpon>AssetManagment.cs</DependentUpon>
     </EmbeddedResource>
@@ -145,6 +155,28 @@
     </None>
     <None Include="_AssetsManagement_DbModelDataSet.xss">
       <DependentUpon>_AssetsManagement_DbModelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet1.xsc">
+      <DependentUpon>_AssetsManagement_DbModelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_AssetsManagement_DbModelDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet1.xss">
+      <DependentUpon>_AssetsManagement_DbModelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet2.xsc">
+      <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_AssetsManagement_DbModelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet2.xss">
+      <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

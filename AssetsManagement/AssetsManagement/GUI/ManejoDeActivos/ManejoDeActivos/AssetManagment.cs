@@ -16,5 +16,12 @@ namespace ManejoDeActivos
         {
             InitializeComponent();
         }
+
+        private void AssetManagment_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the '_AssetsManagement_DbModelDataSet1.AssetEntities' table. You can move, or remove it, as needed.
+            this.assetEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet1.AssetEntities);
+
+        }
     }
 }

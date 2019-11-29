@@ -50,8 +50,9 @@
             this.addUserBtn = new System.Windows.Forms.Button();
             this.userEntitiesTableAdapter = new ManejoDeActivos._AssetsManagement_DbModelDataSetTableAdapters.UserEntitiesTableAdapter();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.usernameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.password = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.roleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.usersTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userEntitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet)).BeginInit();
@@ -61,7 +62,7 @@
             // 
             this.nameUserTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameUserTxt.Location = new System.Drawing.Point(584, 94);
-            this.nameUserTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameUserTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nameUserTxt.Name = "nameUserTxt";
             this.nameUserTxt.Size = new System.Drawing.Size(216, 26);
             this.nameUserTxt.TabIndex = 1;
@@ -75,7 +76,7 @@
             "Profesor",
             "Observador"});
             this.userRolCbx.Location = new System.Drawing.Point(584, 314);
-            this.userRolCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userRolCbx.Margin = new System.Windows.Forms.Padding(2);
             this.userRolCbx.Name = "userRolCbx";
             this.userRolCbx.Size = new System.Drawing.Size(216, 28);
             this.userRolCbx.TabIndex = 4;
@@ -84,7 +85,7 @@
             // 
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTxt.Location = new System.Drawing.Point(584, 240);
-            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(216, 26);
             this.passwordTxt.TabIndex = 3;
@@ -93,7 +94,7 @@
             // 
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTxt.Location = new System.Drawing.Point(584, 167);
-            this.usernameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(216, 26);
             this.usernameTxt.TabIndex = 2;
@@ -156,12 +157,13 @@
             this.usersTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.usersTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nameDataGridViewTextBoxColumn,
-            this.roleDataGridViewTextBoxColumn,
-            this.usernameDataGridViewTextBoxColumn});
+            this.usernameDataGridViewTextBoxColumn,
+            this.password,
+            this.roleDataGridViewTextBoxColumn});
             this.usersTable.DataSource = this.userEntitiesBindingSource;
             this.usersTable.Enabled = false;
             this.usersTable.Location = new System.Drawing.Point(54, 74);
-            this.usersTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usersTable.Margin = new System.Windows.Forms.Padding(2);
             this.usersTable.Name = "usersTable";
             this.usersTable.RowHeadersWidth = 51;
             this.usersTable.RowTemplate.Height = 24;
@@ -240,7 +242,7 @@
             this.removeUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EliminarBtn;
             this.removeUserBtn.Location = new System.Drawing.Point(216, 451);
-            this.removeUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.removeUserBtn.Name = "removeUserBtn";
             this.removeUserBtn.Size = new System.Drawing.Size(106, 41);
             this.removeUserBtn.TabIndex = 13;
@@ -252,7 +254,7 @@
             this.editUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
             this.editUserBtn.Location = new System.Drawing.Point(584, 379);
-            this.editUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editUserBtn.Name = "editUserBtn";
             this.editUserBtn.Size = new System.Drawing.Size(106, 41);
             this.editUserBtn.TabIndex = 12;
@@ -264,7 +266,7 @@
             this.addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
             this.addUserBtn.Location = new System.Drawing.Point(693, 379);
-            this.addUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addUserBtn.Name = "addUserBtn";
             this.addUserBtn.Size = new System.Drawing.Size(106, 41);
             this.addUserBtn.TabIndex = 9;
@@ -283,6 +285,20 @@
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.Width = 125;
             // 
+            // usernameDataGridViewTextBoxColumn
+            // 
+            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
+            this.usernameDataGridViewTextBoxColumn.HeaderText = "Usuario";
+            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
+            this.usernameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // password
+            // 
+            this.password.DataPropertyName = "password";
+            this.password.HeaderText = "Contraseña";
+            this.password.Name = "password";
+            // 
             // roleDataGridViewTextBoxColumn
             // 
             this.roleDataGridViewTextBoxColumn.DataPropertyName = "role";
@@ -290,14 +306,6 @@
             this.roleDataGridViewTextBoxColumn.MinimumWidth = 6;
             this.roleDataGridViewTextBoxColumn.Name = "roleDataGridViewTextBoxColumn";
             this.roleDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // usernameDataGridViewTextBoxColumn
-            // 
-            this.usernameDataGridViewTextBoxColumn.DataPropertyName = "username";
-            this.usernameDataGridViewTextBoxColumn.HeaderText = "Nombre Usuario";
-            this.usernameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.usernameDataGridViewTextBoxColumn.Name = "usernameDataGridViewTextBoxColumn";
-            this.usernameDataGridViewTextBoxColumn.Width = 125;
             // 
             // UserManagment
             // 
@@ -323,7 +331,7 @@
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.nameUserTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserManagment";
             this.Text = "UserManagment";
             this.Load += new System.EventHandler(this.UserManagment_Load);
@@ -357,7 +365,8 @@
         private System.Windows.Forms.BindingSource userEntitiesBindingSource;
         private _AssetsManagement_DbModelDataSetTableAdapters.UserEntitiesTableAdapter userEntitiesTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn usernameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn password;
+        private System.Windows.Forms.DataGridViewTextBoxColumn roleDataGridViewTextBoxColumn;
     }
 }

@@ -9,9 +9,16 @@ namespace AssetsManagement
     public class Admin : User
     {
 
-        public bool CreateUser(User user)
+        public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password)
         {
-            return false;
+            UserEntity userentity = new UserEntity();
+            userentity.id = id;
+            userentity.name = name;
+            userentity.role = role;
+            userentity.username = username;
+            userentity.password = password;
+
+            return userentity;
         }
 
         public bool EditUser(User user)
@@ -54,6 +61,33 @@ namespace AssetsManagement
         private UserEntity MapUserToEntity(User user)
         {
             return null;
+        }
+
+        public static Boolean CheckUsername(string username)
+        {
+            Boolean userFound = false;
+            UserEntity user = null;
+
+            user = UserEntity.GetUserByUsername(username);
+
+            try
+            {
+                if (!user.Equals(null))
+                {
+
+                    userFound = true;
+                }
+
+            }
+            catch (Exception e) 
+            {
+
+                userFound = false;
+            }
+
+            
+
+            return userFound;
         }
     }
 }

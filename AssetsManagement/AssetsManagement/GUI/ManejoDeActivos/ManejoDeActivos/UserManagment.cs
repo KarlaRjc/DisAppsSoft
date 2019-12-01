@@ -1,4 +1,5 @@
 ﻿using AssetsManagement;
+using ManejoDeActivos.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,6 +15,7 @@ namespace ManejoDeActivos
 {
     public partial class UserManagment : Form
     {
+        UserManagmentController userManagmenteController = new UserManagmentController();
         public UserManagment()
         {
             InitializeComponent();
@@ -44,6 +46,7 @@ namespace ManejoDeActivos
 
         }
 
+        //Gets the information from the text inputs to then add a new user
         private void addUserBtn_Click(object sender, EventArgs e)
         {
 
@@ -52,106 +55,33 @@ namespace ManejoDeActivos
             string password = passwordTxt.Text;
             string userRole = (string) userRolCbx.SelectedItem;
 
+            Boolean usernameFound = userManagmenteController.VerifyUsername(username);
 
-            Boolean formFilledOut = true;
-
-            if (string.IsNullOrEmpty(nameUser))
+            if (!usernameFound)
             {
-                errorNameUserLbl.Text = "Nombre vacío";
-                formFilledOut = false;
-            }
-            else 
-            {
-                errorNameUserLbl.Text = "";
-            }
-
-            if (string.IsNullOrEmpty(username))
-            {
-                errorUsernameLbl.Text = "Usuario vacío";
-                formFilledOut = false;
-
-            }
-            else if(username.Contains(" "))
-            {
-                errorUsernameLbl.Text = "Espacios no son permitidos";
-                formFilledOut = false;
+                userManagmenteController.CreateUser(nameUser, username, password, userRole);
+                outputUserLbl.Text = "";
+                ClearForm();
+                MessageBox.Show("Usuario Agregado Correctamente");
             }
             else
             {
-                errorUsernameLbl.Text = "";
-            }
-
-            if (string.IsNullOrEmpty(password))
-            {
-                errorPasswordLbl.Text = "Contraseña vacío";
-                formFilledOut = false;
-            }
-            else if (password.Contains(" "))
-            {
-                errorPasswordLbl.Text = "Espacios no son permitidos";
-                formFilledOut = false;
-            }
-            else
-            {
-                errorPasswordLbl.Text = "";
-            }
-
-            if (string.IsNullOrEmpty(userRole))
-            {
-                errorUserRoleLbl.Text = "Debe seleccionar rol de la lista";
-                formFilledOut = false;
-            }
-            else
-            {
-                errorUserRoleLbl.Text = "";
-            }
-
-            if (formFilledOut) 
-            {
-                switch (userRole) 
-                {
-                    case "Administrador":
-                        UserEntity userentityAdmin = User.CreateUser(7, nameUser, EnumRole.Admin, username, password);
-
-                        //Así se agrega ese user a la DB
-                        UserEntity.CreateUserToDB(userentityAdmin);
-
-                        MessageBox.Show("Usuario Agregado Correctamente");
-
-                        Clear();
-                        break;
-                    case "Profesor":
-                        UserEntity userentityTeacher = User.CreateUser(7, nameUser, EnumRole.Teacher, username, password);
-
-                        //Así se agrega ese user a la DB
-                        UserEntity.CreateUserToDB(userentityTeacher);
-
-                        MessageBox.Show("Usuario Agregado Correctamente");
-                        Clear();
-                        break;
-                    case "Observador":
-                        UserEntity userentityGatherer = User.CreateUser(7, nameUser, EnumRole.Gatherer, username, password);
-
-                        //Así se agrega ese user a la DB
-                        UserEntity.CreateUserToDB(userentityGatherer);
-
-                        MessageBox.Show("Usuario Agregado Correctamente");
-                        Clear();
-                        break;
-                }
-            }
-
+                outputUserLbl.Text = "Nombre de usuario ya existe";
+            }    
         }
 
-        private void Clear()
+        //Allow to clear all text inputs and calls the UpdateUsersTable()
+        private void ClearForm()
         {
             nameUserTxt.Text = "";
             usernameTxt.Text = "";
             passwordTxt.Text = "";
-            userRolCbx.SelectedItem = "";
+            userRolCbx.ResetText();
+            userRolCbx.SelectedItem = -1;
+            outputUserLbl.Text = "";
 
-            usersTable.Update();
-            usersTable.Refresh();
+            UpdateUsersTable();
+
         }
 
         private void UserManagment_Load(object sender, EventArgs e)
@@ -159,6 +89,15 @@ namespace ManejoDeActivos
             // TODO: This line of code loads data into the '_AssetsManagement_DbModelDataSet.UserEntities' table. You can move, or remove it, as needed.
             this.userEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet.UserEntities);
 
+        }
+
+        // Allows to refresh the datagrid after inserting new record
+        private void UpdateUsersTable()
+        {
+            using (DbModel db = new DbModel())
+            {
+                usersTable.DataSource = db.User.ToList<UserEntity>();
+            }
         }
     }
 }

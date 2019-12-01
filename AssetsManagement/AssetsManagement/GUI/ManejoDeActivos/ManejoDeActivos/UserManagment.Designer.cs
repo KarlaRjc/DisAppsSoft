@@ -256,11 +256,11 @@
             // outputUserLbl
             // 
             this.outputUserLbl.AutoSize = true;
-            this.outputUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.outputUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
             this.outputUserLbl.Location = new System.Drawing.Point(784, 555);
             this.outputUserLbl.Name = "outputUserLbl";
-            this.outputUserLbl.Size = new System.Drawing.Size(0, 20);
+            this.outputUserLbl.Size = new System.Drawing.Size(0, 25);
             this.outputUserLbl.TabIndex = 18;
             this.outputUserLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 

@@ -15,26 +15,27 @@ namespace ManejoDeActivos.Controller
             switch (userRole)
             {
                 case "Administrador":
-                    //Create the user
+                    //Creates the user
                     UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Admin, username, password);
 
-                    //Add user to the database
+                    //Adds user to the database
                     UserEntity.CreateUserToDB(userentityAdmin);
                     break;
                 case "Profesor":
-                    //Create the user
+                    //Creates the user
                     UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Teacher, username, password);
 
-                    //Add user to the database
+                    //Adds user to the database
                     UserEntity.CreateUserToDB(userentityTeacher);
                     break;
                 case "Observador":
-                    //Create the user
+                    //Creates the user
                     UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Gatherer, username, password);
 
-                    //Add user to the database
+                    //Adds user to the database
                     UserEntity.CreateUserToDB(userentityGatherer);
-
+                    break;
+                default:
                     break;
             }
         }

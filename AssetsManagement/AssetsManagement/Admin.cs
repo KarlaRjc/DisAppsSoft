@@ -62,7 +62,7 @@ namespace AssetsManagement
         {
             return null;
         }
-
+        //Checks if username already exists
         public static Boolean CheckUsername(string username)
         {
             Boolean userFound = false;
@@ -84,8 +84,6 @@ namespace AssetsManagement
 
                 userFound = false;
             }
-
-            
 
             return userFound;
         }

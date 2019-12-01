@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -24,6 +25,7 @@ namespace AssetsManagement
 
         public string secretAnswer { get; set; }
 
+       
         public void ChangePassword(UserEntity user, string Answer, string newPassword)
         {
 

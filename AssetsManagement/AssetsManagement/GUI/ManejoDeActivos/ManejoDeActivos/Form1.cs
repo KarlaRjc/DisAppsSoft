@@ -105,6 +105,20 @@ namespace ManejoDeActivos
                     {
                         LoginPanel.Hide();
                         CurrentRoleText.Text = result["Role"];
+                        if (CurrentRoleText.Text == "Teacher")
+                        {
+                            assestManagmentBtn.Hide();
+                            userManagmentBtn.Hide();
+                        } else
+                        {
+                            if (CurrentRoleText.Text == "Gatherer")
+                            {
+                                assestManagmentBtn.Hide();
+                                userManagmentBtn.Hide();
+                                transferHisotryBtn.Hide();
+                                transferAssestBtn.Hide();
+                            }
+                        }
                     }
                 }
                 else 

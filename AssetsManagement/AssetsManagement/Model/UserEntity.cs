@@ -25,6 +25,8 @@ namespace AssetsManagement
 
         public string secretAnswer { get; set; }
 
+        
+
        
         public void ChangePassword(UserEntity user, string Answer, string newPassword)
         {

@@ -59,7 +59,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="Asset.cs" />
     <Compile Include="Gatherer.cs" />
+    <Compile Include="Lab.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AssetEntity.cs" />
     <Compile Include="Model\AssetTransferHistoryEntity.cs" />

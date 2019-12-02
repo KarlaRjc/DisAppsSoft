@@ -62,6 +62,7 @@
     <Compile Include="AssetManagment.Designer.cs">
       <DependentUpon>AssetManagment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AssetManagmentController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\Sanitize\CharInput.cs" />
     <Compile Include="Controller\Sanitize\EnumSanitizeErrors.cs" />
@@ -69,6 +70,7 @@
     <Compile Include="Controller\Sanitize\Sanitizer.cs" />
     <Compile Include="Controller\Sanitize\SanitizerDecorator.cs" />
     <Compile Include="Controller\Sanitize\SpecialCharsNotAllowed.cs" />
+    <Compile Include="Controller\UserManagmentController.cs" />
     <Compile Include="Encrypt\IEncryptPassword.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

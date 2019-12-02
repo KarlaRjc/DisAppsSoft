@@ -78,5 +78,10 @@ namespace ManejoDeActivos
                 assetsManagmentTable.DataSource = db.Asset.ToList<AssetEntity>();
             }
         }
+
+        private void RemoveAssetBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

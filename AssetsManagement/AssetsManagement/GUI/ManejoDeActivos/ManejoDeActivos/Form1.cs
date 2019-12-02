@@ -106,15 +106,14 @@ namespace ManejoDeActivos
                         LoginPanel.Hide();
                         CurrentRoleText.Text = result["Role"];
                         //Validates if role is Teacher
-                        if (CurrentRoleText.Text == "Teacher")
+                        if (CurrentRoleText.Text != "Admin")
                         {
+                            if (CurrentRoleText.Text == "Teacher")
+                            { 
                             //Hide the options that are not available for this role
                             assestManagmentBtn.Hide();
                             userManagmentBtn.Hide();
-                        } else
-                        {
-                            //Validates if role is Gatherer
-                            if (CurrentRoleText.Text == "Gatherer")
+                            } else
                             {
                                 //Hide all the options that are not available for the role
                                 assestManagmentBtn.Hide();

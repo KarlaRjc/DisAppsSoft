@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ManejoDeActivos.Controller;
+using ManejoDeActivos.Controller.Sanitize;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -39,7 +41,7 @@ namespace ManejoDeActivos
 
         private void assestManagmentBtn_Click(object sender, EventArgs e)
         {
-            
+            openUserManagment(new AssetManagment());
         }
 
         private void openUserManagment(object childForm) 
@@ -63,6 +65,95 @@ namespace ManejoDeActivos
         private void transferAssestBtn_Click(object sender, EventArgs e)
         {
             openUserManagment(new TransferAssest());
+        }
+
+        private void transferHisotryBtn_Click(object sender, EventArgs e)
+        {
+            openUserManagment(new TransferHistory());
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+            // Set to no text.
+            passwordInput.Text = "";
+            // The password character is an asterisk.
+            passwordInput.PasswordChar = '*';
+            // The control will allow no more than 14 characters.
+            passwordInput.MaxLength = 14;
+        }
+
+        private void label3_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            LoginErrorBox.ResetText();
+
+            Sanitizer userNameSanitizer = new SpecialCharsNotAllowed(new CharInput());
+            Sanitizer passwordSanitizer = new CharInput();
+            var resultPasswordSanitizer = passwordSanitizer.SanitizeInput(passwordInput.Text);
+            var resultUserNameSanitizer = userNameSanitizer.SanitizeInput(UserNameInput.Text);
+            if (resultUserNameSanitizer.Count == 0)
+            {
+                if (resultPasswordSanitizer.Count == 0)
+                {
+                    var result = LoginController.Login(UserNameInput.Text, passwordInput.Text);
+                    if (result.ContainsKey("Success"))
+                    {
+                        LoginPanel.Hide();
+                        CurrentRoleText.Text = result["Role"];
+                        //Validates if role is Teacher
+                        if (CurrentRoleText.Text != "Admin")
+                        {
+                            if (CurrentRoleText.Text == "Teacher")
+                            { 
+                            //Hide the options that are not available for this role
+                            assestManagmentBtn.Hide();
+                            userManagmentBtn.Hide();
+                            } else
+                            {
+                                //Hide all the options that are not available for the role
+                                assestManagmentBtn.Hide();
+                                userManagmentBtn.Hide();
+                                transferHisotryBtn.Hide();
+                                transferAssestBtn.Hide();
+                            }
+                        }
+                    }
+                }
+                else 
+                {
+                    LoginErrorBox.Show();
+                    LoginErrorBox.AppendText("Password input errors: \n");
+                    foreach (KeyValuePair<EnumSanitizeErrors, string> entry in resultPasswordSanitizer)
+                    {
+                        LoginErrorBox.AppendText(entry.Value + "\n");
+                    }
+                }
+            }
+            else 
+            {
+                LoginErrorBox.Show();
+                LoginErrorBox.AppendText("Username input errors: \n");
+                foreach (KeyValuePair<EnumSanitizeErrors, string> entry in resultUserNameSanitizer)
+                {
+                    LoginErrorBox.AppendText(entry.Value + "\n");
+                }
+            }
+        }
+
+        private void LoginButton_Paint(object sender, PaintEventArgs e)
+        {
+
+
+        }
+
+        private void UserNameInput_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -10,10 +10,11 @@ namespace AssetsManagement
     {
         public int id { get; set; }
         public string name { get; set; }
-
         public EnumRole role { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        public string secretQuestion { get; set; }
+        public string secretAnswer { get; set; }
 
         public abstract bool ChangePassword();
 
@@ -37,7 +38,6 @@ namespace AssetsManagement
         /// <returns></returns>
         public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password)
         {
-
 
             UserEntity userentity = new UserEntity();
             userentity.id = id;

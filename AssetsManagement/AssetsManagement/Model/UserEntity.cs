@@ -4,7 +4,6 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AssetsManagement;
 
 namespace AssetsManagement
 {
@@ -24,6 +23,8 @@ namespace AssetsManagement
         public string secretQuestion { get; set; }
 
         public string secretAnswer { get; set; }
+
+        
 
         public void ChangePassword(UserEntity user, string Answer, string newPassword)
         {
@@ -104,5 +105,14 @@ namespace AssetsManagement
             }
         }
 
+        public static UserEntity GetUserByUsername(string username)
+        {
+            UserEntity user = null;
+            using (DbModel db = new DbModel())
+            {
+                user = db.User.Where(x => x.username == username).FirstOrDefault();
+            }
+            return user;
+        }
     }
 }

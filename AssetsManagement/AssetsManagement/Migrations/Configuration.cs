@@ -9,8 +9,7 @@
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
-            ContextKey = "AssetsManagement.DbModel";
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(AssetsManagement.DbModel context)

@@ -84,6 +84,16 @@ namespace AssetsManagement
                 db.SaveChanges();
             }
         }
+        //Returns the assest if the serial number exists otherwise returns null
+        public static AssetEntity GetAssetBySerialNumber(string serial)
+        {
+            AssetEntity asset = null;
+            using (DbModel db = new DbModel())
+            {
+                asset = db.Asset.Where(x => x.series == serial).FirstOrDefault();
+            }
+            return asset;
+        }
 
     }
 }

@@ -15,7 +15,7 @@ namespace AssetsManagement
         public string name { get; set; }
 
 
-        public List<AssetEntity> Assets {get; set;}
+        public List<AssetEntity> Assets { get; set; }
 
 
 

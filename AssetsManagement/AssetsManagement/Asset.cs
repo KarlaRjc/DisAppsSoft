@@ -17,7 +17,7 @@ namespace AssetsManagement
         public string model { get; set; }
 
         public string series { get; set; }
-        
+
         public string state { get; set; }
 
 
@@ -64,8 +64,30 @@ namespace AssetsManagement
             return assetentity;
 
         }
+        //Checks if serial number already exists
+        public static Boolean VerifySerialNumber(string serial)
+        {
+            Boolean assestFound = false;
+            AssetEntity asset = null;
 
+            asset = AssetEntity.GetAssetBySerialNumber(serial);
 
+            try
+            {
+                if (!asset.Equals(null))
+                {
+
+                    assestFound = true;
+                }
+
+            }
+            catch (Exception e)
+            {
+
+                assestFound = false;
+            }
+
+            return assestFound;
+        }
     }
-
 }

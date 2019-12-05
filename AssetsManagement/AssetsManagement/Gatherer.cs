@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
-    class Gatherer : User
+    public class Gatherer : User
     {
         public override bool ChangePassword()
         {

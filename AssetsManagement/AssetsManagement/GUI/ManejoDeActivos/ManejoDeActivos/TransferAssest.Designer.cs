@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.assetsTransferTable = new System.Windows.Forms.DataGridView();
             this.Activo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Laboratorio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.labCbx = new System.Windows.Forms.ComboBox();
             this.TransferAssetBtn = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsTransferTable)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // assetsTransferTable
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.assetsTransferTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assetsTransferTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Activo,
             this.Tipo,
             this.Laboratorio});
-            this.dataGridView1.Location = new System.Drawing.Point(104, 155);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(569, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.assetsTransferTable.Location = new System.Drawing.Point(104, 155);
+            this.assetsTransferTable.Name = "assetsTransferTable";
+            this.assetsTransferTable.RowHeadersWidth = 51;
+            this.assetsTransferTable.RowTemplate.Height = 24;
+            this.assetsTransferTable.Size = new System.Drawing.Size(569, 150);
+            this.assetsTransferTable.TabIndex = 0;
             // 
             // Activo
             // 
@@ -121,11 +121,11 @@
             this.Controls.Add(this.TransferAssetBtn);
             this.Controls.Add(this.labCbx);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.assetsTransferTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "TransferAssest";
             this.Text = "TransferAssest";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetsTransferTable)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -133,7 +133,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView assetsTransferTable;
         private System.Windows.Forms.DataGridViewTextBoxColumn Activo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Laboratorio;

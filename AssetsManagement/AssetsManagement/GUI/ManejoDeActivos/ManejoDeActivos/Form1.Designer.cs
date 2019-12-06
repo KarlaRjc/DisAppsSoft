@@ -78,12 +78,12 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.reportsBtn);
             this.panel3.Controls.Add(this.transferHisotryBtn);
             this.panel3.Controls.Add(this.transferAssestBtn);
-            this.panel3.Controls.Add(this.userManagmentBtn);
             this.panel3.Controls.Add(this.assestManagmentBtn);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.userManagmentBtn);
+            this.panel3.Controls.Add(this.reportsBtn);
             this.panel3.Location = new System.Drawing.Point(0, 80);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
@@ -107,7 +107,7 @@
             this.reportsBtn.FlatAppearance.BorderSize = 0;
             this.reportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.reportsBtn.Image = global::ManejoDeActivos.Properties.Resources.ReportesBtn;
-            this.reportsBtn.Location = new System.Drawing.Point(17, 447);
+            this.reportsBtn.Location = new System.Drawing.Point(19, 27);
             this.reportsBtn.Margin = new System.Windows.Forms.Padding(4);
             this.reportsBtn.Name = "reportsBtn";
             this.reportsBtn.Size = new System.Drawing.Size(289, 98);
@@ -120,7 +120,7 @@
             this.transferHisotryBtn.FlatAppearance.BorderSize = 0;
             this.transferHisotryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transferHisotryBtn.Image = global::ManejoDeActivos.Properties.Resources.HistorialTransferenciasBtn;
-            this.transferHisotryBtn.Location = new System.Drawing.Point(17, 341);
+            this.transferHisotryBtn.Location = new System.Drawing.Point(17, 196);
             this.transferHisotryBtn.Margin = new System.Windows.Forms.Padding(4);
             this.transferHisotryBtn.Name = "transferHisotryBtn";
             this.transferHisotryBtn.Size = new System.Drawing.Size(287, 98);
@@ -133,7 +133,7 @@
             this.transferAssestBtn.FlatAppearance.BorderSize = 0;
             this.transferAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transferAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.RealizarTransferenciasBtn;
-            this.transferAssestBtn.Location = new System.Drawing.Point(17, 235);
+            this.transferAssestBtn.Location = new System.Drawing.Point(19, 98);
             this.transferAssestBtn.Margin = new System.Windows.Forms.Padding(4);
             this.transferAssestBtn.Name = "transferAssestBtn";
             this.transferAssestBtn.Size = new System.Drawing.Size(287, 98);
@@ -146,10 +146,10 @@
             this.userManagmentBtn.FlatAppearance.BorderSize = 0;
             this.userManagmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userManagmentBtn.Image = global::ManejoDeActivos.Properties.Resources.ManejoUsuariosBtn;
-            this.userManagmentBtn.Location = new System.Drawing.Point(17, 138);
+            this.userManagmentBtn.Location = new System.Drawing.Point(17, 378);
             this.userManagmentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.userManagmentBtn.Name = "userManagmentBtn";
-            this.userManagmentBtn.Size = new System.Drawing.Size(287, 90);
+            this.userManagmentBtn.Size = new System.Drawing.Size(287, 96);
             this.userManagmentBtn.TabIndex = 2;
             this.userManagmentBtn.UseVisualStyleBackColor = true;
             this.userManagmentBtn.Click += new System.EventHandler(this.userManagmentBtn_Click);
@@ -159,7 +159,7 @@
             this.assestManagmentBtn.FlatAppearance.BorderSize = 0;
             this.assestManagmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.assestManagmentBtn.Image = global::ManejoDeActivos.Properties.Resources.ManejoActivosBtn;
-            this.assestManagmentBtn.Location = new System.Drawing.Point(17, 41);
+            this.assestManagmentBtn.Location = new System.Drawing.Point(17, 289);
             this.assestManagmentBtn.Margin = new System.Windows.Forms.Padding(4);
             this.assestManagmentBtn.Name = "assestManagmentBtn";
             this.assestManagmentBtn.Size = new System.Drawing.Size(292, 90);
@@ -375,9 +375,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1541, 876);
-            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.LoginPanel);
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Form1";
             this.Text = "Form1";

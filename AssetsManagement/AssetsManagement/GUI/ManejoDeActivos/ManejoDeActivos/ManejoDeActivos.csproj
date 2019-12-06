@@ -71,7 +71,6 @@
     <Compile Include="Controller\Sanitize\SanitizerDecorator.cs" />
     <Compile Include="Controller\Sanitize\SpecialCharsNotAllowed.cs" />
     <Compile Include="Controller\UserManagmentController.cs" />
-    <Compile Include="Encrypt\IEncryptPassword.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>

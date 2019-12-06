@@ -1,13 +1,11 @@
 ﻿using AssetsManagement;
 using ManejoDeActivos.Controller;
-using ManejoDeActivos.Encrypt;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -16,26 +14,14 @@ using System.Windows.Forms;
 
 namespace ManejoDeActivos
 {
-    public partial class UserManagment:Form,IEncryptPassword
+    public partial class UserManagment:Form
     {
         UserManagmentController userManagmenteController = new UserManagmentController();
         public UserManagment()
         {
             InitializeComponent();
         }
-
-
-        public string EncryptPassword(string passwordEncryted)
-        {
-           
-            HashAlgorithm hashAlgorithm = new SHA256CryptoServiceProvider();// Uses the fuction SHA256 from library Cryptography to ecrypt password
-            var byteValue = System.Text.Encoding.UTF8.GetBytes(passwordEncryted); 
-            var byteHash = hashAlgorithm.ComputeHash(byteValue);/// here it encrypts the value 
-            return Convert.ToBase64String(byteHash);
-             /*Returns the length of the encrypted password, in this case it will be 64 bits
-            confirms the password with the length of bytes, without having to decrypt it */
-
-        }
+        
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {

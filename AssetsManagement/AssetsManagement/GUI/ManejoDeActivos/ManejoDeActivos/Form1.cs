@@ -106,7 +106,7 @@ namespace ManejoDeActivos
                         LoginPanel.Hide();
                         CurrentRoleText.Text = result["Role"];
                         //Validates if role is Teacher
-                        if (CurrentRoleText.Text != "Administrador")
+                        if (CurrentRoleText.Text != "Admin")
                         {
                             if (CurrentRoleText.Text == "Teacher")
                             { 

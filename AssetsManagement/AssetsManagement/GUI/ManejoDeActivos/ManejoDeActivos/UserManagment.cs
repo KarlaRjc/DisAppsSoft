@@ -102,5 +102,17 @@ namespace ManejoDeActivos
                 usersTable.DataSource = db.User.ToList<UserEntity>();
             }
         }
+
+        private void RemoveUserBtn_Click(object sender, EventArgs e)
+        {
+            if (usersTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Usuario"].Value);
+                userManagmenteController.RemoveUser(a);
+                UpdateUsersTable();
+            }
+        }
     }
 }

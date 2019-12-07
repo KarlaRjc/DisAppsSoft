@@ -87,6 +87,11 @@ namespace AssetsManagement
             }
         }
 
+        public static void DeleteUserToDB(UserEntity userEntity)
+        {
+            throw new NotImplementedException();
+        }
+
         /// <summary>
         /// Deletes an UserEntity from the Database, searches for the corresponding UserEntity and deletes it
         /// </summary>

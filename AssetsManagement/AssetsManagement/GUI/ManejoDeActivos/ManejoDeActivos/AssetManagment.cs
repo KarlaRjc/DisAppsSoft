@@ -81,7 +81,14 @@ namespace ManejoDeActivos
 
         private void RemoveAssetBtn_Click(object sender, EventArgs e)
         {
-
+            if (assetsManagmentTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Serie"].Value);
+                assetManagmentController.RemoveAsset(a);
+                UpdateAssetsTable();
+            }
         }
     }
 }

@@ -40,6 +40,11 @@ namespace AssetsManagement
             }
         }
 
+        public static void DeleteAssetToDB(AssetEntity assetEntity)
+        {
+            throw new NotImplementedException();
+        }
+
 
         /// <summary>
         /// Modifies an existing AssetEntity in the Database, searches for the corresponding AssetEntity and modifies it

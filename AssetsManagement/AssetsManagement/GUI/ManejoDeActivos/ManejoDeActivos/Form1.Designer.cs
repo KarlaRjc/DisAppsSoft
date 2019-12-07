@@ -30,12 +30,12 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.reportsBtn = new System.Windows.Forms.Button();
             this.transferHisotryBtn = new System.Windows.Forms.Button();
             this.transferAssestBtn = new System.Windows.Forms.Button();
-            this.userManagmentBtn = new System.Windows.Forms.Button();
             this.assestManagmentBtn = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.userManagmentBtn = new System.Windows.Forms.Button();
+            this.reportsBtn = new System.Windows.Forms.Button();
             this.homePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CurrentRoleText = new System.Windows.Forms.Label();
@@ -70,7 +70,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.homePanel);
             this.panel1.Location = new System.Drawing.Point(1, 2);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1539, 874);
             this.panel1.TabIndex = 0;
@@ -78,50 +78,25 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.panel3.Controls.Add(this.button6);
-            this.panel3.Controls.Add(this.reportsBtn);
             this.panel3.Controls.Add(this.transferHisotryBtn);
             this.panel3.Controls.Add(this.transferAssestBtn);
-            this.panel3.Controls.Add(this.userManagmentBtn);
             this.panel3.Controls.Add(this.assestManagmentBtn);
+            this.panel3.Controls.Add(this.button6);
+            this.panel3.Controls.Add(this.userManagmentBtn);
+            this.panel3.Controls.Add(this.reportsBtn);
             this.panel3.Location = new System.Drawing.Point(0, 80);
-            this.panel3.Margin = new System.Windows.Forms.Padding(4);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(329, 912);
             this.panel3.TabIndex = 1;
-            // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::ManejoDeActivos.Properties.Resources.SalirBtn;
-            this.button6.Location = new System.Drawing.Point(17, 706);
-            this.button6.Margin = new System.Windows.Forms.Padding(4);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(193, 74);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // reportsBtn
-            // 
-            this.reportsBtn.FlatAppearance.BorderSize = 0;
-            this.reportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.reportsBtn.Image = global::ManejoDeActivos.Properties.Resources.ReportesBtn;
-            this.reportsBtn.Location = new System.Drawing.Point(17, 447);
-            this.reportsBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.reportsBtn.Name = "reportsBtn";
-            this.reportsBtn.Size = new System.Drawing.Size(289, 98);
-            this.reportsBtn.TabIndex = 2;
-            this.reportsBtn.UseVisualStyleBackColor = true;
-            this.reportsBtn.Click += new System.EventHandler(this.button5_Click);
             // 
             // transferHisotryBtn
             // 
             this.transferHisotryBtn.FlatAppearance.BorderSize = 0;
             this.transferHisotryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transferHisotryBtn.Image = global::ManejoDeActivos.Properties.Resources.HistorialTransferenciasBtn;
-            this.transferHisotryBtn.Location = new System.Drawing.Point(17, 341);
-            this.transferHisotryBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.transferHisotryBtn.Location = new System.Drawing.Point(17, 196);
+            this.transferHisotryBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.transferHisotryBtn.Name = "transferHisotryBtn";
             this.transferHisotryBtn.Size = new System.Drawing.Size(287, 98);
             this.transferHisotryBtn.TabIndex = 4;
@@ -133,39 +108,64 @@
             this.transferAssestBtn.FlatAppearance.BorderSize = 0;
             this.transferAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transferAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.RealizarTransferenciasBtn;
-            this.transferAssestBtn.Location = new System.Drawing.Point(17, 235);
-            this.transferAssestBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.transferAssestBtn.Location = new System.Drawing.Point(19, 98);
+            this.transferAssestBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.transferAssestBtn.Name = "transferAssestBtn";
             this.transferAssestBtn.Size = new System.Drawing.Size(287, 98);
             this.transferAssestBtn.TabIndex = 3;
             this.transferAssestBtn.UseVisualStyleBackColor = true;
             this.transferAssestBtn.Click += new System.EventHandler(this.transferAssestBtn_Click);
             // 
-            // userManagmentBtn
-            // 
-            this.userManagmentBtn.FlatAppearance.BorderSize = 0;
-            this.userManagmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.userManagmentBtn.Image = global::ManejoDeActivos.Properties.Resources.ManejoUsuariosBtn;
-            this.userManagmentBtn.Location = new System.Drawing.Point(17, 138);
-            this.userManagmentBtn.Margin = new System.Windows.Forms.Padding(4);
-            this.userManagmentBtn.Name = "userManagmentBtn";
-            this.userManagmentBtn.Size = new System.Drawing.Size(287, 90);
-            this.userManagmentBtn.TabIndex = 2;
-            this.userManagmentBtn.UseVisualStyleBackColor = true;
-            this.userManagmentBtn.Click += new System.EventHandler(this.userManagmentBtn_Click);
-            // 
             // assestManagmentBtn
             // 
             this.assestManagmentBtn.FlatAppearance.BorderSize = 0;
             this.assestManagmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.assestManagmentBtn.Image = global::ManejoDeActivos.Properties.Resources.ManejoActivosBtn;
-            this.assestManagmentBtn.Location = new System.Drawing.Point(17, 41);
-            this.assestManagmentBtn.Margin = new System.Windows.Forms.Padding(4);
+            this.assestManagmentBtn.Location = new System.Drawing.Point(17, 289);
+            this.assestManagmentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.assestManagmentBtn.Name = "assestManagmentBtn";
             this.assestManagmentBtn.Size = new System.Drawing.Size(292, 90);
             this.assestManagmentBtn.TabIndex = 2;
             this.assestManagmentBtn.UseVisualStyleBackColor = true;
             this.assestManagmentBtn.Click += new System.EventHandler(this.assestManagmentBtn_Click);
+            // 
+            // button6
+            // 
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Image = global::ManejoDeActivos.Properties.Resources.SalirBtn;
+            this.button6.Location = new System.Drawing.Point(17, 706);
+            this.button6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(193, 74);
+            this.button6.TabIndex = 5;
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // userManagmentBtn
+            // 
+            this.userManagmentBtn.FlatAppearance.BorderSize = 0;
+            this.userManagmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.userManagmentBtn.Image = global::ManejoDeActivos.Properties.Resources.ManejoUsuariosBtn;
+            this.userManagmentBtn.Location = new System.Drawing.Point(17, 378);
+            this.userManagmentBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.userManagmentBtn.Name = "userManagmentBtn";
+            this.userManagmentBtn.Size = new System.Drawing.Size(287, 96);
+            this.userManagmentBtn.TabIndex = 2;
+            this.userManagmentBtn.UseVisualStyleBackColor = true;
+            this.userManagmentBtn.Click += new System.EventHandler(this.userManagmentBtn_Click);
+            // 
+            // reportsBtn
+            // 
+            this.reportsBtn.FlatAppearance.BorderSize = 0;
+            this.reportsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.reportsBtn.Image = global::ManejoDeActivos.Properties.Resources.ReportesBtn;
+            this.reportsBtn.Location = new System.Drawing.Point(19, 27);
+            this.reportsBtn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.reportsBtn.Name = "reportsBtn";
+            this.reportsBtn.Size = new System.Drawing.Size(289, 98);
+            this.reportsBtn.TabIndex = 2;
+            this.reportsBtn.UseVisualStyleBackColor = true;
+            this.reportsBtn.Click += new System.EventHandler(this.button5_Click);
             // 
             // homePanel
             // 
@@ -181,7 +181,7 @@
             this.panel2.Controls.Add(this.CurrentRoleText);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Location = new System.Drawing.Point(1, 2);
-            this.panel2.Margin = new System.Windows.Forms.Padding(4);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(1539, 86);
             this.panel2.TabIndex = 0;
@@ -216,7 +216,7 @@
             this.LoginPanel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.LoginPanel.Controls.Add(this.panel5);
             this.LoginPanel.Location = new System.Drawing.Point(1, 2);
-            this.LoginPanel.Margin = new System.Windows.Forms.Padding(4);
+            this.LoginPanel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(1539, 3212);
             this.LoginPanel.TabIndex = 0;
@@ -234,7 +234,7 @@
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Location = new System.Drawing.Point(509, 94);
-            this.panel5.Margin = new System.Windows.Forms.Padding(4);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(580, 649);
             this.panel5.TabIndex = 0;
@@ -242,7 +242,7 @@
             // LoginErrorBox
             // 
             this.LoginErrorBox.Location = new System.Drawing.Point(99, 448);
-            this.LoginErrorBox.Margin = new System.Windows.Forms.Padding(4);
+            this.LoginErrorBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginErrorBox.Name = "LoginErrorBox";
             this.LoginErrorBox.Size = new System.Drawing.Size(405, 109);
             this.LoginErrorBox.TabIndex = 6;
@@ -254,7 +254,7 @@
             this.LoginButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
             this.LoginButton.Controls.Add(this.label7);
             this.LoginButton.Location = new System.Drawing.Point(99, 373);
-            this.LoginButton.Margin = new System.Windows.Forms.Padding(4);
+            this.LoginButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(407, 68);
             this.LoginButton.TabIndex = 2;
@@ -277,7 +277,7 @@
             // 
             this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(130)))), ((int)(((byte)(130)))), ((int)(((byte)(255)))));
             this.panel8.Location = new System.Drawing.Point(0, 84);
-            this.panel8.Margin = new System.Windows.Forms.Padding(4);
+            this.panel8.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel8.Name = "panel8";
             this.panel8.Size = new System.Drawing.Size(580, 49);
             this.panel8.TabIndex = 2;
@@ -286,7 +286,7 @@
             // 
             this.passwordInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordInput.Location = new System.Drawing.Point(92, 305);
-            this.passwordInput.Margin = new System.Windows.Forms.Padding(4);
+            this.passwordInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.passwordInput.Name = "passwordInput";
             this.passwordInput.Size = new System.Drawing.Size(412, 34);
             this.passwordInput.TabIndex = 5;
@@ -319,7 +319,7 @@
             // 
             this.UserNameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.UserNameInput.Location = new System.Drawing.Point(92, 215);
-            this.UserNameInput.Margin = new System.Windows.Forms.Padding(4);
+            this.UserNameInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.UserNameInput.Name = "UserNameInput";
             this.UserNameInput.Size = new System.Drawing.Size(412, 34);
             this.UserNameInput.TabIndex = 3;
@@ -330,7 +330,7 @@
             this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
             this.panel7.Controls.Add(this.label4);
             this.panel7.Location = new System.Drawing.Point(0, 565);
-            this.panel7.Margin = new System.Windows.Forms.Padding(4);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(580, 84);
             this.panel7.TabIndex = 2;
@@ -352,7 +352,7 @@
             this.panel6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
             this.panel6.Controls.Add(this.label3);
             this.panel6.Location = new System.Drawing.Point(0, 0);
-            this.panel6.Margin = new System.Windows.Forms.Padding(4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(580, 84);
             this.panel6.TabIndex = 0;
@@ -374,11 +374,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1541, 876);
+            this.ClientSize = new System.Drawing.Size(1371, 750);
+            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.LoginPanel);
-            this.Margin = new System.Windows.Forms.Padding(4);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

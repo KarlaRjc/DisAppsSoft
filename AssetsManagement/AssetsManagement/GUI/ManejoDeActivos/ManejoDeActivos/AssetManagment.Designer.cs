@@ -416,6 +416,7 @@
             this.removeAssetBtn.Size = new System.Drawing.Size(141, 50);
             this.removeAssetBtn.TabIndex = 30;
             this.removeAssetBtn.UseVisualStyleBackColor = true;
+            this.removeAssetBtn.Click += new System.EventHandler(this.RemoveAssetBtn_Click);
             // 
             // editAssestBtn
             // 

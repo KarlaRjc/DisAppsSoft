@@ -105,6 +105,23 @@ namespace ManejoDeActivos
                     {
                         LoginPanel.Hide();
                         CurrentRoleText.Text = result["Role"];
+                        //Validates if role is Teacher
+                        if (CurrentRoleText.Text != "Admin")
+                        {
+                            if (CurrentRoleText.Text == "Teacher")
+                            { 
+                            //Hide the options that are not available for this role
+                            assestManagmentBtn.Hide();
+                            userManagmentBtn.Hide();
+                            } else
+                            {
+                                //Hide all the options that are not available for the role
+                                assestManagmentBtn.Hide();
+                                userManagmentBtn.Hide();
+                                transferHisotryBtn.Hide();
+                                transferAssestBtn.Hide();
+                            }
+                        }
                     }
                 }
                 else 

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -26,6 +27,7 @@ namespace AssetsManagement
 
         
 
+       
         public void ChangePassword(UserEntity user, string Answer, string newPassword)
         {
 
@@ -83,6 +85,11 @@ namespace AssetsManagement
                 //Saves the changes
                 db.SaveChanges();
             }
+        }
+
+        public static void DeleteUserToDB(UserEntity userEntity)
+        {
+            throw new NotImplementedException();
         }
 
         /// <summary>

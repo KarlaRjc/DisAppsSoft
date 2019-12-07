@@ -23,5 +23,10 @@ namespace ManejoDeActivos.Controller
 
             return assetFound;
         }
+
+        public void RemoveAsset(string asset)
+        {
+            AssetEntity.DeleteAssetToDB(AssetEntity.GetAssetBySerialNumber(asset));
+        }
     }
 }

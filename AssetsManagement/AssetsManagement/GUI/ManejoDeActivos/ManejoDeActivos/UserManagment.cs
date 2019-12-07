@@ -11,15 +11,17 @@ using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+
 namespace ManejoDeActivos
 {
-    public partial class UserManagment : Form
+    public partial class UserManagment:Form
     {
         UserManagmentController userManagmenteController = new UserManagmentController();
         public UserManagment()
         {
             InitializeComponent();
         }
+        
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -31,6 +33,7 @@ namespace ManejoDeActivos
 
         }
 
+       
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -97,6 +100,18 @@ namespace ManejoDeActivos
             using (DbModel db = new DbModel())
             {
                 usersTable.DataSource = db.User.ToList<UserEntity>();
+            }
+        }
+
+        private void RemoveUserBtn_Click(object sender, EventArgs e)
+        {
+            if (usersTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Usuario"].Value);
+                userManagmenteController.RemoveUser(a);
+                UpdateUsersTable();
             }
         }
     }

@@ -275,6 +275,7 @@
             this.removeUserBtn.Size = new System.Drawing.Size(141, 50);
             this.removeUserBtn.TabIndex = 13;
             this.removeUserBtn.UseVisualStyleBackColor = true;
+            this.removeUserBtn.Click += new System.EventHandler(this.RemoveUserBtn_Click);
             // 
             // editUserBtn
             // 

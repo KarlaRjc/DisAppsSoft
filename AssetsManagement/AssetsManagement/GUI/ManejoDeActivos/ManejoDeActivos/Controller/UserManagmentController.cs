@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -16,21 +17,21 @@ namespace ManejoDeActivos.Controller
             {
                 case "Administrador":
                     //Creates the user
-                    UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Admin, username, password);
+                    UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Admin, username, EncryptPassword(password));
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityAdmin);
                     break;
                 case "Profesor":
                     //Creates the user
-                    UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Teacher, username, password);
+                    UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Teacher, username, EncryptPassword(password));
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityTeacher);
                     break;
                 case "Observador":
                     //Creates the user
-                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Gatherer, username, password);
+                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Gatherer, username, EncryptPassword(password));
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityGatherer);
@@ -38,6 +39,22 @@ namespace ManejoDeActivos.Controller
                 default:
                     break;
             }
+        }
+        public static string EncryptPassword(string passwordEncryted)
+        {
+
+            HashAlgorithm hashAlgorithm = new SHA256CryptoServiceProvider();
+            var byteValue = System.Text.Encoding.UTF8.GetBytes(passwordEncryted);
+            var byteHash = hashAlgorithm.ComputeHash(byteValue);
+            return Convert.ToBase64String(byteHash);
+
+
+            /* 
+             *line 1. Uses method SHA256 from library Cryptography to encrypt password
+             * line2. Gets the bytes from the encrypted password
+             * line3. Calculates the specified value 
+             * line4 Converts the 8 bits value into 64 digits
+            */
         }
 
         public Boolean VerifyUsername(string username)

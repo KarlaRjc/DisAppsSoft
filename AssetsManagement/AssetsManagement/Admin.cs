@@ -9,7 +9,7 @@ namespace AssetsManagement
     public class Admin : User
     {
 
-        public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password)
+        public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password, string secretQuestion, string secretAnswer)
         {
             UserEntity userentity = new UserEntity();
             userentity.id = id;
@@ -17,6 +17,8 @@ namespace AssetsManagement
             userentity.role = role;
             userentity.username = username;
             userentity.password = password;
+            userentity.secretQuestion = secretQuestion;
+            userentity.secretAnswer = secretAnswer;
 
             return userentity;
         }

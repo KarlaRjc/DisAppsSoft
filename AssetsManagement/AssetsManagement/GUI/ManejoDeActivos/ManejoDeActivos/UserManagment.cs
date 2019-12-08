@@ -56,13 +56,15 @@ namespace ManejoDeActivos
             string nameUser = nameUserTxt.Text;
             string username = usernameTxt.Text;
             string password = passwordTxt.Text;
-            string userRole = (string) userRolCbx.SelectedItem;
+            string userRole = (string) ((userRolCbx.SelectedItem == null)? "": userRolCbx.SelectedItem);
+            string userQuestion = (string) ((userQuestionCbx.SelectedItem == null)? "": userQuestionCbx.SelectedItem);
+            string userAnswer = userAnswerTxt.Text;
 
             Boolean usernameFound = userManagmenteController.VerifyUsername(username);
 
             if (!usernameFound)
             {
-                userManagmenteController.CreateUser(nameUser, username, password, userRole);
+                userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
                 outputUserLbl.Text = "";
                 ClearForm();
                 MessageBox.Show("Usuario Agregado Correctamente");
@@ -113,6 +115,11 @@ namespace ManejoDeActivos
                 userManagmenteController.RemoveUser(a);
                 UpdateUsersTable();
             }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

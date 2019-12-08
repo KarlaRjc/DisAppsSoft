@@ -28,9 +28,23 @@ namespace AssetsManagement
         
 
        
-        public void ChangePassword(UserEntity user, string Answer, string newPassword)
+        public static bool ChangePassword(string username, string secretAnswer, string newPassword)
         {
-
+            try
+            {
+                using (DbModel db = new DbModel())
+                {
+                    var user = db.User.Where(x => x.username == username && x.secretAnswer == secretAnswer).FirstOrDefault();
+                    user.password = newPassword;
+                    db.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception e) 
+            {
+                return false;
+            }
+                
         }
 
         public void ChangePassword(UserEntity user, string newPassword)

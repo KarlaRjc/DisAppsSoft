@@ -18,6 +18,8 @@ namespace AssetsManagement
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
 
+            /*
+            
             //Así se crea un UserEntity con los parámetros
             //Importante! El ID que se va a asignar no es el que uno lo ponga, es un número consecutivo que depende de la DB
 
@@ -90,6 +92,38 @@ namespace AssetsManagement
 
             //////Así se borra
             //LabEntity.DeleteLabToDB(lab);
+
+            */
+
+            AssetEntity assetentity1 = Asset.CreateAsset(1, "Desc", "Bra", "Mod", "Ser", "Stat");
+            AssetEntity assetentity2 = Asset.CreateAsset(2, "Desc", "Bra", "Mod", "Ser", "Stat");
+            AssetEntity assetentity3 = Asset.CreateAsset(3, "Desc", "Bra", "Mod", "Ser", "Stat");
+            AssetEntity assetentity4 = Asset.CreateAsset(4, "Desc", "Bra", "Mod", "Ser", "Stat");
+
+            List<AssetEntity> lista = new List<AssetEntity>();
+
+            lista.Add(assetentity1);
+            lista.Add(assetentity2);
+            lista.Add(assetentity3);
+            lista.Add(assetentity4);
+
+            LabEntity labEntity = new LabEntity();
+
+            labEntity.Assets = lista;
+
+            /*labEntity.Assets.Add(assetentity1);
+            labEntity.Assets.Add(assetentity2);
+            labEntity.Assets.Add(assetentity3);
+            labEntity.Assets.Add(assetentity4);*/
+
+            IteratorAssetEntity iterator = labEntity.ObtainIterator();
+
+            while (iterator.ElementsLeft())
+            {
+                AssetEntity assetEntity = iterator.Next();
+
+                Console.WriteLine(assetEntity.id);
+            }
 
             Console.ReadLine();
         }

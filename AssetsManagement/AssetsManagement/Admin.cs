@@ -28,9 +28,11 @@ namespace AssetsManagement
             return false;
         }
 
-        public bool DeleteUser(User user)
+        public static void DeleteUser(string username)
         {
-            return false;
+            UserEntity user = null;
+            UserEntity.GetUserByUsername(username);
+            UserEntity.DeleteUserToDB(user);
         }
 
         public bool EditAsset(AssetEntity asset)
@@ -43,9 +45,11 @@ namespace AssetsManagement
             return false;
         }
 
-        public bool DeleteAsset(AssetEntity asset)
+        public static void DeleteAsset(string serial)
         {
-            return false;
+            AssetEntity asset = null;
+            AssetEntity.GetAssetBySerialNumber(serial);
+            AssetEntity.DeleteAssetToDB(asset);
         }
 
         public override bool ChangePassword()

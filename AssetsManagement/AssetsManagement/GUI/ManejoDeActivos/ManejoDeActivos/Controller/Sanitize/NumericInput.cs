@@ -13,11 +13,11 @@ namespace ManejoDeActivos.Controller.Sanitize
             var result = new Dictionary<EnumSanitizeErrors, string>();
             if (input == null)
             {
-                result.Add(EnumSanitizeErrors.NullNotAllowed, "Input cannot be empty");
+                result.Add(EnumSanitizeErrors.NullNotAllowed, "Ingrese un valor");
             }
             if (!int.TryParse(input, out int intOutput)) 
             {
-                result.Add(EnumSanitizeErrors.Not_A_Number, "Input must be a number");
+                result.Add(EnumSanitizeErrors.Not_A_Number, "Ingrese un valor numérico");
             }
             return result;
         }

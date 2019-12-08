@@ -65,6 +65,9 @@
     <Compile Include="Controller\AssetManagmentController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\Sanitize\CharInput.cs" />
+    <Compile Include="Controller\Sanitize\DefinedSanitizers\GeneralInputSanitizer.cs" />
+    <Compile Include="Controller\Sanitize\DefinedSanitizers\PasswordSanitizer.cs" />
+    <Compile Include="Controller\Sanitize\DefinedSanitizers\UsernameSanitizer.cs" />
     <Compile Include="Controller\Sanitize\EnumSanitizeErrors.cs" />
     <Compile Include="Controller\Sanitize\NumericInput.cs" />
     <Compile Include="Controller\Sanitize\Sanitizer.cs" />

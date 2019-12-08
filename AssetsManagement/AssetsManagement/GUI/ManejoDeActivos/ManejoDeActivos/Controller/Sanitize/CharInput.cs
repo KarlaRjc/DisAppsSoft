@@ -13,7 +13,7 @@ namespace ManejoDeActivos.Controller.Sanitize
             var result = new Dictionary<EnumSanitizeErrors, string>();
             if (input == "") 
             {
-                result.Add(EnumSanitizeErrors.NullNotAllowed, "Input cannot be empty");
+                result.Add(EnumSanitizeErrors.NullNotAllowed, "Ingrese un valor");
             }
             return result;
         }

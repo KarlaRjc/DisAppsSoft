@@ -64,6 +64,13 @@ namespace AssetsManagement
 
             return userentity;
         }
+        public static string GetSecretQuestionByUsername(string username)
+        {
+            using (DbModel db = new DbModel())
+            {
+                return db.User.Where(x => x.username == username).Select(x => x.secretQuestion).FirstOrDefault();
+            }
 
+        }
     }
 }

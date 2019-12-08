@@ -66,7 +66,7 @@ namespace ManejoDeActivos.Controller
 
         public void RemoveUser(string username)
         {
-            UserEntity.DeleteUserToDB(UserEntity.GetUserByUsername(username));
+            Admin.DeleteUser(username);
         }
     }
 }

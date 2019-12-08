@@ -26,7 +26,7 @@ namespace ManejoDeActivos.Controller
 
         public void RemoveAsset(string asset)
         {
-            AssetEntity.DeleteAssetToDB(AssetEntity.GetAssetBySerialNumber(asset));
+            Admin.DeleteAsset(asset);
         }
     }
 }

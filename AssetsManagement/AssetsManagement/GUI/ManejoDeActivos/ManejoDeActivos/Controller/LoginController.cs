@@ -17,18 +17,38 @@ namespace ManejoDeActivos.Controller
             var result = new Dictionary<string, string>();
 
             var user = UserEntity.GetUserByUsername(userName);
-            if (user != null) 
+            if (user != null)
             {
-                if (user.password == EncryptPassword(password)) 
+                if (user.password == EncryptPassword(password))
                 {
-                    result.Add("Success","The login was successful");
+                    result.Add("Success", "The login was successful");
                     result.Add("Role", user.role.ToString());
                     currentUser = user;
                 }
+                else
+                {
+                    result.Add("ErrorPassword", "La contraseña es incorrecta.");
+                }
+            }
+            else
+            {
+                result.Add("ErrorPassword", "El usuario no existe.");
             }
             return result;
         }
+        public static bool ChangePassword(string username, string secretAnswer, string newPassword) 
+        {
+            return UserEntity.ChangePassword(username, secretAnswer, EncryptPassword(newPassword));
+        }
+        public static bool VerifyIfUserExists(string username) 
+        {
+            return ((UserEntity.GetUserByUsername(username)) == null) ? false : true ;
+        }
 
+        public static string GetSecretQuestionByUsername(string username) 
+        {
+            return User.GetSecretQuestionByUsername(username);
+        }
         public static string EncryptPassword(string passwordEncryted)
         {
            

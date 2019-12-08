@@ -1,5 +1,6 @@
 ﻿using ManejoDeActivos.Controller;
 using ManejoDeActivos.Controller.Sanitize;
+using ManejoDeActivos.Controller.Sanitize.DefinedSanitizers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,18 +89,21 @@ namespace ManejoDeActivos
 
         }
 
+        private void ResetLoginErrorMessages() 
+        {
+            LoginErrorMessage.ResetText();
+            PasswordErrorMessage.ResetText();
+            UserNameErrorMessage.ResetText();
+        }
+
         private void label7_Click(object sender, EventArgs e)
         {
-            LoginErrorBox.ResetText();
+            ResetLoginErrorMessages();
+            bool isPasswordInputValid = Sanitizer.Sanitize(PasswordErrorMessage, new PasswordSanitizer(), passwordInput.Text);
+            bool isUsernameInputValid = Sanitizer.Sanitize(UserNameErrorMessage, new UsernameSanitizer(), UserNameInput.Text);
 
-            Sanitizer userNameSanitizer = new SpecialCharsNotAllowed(new CharInput());
-            Sanitizer passwordSanitizer = new CharInput();
-            var resultPasswordSanitizer = passwordSanitizer.SanitizeInput(passwordInput.Text);
-            var resultUserNameSanitizer = userNameSanitizer.SanitizeInput(UserNameInput.Text);
-            if (resultUserNameSanitizer.Count == 0)
+            if (isPasswordInputValid && isUsernameInputValid)
             {
-                if (resultPasswordSanitizer.Count == 0)
-                {
                     var result = LoginController.Login(UserNameInput.Text, passwordInput.Text);
                     if (result.ContainsKey("Success"))
                     {
@@ -109,11 +113,12 @@ namespace ManejoDeActivos
                         if (CurrentRoleText.Text != "Admin")
                         {
                             if (CurrentRoleText.Text == "Teacher")
-                            { 
-                            //Hide the options that are not available for this role
-                            assestManagmentBtn.Hide();
-                            userManagmentBtn.Hide();
-                            } else
+                            {
+                                //Hide the options that are not available for this role
+                                assestManagmentBtn.Hide();
+                                userManagmentBtn.Hide();
+                            }
+                            else
                             {
                                 //Hide all the options that are not available for the role
                                 assestManagmentBtn.Hide();
@@ -122,27 +127,23 @@ namespace ManejoDeActivos
                                 transferAssestBtn.Hide();
                             }
                         }
-                    }
-                }
-                else 
-                {
-                    LoginErrorBox.Show();
-                    LoginErrorBox.AppendText("Password input errors: \n");
-                    foreach (KeyValuePair<EnumSanitizeErrors, string> entry in resultPasswordSanitizer)
+                    } 
+                    else 
                     {
-                        LoginErrorBox.AppendText(entry.Value + "\n");
+                        if (result.Count > 1)
+                        {
+                            foreach (KeyValuePair<string, string> entry in result)
+                            {
+                                LoginErrorMessage.Text += (entry.Value + ", ");
+                            }
+                        }
+                        else 
+                        {
+                            LoginErrorMessage.Text = result.FirstOrDefault().Value;
+                        }
+
                     }
                 }
-            }
-            else 
-            {
-                LoginErrorBox.Show();
-                LoginErrorBox.AppendText("Username input errors: \n");
-                foreach (KeyValuePair<EnumSanitizeErrors, string> entry in resultUserNameSanitizer)
-                {
-                    LoginErrorBox.AppendText(entry.Value + "\n");
-                }
-            }
         }
 
         private void LoginButton_Paint(object sender, PaintEventArgs e)
@@ -154,6 +155,84 @@ namespace ManejoDeActivos
         private void UserNameInput_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void UserNameErrorMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PasswordErrorMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void LoginErrorMessage_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel5_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verifyUser_Button_Click(object sender, EventArgs e)
+        {
+            resetpassword_username_error_label.ResetText();
+            var username = resetPasswordUsername.Text;
+            bool isUsernameInputValid = Sanitizer.Sanitize(resetpassword_username_error_label, new UsernameSanitizer(), username);
+            if (isUsernameInputValid) {
+            var isUserValid = LoginController.VerifyIfUserExists(username);
+            if (isUserValid)
+            {
+                panel_resetPassword_Step2.Visible = true;
+                SecretQuestionLabel_Value.Text = LoginController.GetSecretQuestionByUsername(username);
+            }
+            else 
+            {
+                resetpassword_username_error_label.Text = "El usuario no existe.";
+            }
+            }
+        }
+
+        private void ChangePasswordButton_Click(object sender, EventArgs e)
+        {
+            resetPassword_answer_error_label.ResetText();
+            var username = resetPasswordUsername.Text;
+            var secretAnswer = SecretAnswerInput.Text;
+            var newPassword = resetpassword_newPassword_Input.Text;
+            var isPasswordInputValid = Sanitizer.Sanitize(resetpassword_newpassword_error_label, new PasswordSanitizer(), newPassword);
+            var isSecretAnswerInputValid = Sanitizer.Sanitize(resetPassword_answer_error_label, new GeneralInputSanitizer(), secretAnswer);
+            if (isPasswordInputValid && isSecretAnswerInputValid) 
+            {
+                if (LoginController.ChangePassword(username, secretAnswer, newPassword))
+                {
+                    MessageBox.Show("La contraseña ha sido modificada.");
+                    resetPasswordPanel.Visible = false;
+
+                }
+                else
+                {
+                    resetPassword_answer_error_label.Text = "Respuesta incorrecta.";
+                }
+            }
+
+        }
+
+        private void label9_Click_1(object sender, EventArgs e)
+        {
+            resetPasswordPanel.Visible = false;
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            resetPasswordPanel.Visible = true;
         }
     }
 }

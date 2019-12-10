@@ -16,7 +16,7 @@ namespace AssetsManagement
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            //Application.Run(new Form1());
 
             /*
             
@@ -95,35 +95,75 @@ namespace AssetsManagement
 
             */
 
-            AssetEntity assetentity1 = Asset.CreateAsset(1, "Desc", "Bra", "Mod", "Ser", "Stat");
-            AssetEntity assetentity2 = Asset.CreateAsset(2, "Desc", "Bra", "Mod", "Ser", "Stat");
-            AssetEntity assetentity3 = Asset.CreateAsset(3, "Desc", "Bra", "Mod", "Ser", "Stat");
-            AssetEntity assetentity4 = Asset.CreateAsset(4, "Desc", "Bra", "Mod", "Ser", "Stat");
+            /* AssetEntity assetentity1 = Asset.CreateAsset(1, "Desc", "Bra", "Mod", "Ser", "Stat");
+             AssetEntity assetentity2 = Asset.CreateAsset(2, "Desc", "Bra", "Mod", "Ser", "Stat");
+             AssetEntity assetentity3 = Asset.CreateAsset(3, "Desc", "Bra", "Mod", "Ser", "Stat");
+             AssetEntity assetentity4 = Asset.CreateAsset(4, "Desc", "Bra", "Mod", "Ser", "Stat");
 
-            List<AssetEntity> lista = new List<AssetEntity>();
+             List<AssetEntity> lista = new List<AssetEntity>();
 
-            lista.Add(assetentity1);
-            lista.Add(assetentity2);
-            lista.Add(assetentity3);
-            lista.Add(assetentity4);
+             lista.Add(assetentity1);
+             lista.Add(assetentity2);
+             lista.Add(assetentity3);
+             lista.Add(assetentity4);
 
-            LabEntity labEntity = new LabEntity();
+             LabEntity labEntity = new LabEntity();
 
-            labEntity.Assets = lista;
+             labEntity.Assets = lista;*/
 
             /*labEntity.Assets.Add(assetentity1);
             labEntity.Assets.Add(assetentity2);
             labEntity.Assets.Add(assetentity3);
             labEntity.Assets.Add(assetentity4);*/
 
-            IteratorAssetEntity iterator = labEntity.ObtainIterator();
+            /*IteratorAssetEntity iterator = labEntity.ObtainIterator();
 
             while (iterator.ElementsLeft())
             {
                 AssetEntity assetEntity = iterator.Next();
 
                 Console.WriteLine(assetEntity.id);
-            }
+            }*/
+
+            /*AssetEntity assetEntity = Asset.CreateAsset(4, "4Desc", "4Bra", "Mod", "Ser", "Stat");
+            DateTime dateTime = DateTime.Now;
+            LabEntity labentityfrom = Lab.CreateLab(30, "Lab 3");
+            LabEntity labentityto = Lab.CreateLab(20, "Lab 2");
+            UserEntity transfereduserentity = User.CreateUser(7, "Prueba", EnumRole.Admin, "user", "password");
+            string description = "MOviendo asset";
+
+            AssetTransferHistoryEntity assetTransferHistoryEntity = AssetTransferHistory.CreateAssetTransferHistory(assetEntity, dateTime, labentityfrom, labentityto, transfereduserentity, description);
+
+            AssetTransferHistoryEntity.CreateAssetTransferHistoryEntityToDB(assetTransferHistoryEntity);*/
+
+            
+
+            AssetTransferHistory assetTransferHistory = new AssetTransferHistory();
+
+            AssetEntity assetEntity = Asset.CreateAsset(4, "modif4Desc", "4Bra", "Mod", "Ser", "Stat");
+            DateTime dateTime = DateTime.Now;
+            LabEntity labentityfrom = Lab.CreateLab(30, "modiLab 3");
+            LabEntity labentityto = Lab.CreateLab(20, "modifLab 2");
+            UserEntity transfereduserentity = User.CreateUser(7, "Pruebamodif", EnumRole.Admin, "user", "password");
+            string description = "ModifMOviendo asset";
+
+            assetTransferHistory.id = 1;
+            assetTransferHistory.assetTansfered = assetEntity;
+            assetTransferHistory.transferDate = dateTime; ;
+            assetTransferHistory.transferedFromLab = labentityfrom;
+            assetTransferHistory.transferedToLab = labentityto;
+            assetTransferHistory.transferedByUser = transfereduserentity;
+            assetTransferHistory.description = description;
+
+            AssetTransferHistoryEntity.ModifyAssetTransferHistoryEntityToDB(assetTransferHistory);
+
+     //       assetTransferHistory.id = 2;
+
+            AssetTransferHistoryEntity a = AssetTransferHistoryEntity.GetAssetTransferHistoryEntityById(3);
+
+            Console.WriteLine(a.id + a.description);
+
+       //     AssetTransferHistoryEntity.DeleteAssetTransferHistoryEntityToDB(assetTransferHistory);
 
             Console.ReadLine();
         }

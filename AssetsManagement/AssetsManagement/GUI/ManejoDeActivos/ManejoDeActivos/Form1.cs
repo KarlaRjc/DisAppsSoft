@@ -104,29 +104,29 @@ namespace ManejoDeActivos
 
             if (isPasswordInputValid && isUsernameInputValid)
             {
-                    var result = LoginController.Login(UserNameInput.Text, passwordInput.Text);
-                    if (result.ContainsKey("Success"))
+                var result = LoginController.Login(UserNameInput.Text, passwordInput.Text);
+                var role = LoginController.currentUser.role;
+                switch (role)
+                {
+                    case AssetsManagement.EnumRole.Admin:
+                        break;
+                    case AssetsManagement.EnumRole.Teacher:
+                        assestManagmentBtn.Hide();
+                        userManagmentBtn.Hide();
+                        break;
+                    case AssetsManagement.EnumRole.Gatherer:
+                        assestManagmentBtn.Hide();
+                        userManagmentBtn.Hide();
+                        transferHisotryBtn.Hide();
+                        transferAssestBtn.Hide();
+                        break;
+                    default:
+                        break;
+                }
+                if (result.ContainsKey("Success"))
                     {
                         LoginPanel.Hide();
                         CurrentRoleText.Text = result["Role"];
-                        //Validates if role is Teacher
-                        if (CurrentRoleText.Text != "Admin")
-                        {
-                            if (CurrentRoleText.Text == "Teacher")
-                            {
-                                //Hide the options that are not available for this role
-                                assestManagmentBtn.Hide();
-                                userManagmentBtn.Hide();
-                            }
-                            else
-                            {
-                                //Hide all the options that are not available for the role
-                                assestManagmentBtn.Hide();
-                                userManagmentBtn.Hide();
-                                transferHisotryBtn.Hide();
-                                transferAssestBtn.Hide();
-                            }
-                        }
                     } 
                     else 
                     {

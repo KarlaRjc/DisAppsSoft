@@ -30,8 +30,7 @@ namespace AssetsManagement
 
         public static void DeleteUser(string username)
         {
-            UserEntity user = null;
-            UserEntity.GetUserByUsername(username);
+            UserEntity user = UserEntity.GetUserByUsername(username);
             UserEntity.DeleteUserToDB(user);
         }
 
@@ -47,8 +46,7 @@ namespace AssetsManagement
 
         public static void DeleteAsset(string serial)
         {
-            AssetEntity asset = null;
-            AssetEntity.GetAssetBySerialNumber(serial);
+            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(serial);
             AssetEntity.DeleteAssetToDB(asset);
         }
 

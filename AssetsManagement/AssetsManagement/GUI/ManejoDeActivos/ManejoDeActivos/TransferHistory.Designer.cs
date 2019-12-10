@@ -46,11 +46,13 @@
             this.Tipo,
             this.AnteriorLAB,
             this.actualLab});
-            this.assestTransferHsitoryTable.Location = new System.Drawing.Point(206, 66);
+            this.assestTransferHsitoryTable.Enabled = false;
+            this.assestTransferHsitoryTable.Location = new System.Drawing.Point(154, 54);
+            this.assestTransferHsitoryTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assestTransferHsitoryTable.Name = "assestTransferHsitoryTable";
             this.assestTransferHsitoryTable.RowHeadersWidth = 51;
             this.assestTransferHsitoryTable.RowTemplate.Height = 24;
-            this.assestTransferHsitoryTable.Size = new System.Drawing.Size(795, 635);
+            this.assestTransferHsitoryTable.Size = new System.Drawing.Size(596, 516);
             this.assestTransferHsitoryTable.TabIndex = 11;
             // 
             // Nombre
@@ -90,12 +92,13 @@
             // 
             // TransferHistory
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
-            this.ClientSize = new System.Drawing.Size(1212, 792);
+            this.ClientSize = new System.Drawing.Size(909, 640);
             this.Controls.Add(this.assestTransferHsitoryTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "TransferHistory";
             this.Text = "TransferHistory";
             ((System.ComponentModel.ISupportInitialize)(this.assestTransferHsitoryTable)).EndInit();

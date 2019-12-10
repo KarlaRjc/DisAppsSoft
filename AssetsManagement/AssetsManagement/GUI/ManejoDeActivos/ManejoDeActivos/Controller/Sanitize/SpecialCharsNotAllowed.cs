@@ -21,7 +21,7 @@ namespace ManejoDeActivos.Controller.Sanitize
             var regexItem = new Regex("^[a-zA-Z0-9 ]*$");
             if (!regexItem.IsMatch(input))
             {
-                result.Add(EnumSanitizeErrors.SpecialCharsNotAllowed,"Special characters are not allowed");
+                result.Add(EnumSanitizeErrors.SpecialCharsNotAllowed, "No se permiten carácteres especiales.");
             }
             foreach (var sanitizer in sanitizer.SanitizeInput(input))
                 result.Add(sanitizer.Key, sanitizer.Value);

@@ -9,8 +9,6 @@ namespace AssetsManagement
 {
     public class AssetEntity
     {
-        //Primary key in DB
-        //Atributes that DB uses
         [Key]
         public int id { get; set; }
 
@@ -40,6 +38,11 @@ namespace AssetsManagement
                 //Saves the changes
                 db.SaveChanges();
             }
+        }
+
+        public static void DeleteAssetToDB(AssetEntity assetEntity)
+        {
+            throw new NotImplementedException();
         }
 
 
@@ -85,6 +88,16 @@ namespace AssetsManagement
                 //Saves the changes
                 db.SaveChanges();
             }
+        }
+        //Returns the assest if the serial number exists otherwise returns null
+        public static AssetEntity GetAssetBySerialNumber(string serial)
+        {
+            AssetEntity asset = null;
+            using (DbModel db = new DbModel())
+            {
+                asset = db.Asset.Where(x => x.series == serial).FirstOrDefault();
+            }
+            return asset;
         }
 
     }

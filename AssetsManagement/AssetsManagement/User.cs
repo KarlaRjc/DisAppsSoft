@@ -13,6 +13,8 @@ namespace AssetsManagement
         public EnumRole role { get; set; }
         public string username { get; set; }
         public string password { get; set; }
+        public string secretQuestion { get; set; }
+        public string secretAnswer { get; set; }
 
         public abstract bool ChangePassword();
 
@@ -36,7 +38,6 @@ namespace AssetsManagement
         /// <returns></returns>
         public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password)
         {
-
 
             UserEntity userentity = new UserEntity();
             userentity.id = id;
@@ -63,6 +64,13 @@ namespace AssetsManagement
 
             return userentity;
         }
+        public static string GetSecretQuestionByUsername(string username)
+        {
+            using (DbModel db = new DbModel())
+            {
+                return db.User.Where(x => x.username == username).Select(x => x.secretQuestion).FirstOrDefault();
+            }
 
+        }
     }
 }

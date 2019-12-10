@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.otputAssestLbl = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
+            this.outputAssestLbl = new System.Windows.Forms.Label();
             this.errorAssestBrandLbl = new System.Windows.Forms.Label();
             this.errorAssestDescriptionLbl = new System.Windows.Forms.Label();
             this.errorAssestIdNumberLbl = new System.Windows.Forms.Label();
             this.errorAssestModelLbl = new System.Windows.Forms.Label();
             this.assetsManagmentTable = new System.Windows.Forms.DataGridView();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tipo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Serie = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ubicación = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labEntityidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seriesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assetEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this._AssetsManagement_DbModelDataSet1 = new ManejoDeActivos._AssetsManagement_DbModelDataSet1();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,27 +58,36 @@
             this.label8 = new System.Windows.Forms.Label();
             this.errorAssestLocationLbl = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
-            this.assestLocationCbx = new System.Windows.Forms.ComboBox();
+            this.assetLocationCbx = new System.Windows.Forms.ComboBox();
             this.assestModelTxt = new System.Windows.Forms.TextBox();
             this.assestStateCbx = new System.Windows.Forms.ComboBox();
             this.removeAssetBtn = new System.Windows.Forms.Button();
             this.editAssestBtn = new System.Windows.Forms.Button();
             this.addAssestBtn = new System.Windows.Forms.Button();
-            this.CerrarSesionBtn = new System.Windows.Forms.Button();
+            this.assetEntitiesTableAdapter = new ManejoDeActivos._AssetsManagement_DbModelDataSet1TableAdapters.AssetEntitiesTableAdapter();
+            this.assestIdNumberTxt_ErrorLabel = new System.Windows.Forms.Label();
+            this.assestDescriptionTxt_ErrorLabel = new System.Windows.Forms.Label();
+            this.assestBrandTxt_ErrorLabel = new System.Windows.Forms.Label();
+            this.assestModelTxt_ErrorLabel = new System.Windows.Forms.Label();
+            this.assestSerialNumberTxt_ErrorLabel = new System.Windows.Forms.Label();
+            this.assestStateCbx_ErrorLabel = new System.Windows.Forms.Label();
+            this.assetLocationCbx_ErrorLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.assetsManagmentTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // otputAssestLbl
+            // outputAssestLbl
             // 
-            this.otputAssestLbl.AutoSize = true;
-            this.otputAssestLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.otputAssestLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.otputAssestLbl.Location = new System.Drawing.Point(676, 603);
-            this.otputAssestLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.otputAssestLbl.Name = "otputAssestLbl";
-            this.otputAssestLbl.Size = new System.Drawing.Size(0, 17);
-            this.otputAssestLbl.TabIndex = 35;
-            this.otputAssestLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.outputAssestLbl.AutoSize = true;
+            this.outputAssestLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.outputAssestLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.outputAssestLbl.Location = new System.Drawing.Point(617, 603);
+            this.outputAssestLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.outputAssestLbl.Name = "outputAssestLbl";
+            this.outputAssestLbl.Size = new System.Drawing.Size(0, 20);
+            this.outputAssestLbl.TabIndex = 35;
+            this.outputAssestLbl.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // errorAssestBrandLbl
             // 
@@ -123,71 +135,98 @@
             // 
             // assetsManagmentTable
             // 
+            this.assetsManagmentTable.AutoGenerateColumns = false;
             this.assetsManagmentTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.assetsManagmentTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Nombre,
-            this.Usuario,
-            this.Tipo,
-            this.Modelo,
-            this.Serie,
-            this.Estado,
-            this.Ubicación});
+            this.Column1,
+            this.labEntityidDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.brandDataGridViewTextBoxColumn,
+            this.modelDataGridViewTextBoxColumn,
+            this.seriesDataGridViewTextBoxColumn,
+            this.stateDataGridViewTextBoxColumn});
+            this.assetsManagmentTable.DataSource = this.assetEntitiesBindingSource;
             this.assetsManagmentTable.Location = new System.Drawing.Point(42, 60);
             this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assetsManagmentTable.Name = "assetsManagmentTable";
+            this.assetsManagmentTable.ReadOnly = true;
             this.assetsManagmentTable.RowHeadersWidth = 51;
             this.assetsManagmentTable.RowTemplate.Height = 24;
             this.assetsManagmentTable.Size = new System.Drawing.Size(536, 452);
             this.assetsManagmentTable.TabIndex = 28;
             // 
-            // Nombre
+            // Column1
             // 
-            this.Nombre.HeaderText = "No. Identificación";
-            this.Nombre.MinimumWidth = 6;
-            this.Nombre.Name = "Nombre";
-            this.Nombre.Width = 125;
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "No. Identificación";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Width = 125;
             // 
-            // Usuario
+            // labEntityidDataGridViewTextBoxColumn
             // 
-            this.Usuario.HeaderText = "Descripción";
-            this.Usuario.MinimumWidth = 6;
-            this.Usuario.Name = "Usuario";
-            this.Usuario.Width = 125;
+            this.labEntityidDataGridViewTextBoxColumn.DataPropertyName = "LabEntity_id";
+            this.labEntityidDataGridViewTextBoxColumn.HeaderText = "Ubicación Laboratorio";
+            this.labEntityidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.labEntityidDataGridViewTextBoxColumn.Name = "labEntityidDataGridViewTextBoxColumn";
+            this.labEntityidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.labEntityidDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Tipo
+            // descriptionDataGridViewTextBoxColumn
             // 
-            this.Tipo.HeaderText = "Marca";
-            this.Tipo.MinimumWidth = 6;
-            this.Tipo.Name = "Tipo";
-            this.Tipo.Width = 125;
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Modelo
+            // brandDataGridViewTextBoxColumn
             // 
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.MinimumWidth = 6;
-            this.Modelo.Name = "Modelo";
-            this.Modelo.Width = 125;
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.brandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brandDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Serie
+            // modelDataGridViewTextBoxColumn
             // 
-            this.Serie.HeaderText = "Serie";
-            this.Serie.MinimumWidth = 6;
-            this.Serie.Name = "Serie";
-            this.Serie.Width = 125;
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modelDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Estado
+            // seriesDataGridViewTextBoxColumn
             // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.MinimumWidth = 6;
-            this.Estado.Name = "Estado";
-            this.Estado.Width = 125;
+            this.seriesDataGridViewTextBoxColumn.DataPropertyName = "series";
+            this.seriesDataGridViewTextBoxColumn.HeaderText = "Serie";
+            this.seriesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seriesDataGridViewTextBoxColumn.Name = "seriesDataGridViewTextBoxColumn";
+            this.seriesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.seriesDataGridViewTextBoxColumn.Width = 125;
             // 
-            // Ubicación
+            // stateDataGridViewTextBoxColumn
             // 
-            this.Ubicación.HeaderText = "Ubicación";
-            this.Ubicación.MinimumWidth = 6;
-            this.Ubicación.Name = "Ubicación";
-            this.Ubicación.Width = 125;
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "state";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.stateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // assetEntitiesBindingSource
+            // 
+            this.assetEntitiesBindingSource.DataMember = "AssetEntities";
+            this.assetEntitiesBindingSource.DataSource = this._AssetsManagement_DbModelDataSet1;
+            // 
+            // _AssetsManagement_DbModelDataSet1
+            // 
+            this._AssetsManagement_DbModelDataSet1.DataSetName = "_AssetsManagement_DbModelDataSet1";
+            this._AssetsManagement_DbModelDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label4
             // 
@@ -342,11 +381,11 @@
             this.label10.TabIndex = 43;
             this.label10.Text = "Ubicación";
             // 
-            // assestLocationCbx
+            // assetLocationCbx
             // 
-            this.assestLocationCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.assestLocationCbx.FormattingEnabled = true;
-            this.assestLocationCbx.Items.AddRange(new object[] {
+            this.assetLocationCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.assetLocationCbx.FormattingEnabled = true;
+            this.assetLocationCbx.Items.AddRange(new object[] {
             "LAB1",
             "LAB2",
             "LAB3",
@@ -357,11 +396,11 @@
             "LAB8",
             "LAB9",
             "LAB10"});
-            this.assestLocationCbx.Location = new System.Drawing.Point(610, 485);
-            this.assestLocationCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.assestLocationCbx.Name = "assestLocationCbx";
-            this.assestLocationCbx.Size = new System.Drawing.Size(216, 28);
-            this.assestLocationCbx.TabIndex = 45;
+            this.assetLocationCbx.Location = new System.Drawing.Point(610, 485);
+            this.assetLocationCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assetLocationCbx.Name = "assetLocationCbx";
+            this.assetLocationCbx.Size = new System.Drawing.Size(216, 28);
+            this.assetLocationCbx.TabIndex = 45;
             // 
             // assestModelTxt
             // 
@@ -399,6 +438,7 @@
             this.removeAssetBtn.Size = new System.Drawing.Size(106, 41);
             this.removeAssetBtn.TabIndex = 30;
             this.removeAssetBtn.UseVisualStyleBackColor = true;
+            this.removeAssetBtn.Click += new System.EventHandler(this.RemoveAssetBtn_Click);
             // 
             // editAssestBtn
             // 
@@ -424,16 +464,74 @@
             this.addAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.addAssestBtn.TabIndex = 27;
             this.addAssestBtn.UseVisualStyleBackColor = true;
+            this.addAssestBtn.Click += new System.EventHandler(this.addAssestBtn_Click);
             // 
-            // CerrarSesionBtn
+            // assetEntitiesTableAdapter
             // 
-            this.CerrarSesionBtn.Location = new System.Drawing.Point(12, 596);
-            this.CerrarSesionBtn.Name = "CerrarSesionBtn";
-            this.CerrarSesionBtn.Size = new System.Drawing.Size(118, 32);
-            this.CerrarSesionBtn.TabIndex = 48;
-            this.CerrarSesionBtn.Text = "CERRAR SESIÓN";
-            this.CerrarSesionBtn.UseVisualStyleBackColor = true;
-            this.CerrarSesionBtn.Click += new System.EventHandler(this.CerrarSesionBtn_Click);
+            this.assetEntitiesTableAdapter.ClearBeforeFill = true;
+            // 
+            // assestIdNumberTxt_ErrorLabel
+            // 
+            this.assestIdNumberTxt_ErrorLabel.AutoSize = true;
+            this.assestIdNumberTxt_ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.assestIdNumberTxt_ErrorLabel.Location = new System.Drawing.Point(614, 88);
+            this.assestIdNumberTxt_ErrorLabel.Name = "assestIdNumberTxt_ErrorLabel";
+            this.assestIdNumberTxt_ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.assestIdNumberTxt_ErrorLabel.TabIndex = 48;
+            // 
+            // assestDescriptionTxt_ErrorLabel
+            // 
+            this.assestDescriptionTxt_ErrorLabel.AutoSize = true;
+            this.assestDescriptionTxt_ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.assestDescriptionTxt_ErrorLabel.Location = new System.Drawing.Point(614, 162);
+            this.assestDescriptionTxt_ErrorLabel.Name = "assestDescriptionTxt_ErrorLabel";
+            this.assestDescriptionTxt_ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.assestDescriptionTxt_ErrorLabel.TabIndex = 49;
+            // 
+            // assestBrandTxt_ErrorLabel
+            // 
+            this.assestBrandTxt_ErrorLabel.AutoSize = true;
+            this.assestBrandTxt_ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.assestBrandTxt_ErrorLabel.Location = new System.Drawing.Point(614, 236);
+            this.assestBrandTxt_ErrorLabel.Name = "assestBrandTxt_ErrorLabel";
+            this.assestBrandTxt_ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.assestBrandTxt_ErrorLabel.TabIndex = 50;
+            // 
+            // assestModelTxt_ErrorLabel
+            // 
+            this.assestModelTxt_ErrorLabel.AutoSize = true;
+            this.assestModelTxt_ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.assestModelTxt_ErrorLabel.Location = new System.Drawing.Point(610, 308);
+            this.assestModelTxt_ErrorLabel.Name = "assestModelTxt_ErrorLabel";
+            this.assestModelTxt_ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.assestModelTxt_ErrorLabel.TabIndex = 51;
+            // 
+            // assestSerialNumberTxt_ErrorLabel
+            // 
+            this.assestSerialNumberTxt_ErrorLabel.AutoSize = true;
+            this.assestSerialNumberTxt_ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.assestSerialNumberTxt_ErrorLabel.Location = new System.Drawing.Point(614, 375);
+            this.assestSerialNumberTxt_ErrorLabel.Name = "assestSerialNumberTxt_ErrorLabel";
+            this.assestSerialNumberTxt_ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.assestSerialNumberTxt_ErrorLabel.TabIndex = 52;
+            // 
+            // assestStateCbx_ErrorLabel
+            // 
+            this.assestStateCbx_ErrorLabel.AutoSize = true;
+            this.assestStateCbx_ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.assestStateCbx_ErrorLabel.Location = new System.Drawing.Point(610, 446);
+            this.assestStateCbx_ErrorLabel.Name = "assestStateCbx_ErrorLabel";
+            this.assestStateCbx_ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.assestStateCbx_ErrorLabel.TabIndex = 53;
+            // 
+            // assetLocationCbx_ErrorLabel
+            // 
+            this.assetLocationCbx_ErrorLabel.AutoSize = true;
+            this.assetLocationCbx_ErrorLabel.ForeColor = System.Drawing.Color.Red;
+            this.assetLocationCbx_ErrorLabel.Location = new System.Drawing.Point(611, 514);
+            this.assetLocationCbx_ErrorLabel.Name = "assetLocationCbx_ErrorLabel";
+            this.assetLocationCbx_ErrorLabel.Size = new System.Drawing.Size(0, 13);
+            this.assetLocationCbx_ErrorLabel.TabIndex = 54;
             // 
             // AssetManagment
             // 
@@ -441,10 +539,16 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(909, 640);
-            this.Controls.Add(this.CerrarSesionBtn);
+            this.Controls.Add(this.assetLocationCbx_ErrorLabel);
+            this.Controls.Add(this.assestStateCbx_ErrorLabel);
+            this.Controls.Add(this.assestSerialNumberTxt_ErrorLabel);
+            this.Controls.Add(this.assestModelTxt_ErrorLabel);
+            this.Controls.Add(this.assestBrandTxt_ErrorLabel);
+            this.Controls.Add(this.assestDescriptionTxt_ErrorLabel);
+            this.Controls.Add(this.assestIdNumberTxt_ErrorLabel);
             this.Controls.Add(this.assestStateCbx);
             this.Controls.Add(this.assestModelTxt);
-            this.Controls.Add(this.assestLocationCbx);
+            this.Controls.Add(this.assetLocationCbx);
             this.Controls.Add(this.errorAssestLocationLbl);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.errorAssestStateLbl);
@@ -452,7 +556,7 @@
             this.Controls.Add(this.errorAssestSerialNumLbl);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.assestSerialNumberTxt);
-            this.Controls.Add(this.otputAssestLbl);
+            this.Controls.Add(this.outputAssestLbl);
             this.Controls.Add(this.errorAssestBrandLbl);
             this.Controls.Add(this.errorAssestDescriptionLbl);
             this.Controls.Add(this.errorAssestIdNumberLbl);
@@ -472,7 +576,10 @@
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AssetManagment";
             this.Text = "AssetManagment";
+            this.Load += new System.EventHandler(this.AssetManagment_Load);
             ((System.ComponentModel.ISupportInitialize)(this.assetsManagmentTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -480,7 +587,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label otputAssestLbl;
+        private System.Windows.Forms.Label outputAssestLbl;
         private System.Windows.Forms.Label errorAssestBrandLbl;
         private System.Windows.Forms.Label errorAssestDescriptionLbl;
         private System.Windows.Forms.Label errorAssestIdNumberLbl;
@@ -489,13 +596,6 @@
         private System.Windows.Forms.Button addAssestBtn;
         private System.Windows.Forms.Label errorAssestModelLbl;
         private System.Windows.Forms.DataGridView assetsManagmentTable;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Tipo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Modelo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Serie;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Ubicación;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
@@ -510,9 +610,25 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label errorAssestLocationLbl;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox assestLocationCbx;
+        private System.Windows.Forms.ComboBox assetLocationCbx;
         private System.Windows.Forms.TextBox assestModelTxt;
         private System.Windows.Forms.ComboBox assestStateCbx;
-        private System.Windows.Forms.Button CerrarSesionBtn;
+        private _AssetsManagement_DbModelDataSet1 _AssetsManagement_DbModelDataSet1;
+        private System.Windows.Forms.BindingSource assetEntitiesBindingSource;
+        private _AssetsManagement_DbModelDataSet1TableAdapters.AssetEntitiesTableAdapter assetEntitiesTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn labEntityidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seriesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label assestIdNumberTxt_ErrorLabel;
+        private System.Windows.Forms.Label assestDescriptionTxt_ErrorLabel;
+        private System.Windows.Forms.Label assestBrandTxt_ErrorLabel;
+        private System.Windows.Forms.Label assestModelTxt_ErrorLabel;
+        private System.Windows.Forms.Label assestSerialNumberTxt_ErrorLabel;
+        private System.Windows.Forms.Label assestStateCbx_ErrorLabel;
+        private System.Windows.Forms.Label assetLocationCbx_ErrorLabel;
     }
 }

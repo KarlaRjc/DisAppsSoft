@@ -1,4 +1,5 @@
 ﻿using AssetsManagement;
+using ManejoDeActivos.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,16 +10,18 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using static AssetsManagement.User;
+
 
 namespace ManejoDeActivos
 {
-    public partial class UserManagment : Form
+    public partial class UserManagment:Form
     {
+        UserManagmentController userManagmenteController = new UserManagmentController();
         public UserManagment()
         {
             InitializeComponent();
         }
+        
 
         private void tableLayoutPanel1_Paint(object sender, PaintEventArgs e)
         {
@@ -30,6 +33,7 @@ namespace ManejoDeActivos
 
         }
 
+       
         private void label3_Click(object sender, EventArgs e)
         {
 
@@ -45,114 +49,44 @@ namespace ManejoDeActivos
 
         }
 
+        //Gets the information from the text inputs to then add a new user
         private void addUserBtn_Click(object sender, EventArgs e)
         {
 
             string nameUser = nameUserTxt.Text;
             string username = usernameTxt.Text;
             string password = passwordTxt.Text;
-            string userRole = (string) userRolCbx.SelectedItem;
+            string userRole = (string) ((userRolCbx.SelectedItem == null)? "": userRolCbx.SelectedItem);
+            string userQuestion = (string) ((userQuestionCbx.SelectedItem == null)? "": userQuestionCbx.SelectedItem);
+            string userAnswer = userAnswerTxt.Text;
 
+            Boolean usernameFound = userManagmenteController.VerifyUsername(username);
 
-            Boolean formFilledOut = true;
-
-            if (string.IsNullOrEmpty(nameUser))
+            if (!usernameFound)
             {
-                errorNameUserLbl.Text = "Nombre vacío";
-                formFilledOut = false;
-            }
-            else 
-            {
-                errorNameUserLbl.Text = "";
-            }
-
-            if (string.IsNullOrEmpty(username))
-            {
-                errorUsernameLbl.Text = "Usuario vacío";
-                formFilledOut = false;
-
-            }
-            else if(username.Contains(" "))
-            {
-                errorUsernameLbl.Text = "Espacios no son permitidos";
-                formFilledOut = false;
+                userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+                outputUserLbl.Text = "";
+                ClearForm();
+                MessageBox.Show("Usuario Agregado Correctamente");
             }
             else
             {
-                errorUsernameLbl.Text = "";
-            }
-
-            if (string.IsNullOrEmpty(password))
-            {
-                errorPasswordLbl.Text = "Contraseña vacío";
-                formFilledOut = false;
-            }
-            else if (password.Contains(" "))
-            {
-                errorPasswordLbl.Text = "Espacios no son permitidos";
-                formFilledOut = false;
-            }
-            else
-            {
-                errorPasswordLbl.Text = "";
-            }
-
-            if (string.IsNullOrEmpty(userRole))
-            {
-                errorUserRoleLbl.Text = "Debe seleccionar rol de la lista";
-                formFilledOut = false;
-            }
-            else
-            {
-                errorUserRoleLbl.Text = "";
-            }
-
-            if (formFilledOut) 
-            {
-                switch (userRole) 
-                {
-                    case "Administrador":
-                        UserEntity userentityAdmin = User.CreateUser(7, nameUser, EnumRole.Admin, username, password);
-
-                        //Así se agrega ese user a la DB
-                        UserEntity.CreateUserToDB(userentityAdmin);
-
-                        MessageBox.Show("Usuario Agregado Correctamente");
-
-                        Clear();
-                        break;
-                    case "Profesor":
-                        UserEntity userentityTeacher = User.CreateUser(7, nameUser, EnumRole.Teacher, username, password);
-
-                        //Así se agrega ese user a la DB
-                        UserEntity.CreateUserToDB(userentityTeacher);
-
-                        MessageBox.Show("Usuario Agregado Correctamente");
-                        Clear();
-                        break;
-                    case "Observador":
-                        UserEntity userentityGatherer = User.CreateUser(7, nameUser, EnumRole.Gatherer, username, password);
-
-                        //Así se agrega ese user a la DB
-                        UserEntity.CreateUserToDB(userentityGatherer);
-
-                        MessageBox.Show("Usuario Agregado Correctamente");
-                        Clear();
-                        break;
-                }
-            }
-
+                outputUserLbl.Text = "Nombre de usuario ya existe";
+            }    
         }
 
-        private void Clear()
+        //Allow to clear all text inputs and calls the UpdateUsersTable()
+        private void ClearForm()
         {
             nameUserTxt.Text = "";
             usernameTxt.Text = "";
             passwordTxt.Text = "";
-            userRolCbx.SelectedItem = "";
+            userRolCbx.ResetText();
+            userRolCbx.SelectedItem = -1;
+            outputUserLbl.Text = "";
 
-            usersTable.Update();
-            usersTable.Refresh();
+            UpdateUsersTable();
+
         }
 
         private void UserManagment_Load(object sender, EventArgs e)
@@ -162,24 +96,30 @@ namespace ManejoDeActivos
 
         }
 
-        private void userEntitiesBindingSource_CurrentChanged(object sender, EventArgs e)
+        // Allows to refresh the datagrid after inserting new record
+        private void UpdateUsersTable()
         {
-
+            using (DbModel db = new DbModel())
+            {
+                usersTable.DataSource = db.User.ToList<UserEntity>();
+            }
         }
 
-        private void editUserBtn_Click(object sender, EventArgs e)
+        private void RemoveUserBtn_Click(object sender, EventArgs e)
+        {
+            if (usersTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+                string a = Convert.ToString(selectedRow.Cells["Usuario"].Value);
+                userManagmenteController.RemoveUser(a);
+                UpdateUsersTable();
+            }
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
-            string nameUser = nameUserTxt.Text;
-            string username = usernameTxt.Text;
-            string password = passwordTxt.Text;
-            string userRole = (string)userRolCbx.SelectedItem;
-
-            
-
-            
-
-            
         }
     }
 }

@@ -61,6 +61,7 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Asset.cs" />
     <Compile Include="Gatherer.cs" />
+    <Compile Include="Lab.cs" />
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AssetEntity.cs" />
     <Compile Include="Model\AssetTransferHistoryEntity.cs" />
@@ -72,6 +73,8 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Model\IIteratorAssetEntity.cs" />
+    <Compile Include="Model\IteratorAssetEntity.cs" />
     <Compile Include="Model\LabEntity.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

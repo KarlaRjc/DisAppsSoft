@@ -36,7 +36,7 @@ namespace Testing
             EnumRole role = EnumRole.Admin;
             string username = "dugalde";
             string password = "123";
-            var expectedResult = User.CreateUser(1, "Denis", EnumRole.Admin, "dugalde", "123");
+            var expectedResult = User.CreateUser(-1, "Denis", EnumRole.Admin, "dugalde", "123");
 
             //Act
             var result = User.CreateUser(id, name, role, username, password);

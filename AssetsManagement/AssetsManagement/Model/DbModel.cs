@@ -12,5 +12,6 @@
         public virtual DbSet<LabEntity> Lab { get; set; }
         public virtual DbSet<AssetTransferHistoryEntity> AssetTransferHistory { get; set; }
         public virtual DbSet<AssetEntity> Asset { get; set; }
+        
     }
 }

@@ -62,13 +62,18 @@
     <Compile Include="AssetManagment.Designer.cs">
       <DependentUpon>AssetManagment.cs</DependentUpon>
     </Compile>
+    <Compile Include="Controller\AssetManagmentController.cs" />
     <Compile Include="Controller\LoginController.cs" />
     <Compile Include="Controller\Sanitize\CharInput.cs" />
+    <Compile Include="Controller\Sanitize\DefinedSanitizers\GeneralInputSanitizer.cs" />
+    <Compile Include="Controller\Sanitize\DefinedSanitizers\PasswordSanitizer.cs" />
+    <Compile Include="Controller\Sanitize\DefinedSanitizers\UsernameSanitizer.cs" />
     <Compile Include="Controller\Sanitize\EnumSanitizeErrors.cs" />
     <Compile Include="Controller\Sanitize\NumericInput.cs" />
     <Compile Include="Controller\Sanitize\Sanitizer.cs" />
     <Compile Include="Controller\Sanitize\SanitizerDecorator.cs" />
     <Compile Include="Controller\Sanitize\SpecialCharsNotAllowed.cs" />
+    <Compile Include="Controller\UserManagmentController.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,13 +100,20 @@
     <Compile Include="UserManagment.Designer.cs">
       <DependentUpon>UserManagment.cs</DependentUpon>
     </Compile>
-    <Compile Include="_AssetsManagement_DbModelDataSet.cs">
-      <DependentUpon>_AssetsManagement_DbModelDataSet.xsd</DependentUpon>
-    </Compile>
     <Compile Include="_AssetsManagement_DbModelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_AssetsManagement_DbModelDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_AssetsManagement_DbModelDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AssetsManagement_DbModelDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_AssetsManagement_DbModelDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AssetManagment.resx">
       <DependentUpon>AssetManagment.cs</DependentUpon>
@@ -148,6 +160,28 @@
     </None>
     <None Include="_AssetsManagement_DbModelDataSet.xss">
       <DependentUpon>_AssetsManagement_DbModelDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet1.xsc">
+      <DependentUpon>_AssetsManagement_DbModelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_AssetsManagement_DbModelDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet1.xss">
+      <DependentUpon>_AssetsManagement_DbModelDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet2.xsc">
+      <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_AssetsManagement_DbModelDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet2.xss">
+      <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

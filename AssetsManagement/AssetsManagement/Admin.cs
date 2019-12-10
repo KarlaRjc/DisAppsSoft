@@ -9,9 +9,18 @@ namespace AssetsManagement
     public class Admin : User
     {
 
-        public bool CreateUser(User user)
+        public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password, string secretQuestion, string secretAnswer)
         {
-            return false;
+            UserEntity userentity = new UserEntity();
+            userentity.id = id;
+            userentity.name = name;
+            userentity.role = role;
+            userentity.username = username;
+            userentity.password = password;
+            userentity.secretQuestion = secretQuestion;
+            userentity.secretAnswer = secretAnswer;
+
+            return userentity;
         }
 
         public bool EditUser(User user)
@@ -19,9 +28,10 @@ namespace AssetsManagement
             return false;
         }
 
-        public bool DeleteUser(User user)
+        public static void DeleteUser(string username)
         {
-            return false;
+            UserEntity user = UserEntity.GetUserByUsername(username);
+            UserEntity.DeleteUserToDB(user);
         }
 
         public bool EditAsset(AssetEntity asset)
@@ -34,9 +44,10 @@ namespace AssetsManagement
             return false;
         }
 
-        public bool DeleteAsset(AssetEntity asset)
+        public static void DeleteAsset(string serial)
         {
-            return false;
+            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(serial);
+            AssetEntity.DeleteAssetToDB(asset);
         }
 
         public override bool ChangePassword()
@@ -54,6 +65,31 @@ namespace AssetsManagement
         private UserEntity MapUserToEntity(User user)
         {
             return null;
+        }
+        //Checks if username already exists
+        public static Boolean CheckUsername(string username)
+        {
+            Boolean userFound = false;
+            UserEntity user = null;
+
+            user = UserEntity.GetUserByUsername(username);
+
+            try
+            {
+                if (!user.Equals(null))
+                {
+
+                    userFound = true;
+                }
+
+            }
+            catch (Exception e) 
+            {
+
+                userFound = false;
+            }
+
+            return userFound;
         }
     }
 }

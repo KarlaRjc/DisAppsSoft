@@ -8,6 +8,6 @@ namespace AssetsManagement
 {
     public enum EnumRole
     {
-        Admin,Teacher,Gatherer
+        Administrador,Profesor,Recolector
     }
 }

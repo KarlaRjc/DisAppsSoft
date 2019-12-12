@@ -45,6 +45,17 @@ namespace AssetsManagement
 
         }
 
+        //Returns the assest if the serial number exists otherwise returns null
+        public static AssetEntity GetAssetBySerialNumber(string serial)
+        {
+            AssetEntity asset = null;
+            using (DbModel db = new DbModel())
+            {
+                asset = db.Asset.Where(x => x.series == serial).FirstOrDefault();
+            }
+            return asset;
+        }
+
         /// <summary>
         /// Modifies an existing AssetEntity, receives as parameters the AssetEntity that wants to be modified and an Asset with the updated information
         /// </summary>

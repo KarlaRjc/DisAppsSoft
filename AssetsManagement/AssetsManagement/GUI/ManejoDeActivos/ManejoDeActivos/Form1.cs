@@ -105,27 +105,28 @@ namespace ManejoDeActivos
             if (isPasswordInputValid && isUsernameInputValid)
             {
                 var result = LoginController.Login(UserNameInput.Text, passwordInput.Text);
-                var role = LoginController.currentUser.role;
-                switch (role)
-                {
-                    case AssetsManagement.EnumRole.Administrador:
-                        break;
-                    case AssetsManagement.EnumRole.Profesor:
-                        assestManagmentBtn.Hide();
-                        userManagmentBtn.Hide();
-                        break;
-                    case AssetsManagement.EnumRole.Recolector:
-                        assestManagmentBtn.Hide();
-                        userManagmentBtn.Hide();
-                        transferHisotryBtn.Hide();
-                        transferAssestBtn.Hide();
-                        break;
-                    default:
-                        break;
-                }
+
                 if (result.ContainsKey("Success"))
                     {
-                        LoginPanel.Hide();
+                    var role = LoginController.currentUser.role;
+                    switch (role)
+                    {
+                        case AssetsManagement.EnumRole.Administrador:
+                            break;
+                        case AssetsManagement.EnumRole.Profesor:
+                            assestManagmentBtn.Hide();
+                            userManagmentBtn.Hide();
+                            break;
+                        case AssetsManagement.EnumRole.Recopilador:
+                            assestManagmentBtn.Hide();
+                            userManagmentBtn.Hide();
+                            transferHisotryBtn.Hide();
+                            transferAssestBtn.Hide();
+                            break;
+                        default:
+                            break;
+                    }
+                    LoginPanel.Hide();
                         CurrentRoleText.Text = result["Role"];
                     } 
                     else 

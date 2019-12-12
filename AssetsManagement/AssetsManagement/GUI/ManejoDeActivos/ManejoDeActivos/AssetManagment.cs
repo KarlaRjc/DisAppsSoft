@@ -98,7 +98,7 @@ namespace ManejoDeActivos
             {
                 int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Serie"].Value);
+                string a = Convert.ToString(selectedRow.Cells[5].Value);
                 assetManagmentController.RemoveAsset(a);
                 UpdateAssetsTable();
             }

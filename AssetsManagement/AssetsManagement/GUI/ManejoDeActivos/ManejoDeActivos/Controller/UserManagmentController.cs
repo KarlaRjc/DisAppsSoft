@@ -31,7 +31,7 @@ namespace ManejoDeActivos.Controller
                     break;
                 case "Observador":
                     //Creates the user
-                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Recolector, username, EncryptPassword(password), userQuestion, userAnswer);
+                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Recopilador, username, EncryptPassword(password), userQuestion, userAnswer);
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityGatherer);

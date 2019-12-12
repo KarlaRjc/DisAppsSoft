@@ -46,7 +46,7 @@ namespace AssetsManagement
 
         public static void DeleteAsset(string serial)
         {
-            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(serial);
+            AssetEntity asset = Asset.GetAssetBySerialNumber(serial);
             AssetEntity.DeleteAssetToDB(asset);
         }
 

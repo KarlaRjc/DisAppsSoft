@@ -40,11 +40,6 @@ namespace AssetsManagement
             }
         }
 
-        public static void DeleteAssetToDB(AssetEntity assetEntity)
-        {
-            throw new NotImplementedException();
-        }
-
 
         /// <summary>
         /// Modifies an existing AssetEntity in the Database, searches for the corresponding AssetEntity and modifies it
@@ -74,7 +69,7 @@ namespace AssetsManagement
         /// Deletes an AssetEntity from the Database, searches for the corresponding AssetEntity and deletes it
         /// </summary>
         /// <param name="asset"></param>
-        public static void DeleteAssetToDB(Asset asset)
+        public static void DeleteAssetToDB(AssetEntity asset)
         {
             //Opens a conection with the DB
             using (DbModel db = new DbModel())

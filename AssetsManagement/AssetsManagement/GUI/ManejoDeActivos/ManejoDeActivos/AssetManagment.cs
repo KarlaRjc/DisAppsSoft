@@ -42,8 +42,6 @@ namespace ManejoDeActivos
         //Adds new asset
         private void addAssestBtn_Click(object sender, EventArgs e)
         {
-
-            int id = Int32.Parse(assestIdNumberTxt.Text);
             string description = assestDescriptionTxt.Text;
             string brand = assestBrandTxt.Text;
             string model = assestModelTxt.Text;
@@ -58,7 +56,7 @@ namespace ManejoDeActivos
 
                 if (!assetFound)
                 {
-                    assetManagmentController.CreateAsset(id, description, brand, model, serialNumber, state);
+                    assetManagmentController.CreateAsset(description, brand, model, serialNumber, state);
                     outputAssestLbl.Text = "";
                     ClearForm();
                     MessageBox.Show("Activo Agregado Correctamente");
@@ -72,7 +70,6 @@ namespace ManejoDeActivos
         
         private void ClearForm()
         {
-            assestIdNumberTxt.Text = "";
             assestDescriptionTxt.Text = "";
             assestBrandTxt.Text = "";
             assestSerialNumberTxt.Text = "";

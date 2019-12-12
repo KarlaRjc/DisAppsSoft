@@ -32,7 +32,6 @@
             this.outputAssestLbl = new System.Windows.Forms.Label();
             this.errorAssestBrandLbl = new System.Windows.Forms.Label();
             this.errorAssestDescriptionLbl = new System.Windows.Forms.Label();
-            this.errorAssestIdNumberLbl = new System.Windows.Forms.Label();
             this.errorAssestModelLbl = new System.Windows.Forms.Label();
             this.assetsManagmentTable = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -47,10 +46,8 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.assestBrandTxt = new System.Windows.Forms.TextBox();
             this.assestDescriptionTxt = new System.Windows.Forms.TextBox();
-            this.assestIdNumberTxt = new System.Windows.Forms.TextBox();
             this.errorAssestSerialNumLbl = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.assestSerialNumberTxt = new System.Windows.Forms.TextBox();
@@ -111,17 +108,6 @@
             this.errorAssestDescriptionLbl.Size = new System.Drawing.Size(0, 17);
             this.errorAssestDescriptionLbl.TabIndex = 32;
             // 
-            // errorAssestIdNumberLbl
-            // 
-            this.errorAssestIdNumberLbl.AutoSize = true;
-            this.errorAssestIdNumberLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.errorAssestIdNumberLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorAssestIdNumberLbl.Location = new System.Drawing.Point(616, 87);
-            this.errorAssestIdNumberLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.errorAssestIdNumberLbl.Name = "errorAssestIdNumberLbl";
-            this.errorAssestIdNumberLbl.Size = new System.Drawing.Size(0, 17);
-            this.errorAssestIdNumberLbl.TabIndex = 31;
-            // 
             // errorAssestModelLbl
             // 
             this.errorAssestModelLbl.AutoSize = true;
@@ -147,7 +133,7 @@
             this.stateDataGridViewTextBoxColumn});
             this.assetsManagmentTable.DataSource = this.assetEntitiesBindingSource;
             this.assetsManagmentTable.Location = new System.Drawing.Point(42, 60);
-            this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2);
             this.assetsManagmentTable.Name = "assetsManagmentTable";
             this.assetsManagmentTable.ReadOnly = true;
             this.assetsManagmentTable.RowHeadersWidth = 51;
@@ -264,23 +250,11 @@
             this.label2.TabIndex = 24;
             this.label2.Text = "Descripción";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(636, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(185, 20);
-            this.label1.TabIndex = 23;
-            this.label1.Text = "Número de Identificación";
-            // 
             // assestBrandTxt
             // 
             this.assestBrandTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestBrandTxt.Location = new System.Drawing.Point(613, 206);
-            this.assestBrandTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestBrandTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestBrandTxt.Name = "assestBrandTxt";
             this.assestBrandTxt.Size = new System.Drawing.Size(216, 26);
             this.assestBrandTxt.TabIndex = 21;
@@ -289,19 +263,10 @@
             // 
             this.assestDescriptionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestDescriptionTxt.Location = new System.Drawing.Point(613, 132);
-            this.assestDescriptionTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestDescriptionTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestDescriptionTxt.Name = "assestDescriptionTxt";
             this.assestDescriptionTxt.Size = new System.Drawing.Size(216, 26);
             this.assestDescriptionTxt.TabIndex = 20;
-            // 
-            // assestIdNumberTxt
-            // 
-            this.assestIdNumberTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.assestIdNumberTxt.Location = new System.Drawing.Point(613, 60);
-            this.assestIdNumberTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.assestIdNumberTxt.Name = "assestIdNumberTxt";
-            this.assestIdNumberTxt.Size = new System.Drawing.Size(216, 26);
-            this.assestIdNumberTxt.TabIndex = 19;
             // 
             // errorAssestSerialNumLbl
             // 
@@ -330,7 +295,7 @@
             // 
             this.assestSerialNumberTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestSerialNumberTxt.Location = new System.Drawing.Point(613, 347);
-            this.assestSerialNumberTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestSerialNumberTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestSerialNumberTxt.Name = "assestSerialNumberTxt";
             this.assestSerialNumberTxt.Size = new System.Drawing.Size(216, 26);
             this.assestSerialNumberTxt.TabIndex = 36;
@@ -397,7 +362,7 @@
             "LAB9",
             "LAB10"});
             this.assetLocationCbx.Location = new System.Drawing.Point(610, 485);
-            this.assetLocationCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assetLocationCbx.Margin = new System.Windows.Forms.Padding(2);
             this.assetLocationCbx.Name = "assetLocationCbx";
             this.assetLocationCbx.Size = new System.Drawing.Size(216, 28);
             this.assetLocationCbx.TabIndex = 45;
@@ -406,7 +371,7 @@
             // 
             this.assestModelTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestModelTxt.Location = new System.Drawing.Point(610, 280);
-            this.assestModelTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestModelTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestModelTxt.Name = "assestModelTxt";
             this.assestModelTxt.Size = new System.Drawing.Size(216, 26);
             this.assestModelTxt.TabIndex = 46;
@@ -422,7 +387,7 @@
             "Reparación",
             "Otro"});
             this.assestStateCbx.Location = new System.Drawing.Point(610, 416);
-            this.assestStateCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestStateCbx.Margin = new System.Windows.Forms.Padding(2);
             this.assestStateCbx.Name = "assestStateCbx";
             this.assestStateCbx.Size = new System.Drawing.Size(216, 28);
             this.assestStateCbx.TabIndex = 47;
@@ -433,7 +398,7 @@
             this.removeAssetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeAssetBtn.Image = global::ManejoDeActivos.Properties.Resources.EliminarBtn;
             this.removeAssetBtn.Location = new System.Drawing.Point(243, 544);
-            this.removeAssetBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeAssetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.removeAssetBtn.Name = "removeAssetBtn";
             this.removeAssetBtn.Size = new System.Drawing.Size(106, 41);
             this.removeAssetBtn.TabIndex = 30;
@@ -446,7 +411,7 @@
             this.editAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
             this.editAssestBtn.Location = new System.Drawing.Point(614, 544);
-            this.editAssestBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editAssestBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editAssestBtn.Name = "editAssestBtn";
             this.editAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.editAssestBtn.TabIndex = 29;
@@ -459,7 +424,7 @@
             this.addAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
             this.addAssestBtn.Location = new System.Drawing.Point(722, 544);
-            this.addAssestBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addAssestBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addAssestBtn.Name = "addAssestBtn";
             this.addAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.addAssestBtn.TabIndex = 27;
@@ -559,7 +524,6 @@
             this.Controls.Add(this.outputAssestLbl);
             this.Controls.Add(this.errorAssestBrandLbl);
             this.Controls.Add(this.errorAssestDescriptionLbl);
-            this.Controls.Add(this.errorAssestIdNumberLbl);
             this.Controls.Add(this.removeAssetBtn);
             this.Controls.Add(this.editAssestBtn);
             this.Controls.Add(this.addAssestBtn);
@@ -568,12 +532,10 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.assestBrandTxt);
             this.Controls.Add(this.assestDescriptionTxt);
-            this.Controls.Add(this.assestIdNumberTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AssetManagment";
             this.Text = "AssetManagment";
             this.Load += new System.EventHandler(this.AssetManagment_Load);
@@ -590,7 +552,6 @@
         private System.Windows.Forms.Label outputAssestLbl;
         private System.Windows.Forms.Label errorAssestBrandLbl;
         private System.Windows.Forms.Label errorAssestDescriptionLbl;
-        private System.Windows.Forms.Label errorAssestIdNumberLbl;
         private System.Windows.Forms.Button removeAssetBtn;
         private System.Windows.Forms.Button editAssestBtn;
         private System.Windows.Forms.Button addAssestBtn;
@@ -599,10 +560,8 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox assestBrandTxt;
         private System.Windows.Forms.TextBox assestDescriptionTxt;
-        private System.Windows.Forms.TextBox assestIdNumberTxt;
         private System.Windows.Forms.Label errorAssestSerialNumLbl;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.TextBox assestSerialNumberTxt;

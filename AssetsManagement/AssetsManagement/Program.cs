@@ -48,7 +48,7 @@ namespace AssetsManagement
             ////Así se crea un AssetEntity con los parámetros
             ////Importante! El ID que se va a asignar no es el que uno lo ponga, es un número consecutivo que depende de la DB
 
-            AssetEntity assetentity = Asset.CreateAsset(1, "Desc", "Bra", "Mod", "Ser", "Stat");
+            AssetEntity assetentity = Asset.CreateAsset("Desc", "Bra", "Mod", "Ser", "Stat");
 
             ////Así se agrega a la DB
 

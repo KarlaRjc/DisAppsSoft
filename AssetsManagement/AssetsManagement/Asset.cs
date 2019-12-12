@@ -31,11 +31,10 @@ namespace AssetsManagement
         /// <param name="series"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        public static AssetEntity CreateAsset(int id, string description, string brand, string model, string series, string state)
+        public static AssetEntity CreateAsset(string description, string brand, string model, string series, string state)
         {
 
             AssetEntity asset = new AssetEntity();
-            asset.id = id;
             asset.description = description;
             asset.brand = brand;
             asset.model = model;

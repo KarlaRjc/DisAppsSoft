@@ -111,7 +111,7 @@ namespace ManejoDeActivos
             {
                 int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
                 DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells["Usuario"].Value);
+                string a = Convert.ToString(selectedRow.Cells[5].Value);
                 userManagmenteController.RemoveUser(a);
                 UpdateUsersTable();
             }

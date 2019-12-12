@@ -30,7 +30,7 @@ namespace AssetsManagement
 
         public static void DeleteUser(string username)
         {
-            UserEntity user = UserEntity.GetUserByUsername(username);
+            UserEntity user = User.GetUserByUsername(username);
             UserEntity.DeleteUserToDB(user);
         }
 

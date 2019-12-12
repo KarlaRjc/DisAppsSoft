@@ -72,5 +72,15 @@ namespace AssetsManagement
             }
 
         }
+
+        public static UserEntity GetUserByUsername(string username)
+        {
+            UserEntity user = null;
+            using (DbModel db = new DbModel())
+            {
+                user = db.User.Where(x => x.username == username).FirstOrDefault();
+            }
+            return user;
+        }
     }
 }

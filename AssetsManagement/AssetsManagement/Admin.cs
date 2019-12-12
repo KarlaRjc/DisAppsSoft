@@ -9,7 +9,7 @@ namespace AssetsManagement
     public class Admin : User
     {
 
-        public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password)
+        public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password, string secretQuestion, string secretAnswer)
         {
             UserEntity userentity = new UserEntity();
             userentity.id = id;
@@ -17,6 +17,8 @@ namespace AssetsManagement
             userentity.role = role;
             userentity.username = username;
             userentity.password = password;
+            userentity.secretQuestion = secretQuestion;
+            userentity.secretAnswer = secretAnswer;
 
             return userentity;
         }
@@ -26,9 +28,10 @@ namespace AssetsManagement
             return false;
         }
 
-        public bool DeleteUser(User user)
+        public static void DeleteUser(string username)
         {
-            return false;
+            UserEntity user = UserEntity.GetUserByUsername(username);
+            UserEntity.DeleteUserToDB(user);
         }
 
         public bool EditAsset(AssetEntity asset)
@@ -41,9 +44,10 @@ namespace AssetsManagement
             return false;
         }
 
-        public bool DeleteAsset(AssetEntity asset)
+        public static void DeleteAsset(string serial)
         {
-            return false;
+            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(serial);
+            AssetEntity.DeleteAssetToDB(asset);
         }
 
         public override bool ChangePassword()

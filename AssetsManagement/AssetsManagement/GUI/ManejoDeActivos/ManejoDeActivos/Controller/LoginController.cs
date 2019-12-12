@@ -10,7 +10,7 @@ namespace ManejoDeActivos.Controller
 {
     public static class LoginController
     {
-        static UserEntity currentUser;
+        public static UserEntity currentUser;
 
         public static Dictionary<string,string> Login(string userName, string password) 
         {
@@ -65,5 +65,6 @@ namespace ManejoDeActivos.Controller
              * line4 Converts the 8 bits value into 64 digits
             */
         }
+        
     }
 }

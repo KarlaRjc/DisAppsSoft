@@ -11,27 +11,27 @@ namespace ManejoDeActivos.Controller
     class UserManagmentController
     {
         //Allows to create user entity according to the role and then add it to the database
-        public void CreateUser(string nameUser, string username, string password, string userRole)
+        public void CreateUser(string nameUser, string username, string password, string userRole, string userQuestion, string userAnswer)
         {
             switch (userRole)
             {
                 case "Administrador":
                     //Creates the user
-                    UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Admin, username, EncryptPassword(password));
+                    UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Admin, username, EncryptPassword(password), userQuestion, userAnswer);
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityAdmin);
                     break;
                 case "Profesor":
                     //Creates the user
-                    UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Teacher, username, EncryptPassword(password));
+                    UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Teacher, username, EncryptPassword(password), userQuestion, userAnswer);
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityTeacher);
                     break;
                 case "Observador":
                     //Creates the user
-                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Gatherer, username, EncryptPassword(password));
+                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Gatherer, username, EncryptPassword(password), userQuestion, userAnswer);
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityGatherer);
@@ -66,7 +66,7 @@ namespace ManejoDeActivos.Controller
 
         public void RemoveUser(string username)
         {
-            UserEntity.DeleteUserToDB(UserEntity.GetUserByUsername(username));
+            Admin.DeleteUser(username);
         }
     }
 }

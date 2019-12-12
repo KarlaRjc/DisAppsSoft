@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using AssetsManagement;
 
 namespace AssetsManagement
 {
@@ -79,6 +80,11 @@ namespace AssetsManagement
                 //Saves the changes
                 db.SaveChanges();
             }
+        }
+
+        public IteratorAssetEntity ObtainIterator()
+        {
+            return new IteratorAssetEntity(Assets);
         }
     }
 }

@@ -56,7 +56,7 @@ namespace ManejoDeActivos
             string nameUser = nameUserTxt.Text;
             string username = usernameTxt.Text;
             string password = passwordTxt.Text;
-            string userRole = (string) userRolCbx.SelectedItem;
+            string userRole = (string) ((userRolCbx.SelectedItem == null)? "" : userRolCbx.SelectedItem);
 
             Boolean usernameFound = userManagmenteController.VerifyUsername(username);
 

@@ -17,11 +17,9 @@ namespace ManejoDeActivos.Controller
         }
 
 
-        public Boolean VerifySerialNumber(string serial)
+        public bool VerifySerialNumber(string serial)
         {
-            Boolean assetFound = Asset.VerifySerialNumber(serial);
-
-            return assetFound;
+            return Asset.VerifySerialNumber(serial);
         }
 
         public void RemoveAsset(string asset)

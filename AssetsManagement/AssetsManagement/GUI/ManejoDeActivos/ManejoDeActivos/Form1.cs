@@ -234,5 +234,15 @@ namespace ManejoDeActivos
         {
             resetPasswordPanel.Visible = true;
         }
+
+        private void resetPasswordPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void LoginPanel_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

@@ -41,6 +41,25 @@
             this.CurrentRoleText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.LoginPanel = new System.Windows.Forms.Panel();
+            this.resetPasswordPanel = new System.Windows.Forms.Panel();
+            this.panel_resetPassword_Step2 = new System.Windows.Forms.Panel();
+            this.resetPassword_answer_error_label = new System.Windows.Forms.Label();
+            this.resetpassword_newpassword_error_label = new System.Windows.Forms.Label();
+            this.resetpassword_newPassword_Input = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.SecretQuestionLabel = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.ChangePasswordButton = new System.Windows.Forms.Label();
+            this.SecretAnswerInput = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.SecretQuestionLabel_Value = new System.Windows.Forms.Label();
+            this.panel10 = new System.Windows.Forms.Panel();
+            this.label9 = new System.Windows.Forms.Label();
+            this.resetpassword_username_error_label = new System.Windows.Forms.Label();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.verifyUser_Button = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.resetPasswordUsername = new System.Windows.Forms.TextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.LoginErrorMessage = new System.Windows.Forms.Label();
             this.PasswordErrorMessage = new System.Windows.Forms.Label();
@@ -56,38 +75,19 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
-            this.resetPasswordPanel = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.ChangePasswordButton = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.resetPasswordUsername = new System.Windows.Forms.TextBox();
-            this.SecretQuestionLabel = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.SecretAnswerInput = new System.Windows.Forms.TextBox();
-            this.SecretQuestionLabel_Value = new System.Windows.Forms.Label();
-            this.panel_resetPassword_Step2 = new System.Windows.Forms.Panel();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.verifyUser_Button = new System.Windows.Forms.Label();
-            this.resetpassword_username_error_label = new System.Windows.Forms.Label();
-            this.resetpassword_newPassword_Input = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.resetpassword_newpassword_error_label = new System.Windows.Forms.Label();
-            this.panel10 = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.resetPassword_answer_error_label = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.LoginPanel.SuspendLayout();
+            this.resetPasswordPanel.SuspendLayout();
+            this.panel_resetPassword_Step2.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel10.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel5.SuspendLayout();
             this.LoginButton.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.resetPasswordPanel.SuspendLayout();
-            this.panel4.SuspendLayout();
-            this.panel_resetPassword_Step2.SuspendLayout();
-            this.panel9.SuspendLayout();
-            this.panel10.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -235,6 +235,211 @@
             this.LoginPanel.Name = "LoginPanel";
             this.LoginPanel.Size = new System.Drawing.Size(1154, 2610);
             this.LoginPanel.TabIndex = 0;
+            this.LoginPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginPanel_Paint);
+            // 
+            // resetPasswordPanel
+            // 
+            this.resetPasswordPanel.BackColor = System.Drawing.Color.White;
+            this.resetPasswordPanel.Controls.Add(this.panel_resetPassword_Step2);
+            this.resetPasswordPanel.Controls.Add(this.panel10);
+            this.resetPasswordPanel.Controls.Add(this.resetpassword_username_error_label);
+            this.resetPasswordPanel.Controls.Add(this.panel9);
+            this.resetPasswordPanel.Controls.Add(this.label8);
+            this.resetPasswordPanel.Controls.Add(this.resetPasswordUsername);
+            this.resetPasswordPanel.Location = new System.Drawing.Point(382, 184);
+            this.resetPasswordPanel.Name = "resetPasswordPanel";
+            this.resetPasswordPanel.Size = new System.Drawing.Size(435, 353);
+            this.resetPasswordPanel.TabIndex = 1;
+            this.resetPasswordPanel.Visible = false;
+            this.resetPasswordPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.resetPasswordPanel_Paint);
+            // 
+            // panel_resetPassword_Step2
+            // 
+            this.panel_resetPassword_Step2.Controls.Add(this.resetPassword_answer_error_label);
+            this.panel_resetPassword_Step2.Controls.Add(this.resetpassword_newpassword_error_label);
+            this.panel_resetPassword_Step2.Controls.Add(this.resetpassword_newPassword_Input);
+            this.panel_resetPassword_Step2.Controls.Add(this.label2);
+            this.panel_resetPassword_Step2.Controls.Add(this.SecretQuestionLabel);
+            this.panel_resetPassword_Step2.Controls.Add(this.panel4);
+            this.panel_resetPassword_Step2.Controls.Add(this.SecretAnswerInput);
+            this.panel_resetPassword_Step2.Controls.Add(this.label10);
+            this.panel_resetPassword_Step2.Controls.Add(this.SecretQuestionLabel_Value);
+            this.panel_resetPassword_Step2.Location = new System.Drawing.Point(34, 79);
+            this.panel_resetPassword_Step2.Name = "panel_resetPassword_Step2";
+            this.panel_resetPassword_Step2.Size = new System.Drawing.Size(365, 266);
+            this.panel_resetPassword_Step2.TabIndex = 12;
+            this.panel_resetPassword_Step2.Visible = false;
+            // 
+            // resetPassword_answer_error_label
+            // 
+            this.resetPassword_answer_error_label.AutoSize = true;
+            this.resetPassword_answer_error_label.ForeColor = System.Drawing.Color.Red;
+            this.resetPassword_answer_error_label.Location = new System.Drawing.Point(231, 81);
+            this.resetPassword_answer_error_label.Name = "resetPassword_answer_error_label";
+            this.resetPassword_answer_error_label.Size = new System.Drawing.Size(0, 13);
+            this.resetPassword_answer_error_label.TabIndex = 15;
+            // 
+            // resetpassword_newpassword_error_label
+            // 
+            this.resetpassword_newpassword_error_label.AutoSize = true;
+            this.resetpassword_newpassword_error_label.ForeColor = System.Drawing.Color.Red;
+            this.resetpassword_newpassword_error_label.Location = new System.Drawing.Point(231, 154);
+            this.resetpassword_newpassword_error_label.Name = "resetpassword_newpassword_error_label";
+            this.resetpassword_newpassword_error_label.Size = new System.Drawing.Size(0, 13);
+            this.resetpassword_newpassword_error_label.TabIndex = 14;
+            // 
+            // resetpassword_newPassword_Input
+            // 
+            this.resetpassword_newPassword_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetpassword_newPassword_Input.Location = new System.Drawing.Point(27, 173);
+            this.resetpassword_newPassword_Input.Name = "resetpassword_newPassword_Input";
+            this.resetpassword_newPassword_Input.PasswordChar = '*';
+            this.resetpassword_newPassword_Input.Size = new System.Drawing.Size(310, 29);
+            this.resetpassword_newPassword_Input.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.Black;
+            this.label2.Location = new System.Drawing.Point(28, 138);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(163, 24);
+            this.label2.TabIndex = 12;
+            this.label2.Text = "Nueva contraseña";
+            // 
+            // SecretQuestionLabel
+            // 
+            this.SecretQuestionLabel.AutoSize = true;
+            this.SecretQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecretQuestionLabel.ForeColor = System.Drawing.Color.Black;
+            this.SecretQuestionLabel.Location = new System.Drawing.Point(29, 5);
+            this.SecretQuestionLabel.Name = "SecretQuestionLabel";
+            this.SecretQuestionLabel.Size = new System.Drawing.Size(157, 24);
+            this.SecretQuestionLabel.TabIndex = 7;
+            this.SecretQuestionLabel.Text = "Pregunta secreta:";
+            this.SecretQuestionLabel.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.panel4.Controls.Add(this.ChangePasswordButton);
+            this.panel4.Location = new System.Drawing.Point(28, 214);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(310, 55);
+            this.panel4.TabIndex = 4;
+            // 
+            // ChangePasswordButton
+            // 
+            this.ChangePasswordButton.AutoSize = true;
+            this.ChangePasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ChangePasswordButton.ForeColor = System.Drawing.Color.White;
+            this.ChangePasswordButton.Location = new System.Drawing.Point(67, 16);
+            this.ChangePasswordButton.Name = "ChangePasswordButton";
+            this.ChangePasswordButton.Size = new System.Drawing.Size(178, 24);
+            this.ChangePasswordButton.TabIndex = 1;
+            this.ChangePasswordButton.Text = "Cambiar contraseña";
+            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
+            // 
+            // SecretAnswerInput
+            // 
+            this.SecretAnswerInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecretAnswerInput.Location = new System.Drawing.Point(28, 99);
+            this.SecretAnswerInput.Name = "SecretAnswerInput";
+            this.SecretAnswerInput.Size = new System.Drawing.Size(310, 29);
+            this.SecretAnswerInput.TabIndex = 10;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(29, 64);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(99, 24);
+            this.label10.TabIndex = 9;
+            this.label10.Text = "Respuesta";
+            // 
+            // SecretQuestionLabel_Value
+            // 
+            this.SecretQuestionLabel_Value.AutoSize = true;
+            this.SecretQuestionLabel_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SecretQuestionLabel_Value.ForeColor = System.Drawing.Color.Black;
+            this.SecretQuestionLabel_Value.Location = new System.Drawing.Point(29, 35);
+            this.SecretQuestionLabel_Value.Name = "SecretQuestionLabel_Value";
+            this.SecretQuestionLabel_Value.Size = new System.Drawing.Size(0, 24);
+            this.SecretQuestionLabel_Value.TabIndex = 11;
+            // 
+            // panel10
+            // 
+            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.panel10.Controls.Add(this.label9);
+            this.panel10.Location = new System.Drawing.Point(12, 14);
+            this.panel10.Name = "panel10";
+            this.panel10.Size = new System.Drawing.Size(29, 27);
+            this.panel10.TabIndex = 6;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.White;
+            this.label9.Location = new System.Drawing.Point(1, 1);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(21, 24);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "<";
+            this.label9.Click += new System.EventHandler(this.label9_Click_1);
+            // 
+            // resetpassword_username_error_label
+            // 
+            this.resetpassword_username_error_label.AutoSize = true;
+            this.resetpassword_username_error_label.ForeColor = System.Drawing.Color.Red;
+            this.resetpassword_username_error_label.Location = new System.Drawing.Point(301, 28);
+            this.resetpassword_username_error_label.Name = "resetpassword_username_error_label";
+            this.resetpassword_username_error_label.Size = new System.Drawing.Size(0, 13);
+            this.resetpassword_username_error_label.TabIndex = 13;
+            this.resetpassword_username_error_label.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // panel9
+            // 
+            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.panel9.Controls.Add(this.verifyUser_Button);
+            this.panel9.Location = new System.Drawing.Point(62, 84);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(310, 55);
+            this.panel9.TabIndex = 5;
+            // 
+            // verifyUser_Button
+            // 
+            this.verifyUser_Button.AutoSize = true;
+            this.verifyUser_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.verifyUser_Button.ForeColor = System.Drawing.Color.White;
+            this.verifyUser_Button.Location = new System.Drawing.Point(84, 15);
+            this.verifyUser_Button.Name = "verifyUser_Button";
+            this.verifyUser_Button.Size = new System.Drawing.Size(135, 24);
+            this.verifyUser_Button.TabIndex = 1;
+            this.verifyUser_Button.Text = "Validar usuario";
+            this.verifyUser_Button.Click += new System.EventHandler(this.verifyUser_Button_Click);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.Black;
+            this.label8.Location = new System.Drawing.Point(63, 17);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(173, 24);
+            this.label8.TabIndex = 5;
+            this.label8.Text = "Nombre de usuario";
+            // 
+            // resetPasswordUsername
+            // 
+            this.resetPasswordUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.resetPasswordUsername.Location = new System.Drawing.Point(62, 44);
+            this.resetPasswordUsername.Name = "resetPasswordUsername";
+            this.resetPasswordUsername.Size = new System.Drawing.Size(310, 29);
+            this.resetPasswordUsername.TabIndex = 6;
             // 
             // panel5
             // 
@@ -404,209 +609,6 @@
             this.label3.Text = "Login";
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
-            // resetPasswordPanel
-            // 
-            this.resetPasswordPanel.BackColor = System.Drawing.Color.White;
-            this.resetPasswordPanel.Controls.Add(this.panel_resetPassword_Step2);
-            this.resetPasswordPanel.Controls.Add(this.panel10);
-            this.resetPasswordPanel.Controls.Add(this.resetpassword_username_error_label);
-            this.resetPasswordPanel.Controls.Add(this.panel9);
-            this.resetPasswordPanel.Controls.Add(this.label8);
-            this.resetPasswordPanel.Controls.Add(this.resetPasswordUsername);
-            this.resetPasswordPanel.Location = new System.Drawing.Point(382, 184);
-            this.resetPasswordPanel.Name = "resetPasswordPanel";
-            this.resetPasswordPanel.Size = new System.Drawing.Size(435, 353);
-            this.resetPasswordPanel.TabIndex = 1;
-            this.resetPasswordPanel.Visible = false;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.panel4.Controls.Add(this.ChangePasswordButton);
-            this.panel4.Location = new System.Drawing.Point(28, 214);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(310, 55);
-            this.panel4.TabIndex = 4;
-            // 
-            // ChangePasswordButton
-            // 
-            this.ChangePasswordButton.AutoSize = true;
-            this.ChangePasswordButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ChangePasswordButton.ForeColor = System.Drawing.Color.White;
-            this.ChangePasswordButton.Location = new System.Drawing.Point(67, 16);
-            this.ChangePasswordButton.Name = "ChangePasswordButton";
-            this.ChangePasswordButton.Size = new System.Drawing.Size(178, 24);
-            this.ChangePasswordButton.TabIndex = 1;
-            this.ChangePasswordButton.Text = "Cambiar contraseña";
-            this.ChangePasswordButton.Click += new System.EventHandler(this.ChangePasswordButton_Click);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(63, 17);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(173, 24);
-            this.label8.TabIndex = 5;
-            this.label8.Text = "Nombre de usuario";
-            // 
-            // resetPasswordUsername
-            // 
-            this.resetPasswordUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetPasswordUsername.Location = new System.Drawing.Point(62, 44);
-            this.resetPasswordUsername.Name = "resetPasswordUsername";
-            this.resetPasswordUsername.Size = new System.Drawing.Size(310, 29);
-            this.resetPasswordUsername.TabIndex = 6;
-            // 
-            // SecretQuestionLabel
-            // 
-            this.SecretQuestionLabel.AutoSize = true;
-            this.SecretQuestionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SecretQuestionLabel.ForeColor = System.Drawing.Color.Black;
-            this.SecretQuestionLabel.Location = new System.Drawing.Point(29, 5);
-            this.SecretQuestionLabel.Name = "SecretQuestionLabel";
-            this.SecretQuestionLabel.Size = new System.Drawing.Size(157, 24);
-            this.SecretQuestionLabel.TabIndex = 7;
-            this.SecretQuestionLabel.Text = "Pregunta secreta:";
-            this.SecretQuestionLabel.Click += new System.EventHandler(this.label9_Click);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(29, 64);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(99, 24);
-            this.label10.TabIndex = 9;
-            this.label10.Text = "Respuesta";
-            // 
-            // SecretAnswerInput
-            // 
-            this.SecretAnswerInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SecretAnswerInput.Location = new System.Drawing.Point(28, 99);
-            this.SecretAnswerInput.Name = "SecretAnswerInput";
-            this.SecretAnswerInput.Size = new System.Drawing.Size(310, 29);
-            this.SecretAnswerInput.TabIndex = 10;
-            // 
-            // SecretQuestionLabel_Value
-            // 
-            this.SecretQuestionLabel_Value.AutoSize = true;
-            this.SecretQuestionLabel_Value.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.SecretQuestionLabel_Value.ForeColor = System.Drawing.Color.Black;
-            this.SecretQuestionLabel_Value.Location = new System.Drawing.Point(29, 35);
-            this.SecretQuestionLabel_Value.Name = "SecretQuestionLabel_Value";
-            this.SecretQuestionLabel_Value.Size = new System.Drawing.Size(0, 24);
-            this.SecretQuestionLabel_Value.TabIndex = 11;
-            // 
-            // panel_resetPassword_Step2
-            // 
-            this.panel_resetPassword_Step2.Controls.Add(this.resetPassword_answer_error_label);
-            this.panel_resetPassword_Step2.Controls.Add(this.resetpassword_newpassword_error_label);
-            this.panel_resetPassword_Step2.Controls.Add(this.resetpassword_newPassword_Input);
-            this.panel_resetPassword_Step2.Controls.Add(this.label2);
-            this.panel_resetPassword_Step2.Controls.Add(this.SecretQuestionLabel);
-            this.panel_resetPassword_Step2.Controls.Add(this.panel4);
-            this.panel_resetPassword_Step2.Controls.Add(this.SecretAnswerInput);
-            this.panel_resetPassword_Step2.Controls.Add(this.label10);
-            this.panel_resetPassword_Step2.Controls.Add(this.SecretQuestionLabel_Value);
-            this.panel_resetPassword_Step2.Location = new System.Drawing.Point(34, 79);
-            this.panel_resetPassword_Step2.Name = "panel_resetPassword_Step2";
-            this.panel_resetPassword_Step2.Size = new System.Drawing.Size(365, 266);
-            this.panel_resetPassword_Step2.TabIndex = 12;
-            this.panel_resetPassword_Step2.Visible = false;
-            // 
-            // panel9
-            // 
-            this.panel9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.panel9.Controls.Add(this.verifyUser_Button);
-            this.panel9.Location = new System.Drawing.Point(62, 84);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(310, 55);
-            this.panel9.TabIndex = 5;
-            // 
-            // verifyUser_Button
-            // 
-            this.verifyUser_Button.AutoSize = true;
-            this.verifyUser_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.verifyUser_Button.ForeColor = System.Drawing.Color.White;
-            this.verifyUser_Button.Location = new System.Drawing.Point(84, 15);
-            this.verifyUser_Button.Name = "verifyUser_Button";
-            this.verifyUser_Button.Size = new System.Drawing.Size(135, 24);
-            this.verifyUser_Button.TabIndex = 1;
-            this.verifyUser_Button.Text = "Validar usuario";
-            this.verifyUser_Button.Click += new System.EventHandler(this.verifyUser_Button_Click);
-            // 
-            // resetpassword_username_error_label
-            // 
-            this.resetpassword_username_error_label.AutoSize = true;
-            this.resetpassword_username_error_label.ForeColor = System.Drawing.Color.Red;
-            this.resetpassword_username_error_label.Location = new System.Drawing.Point(301, 28);
-            this.resetpassword_username_error_label.Name = "resetpassword_username_error_label";
-            this.resetpassword_username_error_label.Size = new System.Drawing.Size(0, 13);
-            this.resetpassword_username_error_label.TabIndex = 13;
-            this.resetpassword_username_error_label.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // resetpassword_newPassword_Input
-            // 
-            this.resetpassword_newPassword_Input.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.resetpassword_newPassword_Input.Location = new System.Drawing.Point(27, 173);
-            this.resetpassword_newPassword_Input.Name = "resetpassword_newPassword_Input";
-            this.resetpassword_newPassword_Input.PasswordChar = '*';
-            this.resetpassword_newPassword_Input.Size = new System.Drawing.Size(310, 29);
-            this.resetpassword_newPassword_Input.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(28, 138);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(163, 24);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Nueva contraseña";
-            // 
-            // resetpassword_newpassword_error_label
-            // 
-            this.resetpassword_newpassword_error_label.AutoSize = true;
-            this.resetpassword_newpassword_error_label.ForeColor = System.Drawing.Color.Red;
-            this.resetpassword_newpassword_error_label.Location = new System.Drawing.Point(231, 154);
-            this.resetpassword_newpassword_error_label.Name = "resetpassword_newpassword_error_label";
-            this.resetpassword_newpassword_error_label.Size = new System.Drawing.Size(0, 13);
-            this.resetpassword_newpassword_error_label.TabIndex = 14;
-            // 
-            // panel10
-            // 
-            this.panel10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.panel10.Controls.Add(this.label9);
-            this.panel10.Location = new System.Drawing.Point(12, 14);
-            this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(29, 27);
-            this.panel10.TabIndex = 6;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(1, 1);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(21, 24);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "<";
-            this.label9.Click += new System.EventHandler(this.label9_Click_1);
-            // 
-            // resetPassword_answer_error_label
-            // 
-            this.resetPassword_answer_error_label.AutoSize = true;
-            this.resetPassword_answer_error_label.ForeColor = System.Drawing.Color.Red;
-            this.resetPassword_answer_error_label.Location = new System.Drawing.Point(231, 81);
-            this.resetPassword_answer_error_label.Name = "resetPassword_answer_error_label";
-            this.resetPassword_answer_error_label.Size = new System.Drawing.Size(0, 13);
-            this.resetPassword_answer_error_label.TabIndex = 15;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -623,6 +625,16 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.LoginPanel.ResumeLayout(false);
+            this.resetPasswordPanel.ResumeLayout(false);
+            this.resetPasswordPanel.PerformLayout();
+            this.panel_resetPassword_Step2.ResumeLayout(false);
+            this.panel_resetPassword_Step2.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel10.ResumeLayout(false);
+            this.panel10.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             this.LoginButton.ResumeLayout(false);
@@ -631,16 +643,6 @@
             this.panel7.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.resetPasswordPanel.ResumeLayout(false);
-            this.resetPasswordPanel.PerformLayout();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            this.panel_resetPassword_Step2.ResumeLayout(false);
-            this.panel_resetPassword_Step2.PerformLayout();
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
-            this.panel10.ResumeLayout(false);
-            this.panel10.PerformLayout();
             this.ResumeLayout(false);
 
         }

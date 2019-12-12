@@ -48,7 +48,7 @@
             this.actualLab});
             this.assestTransferHsitoryTable.Enabled = false;
             this.assestTransferHsitoryTable.Location = new System.Drawing.Point(154, 54);
-            this.assestTransferHsitoryTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestTransferHsitoryTable.Margin = new System.Windows.Forms.Padding(2);
             this.assestTransferHsitoryTable.Name = "assestTransferHsitoryTable";
             this.assestTransferHsitoryTable.RowHeadersWidth = 51;
             this.assestTransferHsitoryTable.RowTemplate.Height = 24;
@@ -98,9 +98,10 @@
             this.ClientSize = new System.Drawing.Size(909, 640);
             this.Controls.Add(this.assestTransferHsitoryTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "TransferHistory";
             this.Text = "TransferHistory";
+            this.Load += new System.EventHandler(this.TransferHistory_Load);
             ((System.ComponentModel.ISupportInitialize)(this.assestTransferHsitoryTable)).EndInit();
             this.ResumeLayout(false);
 

@@ -101,16 +101,11 @@ namespace AssetsManagement
             }
         }
 
-        public static void DeleteUserToDB(UserEntity userEntity)
-        {
-            throw new NotImplementedException();
-        }
-
         /// <summary>
         /// Deletes an UserEntity from the Database, searches for the corresponding UserEntity and deletes it
         /// </summary>
         /// <param name="user"></param>
-        public static void DeleteUserToDB(User user)
+        public static void DeleteUserToDB(UserEntity user)
         {
             //Opens a connection with the DB
             using (DbModel db = new DbModel())

@@ -33,5 +33,10 @@ namespace ManejoDeActivos
             this.assetTransferHistoryEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet2.AssetTransferHistoryEntities);
 
         }
+
+        private void TransferAssetBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

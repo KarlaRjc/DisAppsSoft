@@ -140,11 +140,11 @@ namespace AssetsManagement
 
             AssetTransferHistory assetTransferHistory = new AssetTransferHistory();
 
-            AssetEntity assetEntity = Asset.CreateAsset(4, "modif4Desc", "4Bra", "Mod", "Ser", "Stat");
+            AssetEntity assetEntity = Asset.CreateAsset("modif4Desc", "4Bra", "Mod", "Ser", "Stat");
             DateTime dateTime = DateTime.Now;
             LabEntity labentityfrom = Lab.CreateLab(30, "modiLab 3");
             LabEntity labentityto = Lab.CreateLab(20, "modifLab 2");
-            UserEntity transfereduserentity = User.CreateUser(7, "Pruebamodif", EnumRole.Admin, "user", "password");
+            UserEntity transfereduserentity = User.CreateUser(7, "Pruebamodif", EnumRole.Administrador, "user", "password");
             string description = "ModifMOviendo asset";
 
             assetTransferHistory.id = 1;

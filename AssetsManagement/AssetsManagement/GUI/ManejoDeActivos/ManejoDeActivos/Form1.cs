@@ -108,13 +108,13 @@ namespace ManejoDeActivos
                 var role = LoginController.currentUser.role;
                 switch (role)
                 {
-                    case AssetsManagement.EnumRole.Admin:
+                    case AssetsManagement.EnumRole.Administrador:
                         break;
-                    case AssetsManagement.EnumRole.Teacher:
+                    case AssetsManagement.EnumRole.Profesor:
                         assestManagmentBtn.Hide();
                         userManagmentBtn.Hide();
                         break;
-                    case AssetsManagement.EnumRole.Gatherer:
+                    case AssetsManagement.EnumRole.Recolector:
                         assestManagmentBtn.Hide();
                         userManagmentBtn.Hide();
                         transferHisotryBtn.Hide();

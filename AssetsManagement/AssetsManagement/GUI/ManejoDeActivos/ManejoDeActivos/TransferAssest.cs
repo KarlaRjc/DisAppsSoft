@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AssetsManagement;
+using ManejoDeActivos.Controller;
+using ManejoDeActivos.Controller.Sanitize;
+using ManejoDeActivos.Controller.Sanitize.DefinedSanitizers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +16,8 @@ namespace ManejoDeActivos
 {
     public partial class TransferAssest : Form
     {
+        AssetManagmentController assetManagmentController = new AssetManagmentController();
+
         public TransferAssest()
         {
             InitializeComponent();
@@ -36,6 +42,14 @@ namespace ManejoDeActivos
 
         private void TransferAssetBtn_Click(object sender, EventArgs e)
         {
+            var destinationlab = labCbx.SelectedValue;
+            int selectedrowindex = assetsTransferTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = assetsTransferTable.Rows[selectedrowindex];
+            string id = Convert.ToString(selectedRow.Cells[0].Value);
+            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(id);
+            asset.location = destinationlab;
+
+
 
         }
     }

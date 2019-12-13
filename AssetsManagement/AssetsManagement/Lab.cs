@@ -41,5 +41,15 @@ namespace AssetsManagement
 
             return labentity;
         }
+
+        public static LabEntity GetLabById(int id)
+        {
+            LabEntity lab = null;
+            using (DbModel db = new DbModel())
+            {
+                lab = db.Lab.Where(x => x.id == id).FirstOrDefault();
+            }
+            return lab;
+        }
     }
 }

@@ -90,8 +90,7 @@ namespace AssetsManagement
             string description = asset.description;
             LabEntity fromLab = Lab.GetLabById(idLab);
             LabEntity tolabtransf = Lab.GetLabById(toLab);
-            AssetTransferHistory.CreateAssetTransferHistory(asset, DateTime.Now, fromLab, tolabtransf, user, description);
-
+            AssetTransferHistoryEntity assettransferred = AssetTransferHistory.CreateAssetTransferHistory(asset, DateTime.Now, fromLab, tolabtransf, user, description);
         }
     }
 }

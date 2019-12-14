@@ -1,4 +1,8 @@
-﻿using System;
+﻿using AssetsManagement;
+using ManejoDeActivos.Controller;
+using ManejoDeActivos.Controller.Sanitize;
+using ManejoDeActivos.Controller.Sanitize.DefinedSanitizers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +19,14 @@ namespace ManejoDeActivos
         public TransferHistory()
         {
             InitializeComponent();
+        }
+
+        public void UpdateTransferHistoryTable()
+        {
+            using (DbModel db = new DbModel())
+            {
+                assestTransferHsitoryTable.DataSource = db.AssetTransferHistory.ToList<AssetTransferHistoryEntity>();
+            }
         }
 
         private void TransferHistory_Load(object sender, EventArgs e)

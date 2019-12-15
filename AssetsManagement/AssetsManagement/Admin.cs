@@ -34,22 +34,6 @@ namespace AssetsManagement
             UserEntity.DeleteUserToDB(user);
         }
 
-        public bool EditAsset(AssetEntity asset)
-        {
-            return false;
-        }
-
-        public bool CreateAsset(AssetEntity asset)
-        {
-            return false;
-        }
-
-        public static void DeleteAsset(string serial)
-        {
-            AssetEntity asset = Asset.GetAssetBySerialNumber(serial);
-            AssetEntity.DeleteAssetToDB(asset);
-        }
-
         public override bool ChangePassword()
         {
             return false;

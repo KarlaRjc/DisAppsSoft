@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace ManejoDeActivos.Controller
 {
-    class AssetManagmentController
+    public class AssetManagmentController
     {
         public void CreateAsset(string description, string brand, string model, string series, string state)
         {
@@ -24,7 +24,16 @@ namespace ManejoDeActivos.Controller
 
         public void RemoveAsset(string asset)
         {
-            Admin.DeleteAsset(asset);
+            AdminAsset.DeleteAsset(asset);
+        }
+
+        public void ModifyAsset(string description, string brand, string model, string series, string state)
+        {
+            bool wasSuccessful = AdminAsset.ModifyAsset(description, brand, model, series, state);
+            if (!wasSuccessful)
+            {
+                throw new Exception();
+            }
         }
     }
 }

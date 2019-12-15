@@ -45,23 +45,17 @@ namespace AssetsManagement
         /// Modifies an existing AssetEntity in the Database, searches for the corresponding AssetEntity and modifies it
         /// </summary>
         /// <param name="asset"></param>
-        public static void ModifyAssetToDB(Asset asset)
+        public static void ModifyAssetToDB(AssetEntity asset)
         {
             //Opens a conection with the DB
             using (DbModel db = new DbModel())
+
             {
-                //Searches for the assetentity related to that asset id
-                AssetEntity assetentity = db.Asset.SingleOrDefault(a => a.id == asset.id);
-
-                //Calls ModifyAsset function, assigns to Assetentity the new parameters
-                assetentity = Asset.ModifyAsset(asset, assetentity);
-
-                //Modifies the record in the DB
-                db.Entry(assetentity).State = System.Data.Entity.EntityState.Modified;
-
-                //Saves the changes
+                db.Entry(asset).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
+
+
         }
 
 

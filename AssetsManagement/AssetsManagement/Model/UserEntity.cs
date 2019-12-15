@@ -82,7 +82,7 @@ namespace AssetsManagement
         /// Modifies an existing UserEntity in the Database, searches for the corresponding UserEntity and modifies it
         /// </summary>
         /// <param name="user"></param>
-        public static void ModifyUserToDB(User user)
+        public static void ModifyUserToDB(UserEntity user)
         {
             //Opens a conection with the DB
             using (DbModel db = new DbModel())
@@ -91,7 +91,7 @@ namespace AssetsManagement
                 UserEntity userentity = db.User.SingleOrDefault(d => d.id == user.id);
 
                 //Calls ModifyUser function, assigns to userentity the new parameters
-                userentity = User.ModifyUser(user, userentity);
+                userentity = User.ModifyUser(userentity);
 
                 //Modifies the record in the DB
                 db.Entry(userentity).State = System.Data.Entity.EntityState.Modified;

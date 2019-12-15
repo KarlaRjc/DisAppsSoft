@@ -55,15 +55,11 @@ namespace AssetsManagement
         /// <param name="user"></param>
         /// <param name="userentity"></param>
         /// <returns></returns>
-        public static UserEntity ModifyUser(User user, UserEntity userentity)
+        public static UserEntity ModifyUser(UserEntity userentity)
         {
-            userentity.name = user.name;
-            userentity.role = user.role;
-            userentity.username = user.username;
-            userentity.password = user.password;
-
             return userentity;
         }
+
         public static string GetSecretQuestionByUsername(string username)
         {
             using (DbModel db = new DbModel())

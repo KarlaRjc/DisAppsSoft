@@ -119,6 +119,47 @@ namespace ManejoDeActivos
 
         private void label6_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void editUserBtn_Click(object sender, EventArgs e)
+        {
+
+            if (usersTable.SelectedCells.Count > 0)
+            {
+                int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+                DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+
+                string name = Convert.ToString(selectedRow.Cells["Nombre"].Value);
+                string userName = Convert.ToString(selectedRow.Cells["Usuario"].Value);
+                string passwordCapture = Convert.ToString(selectedRow.Cells["Contraseña"].Value);
+                string rol = Convert.ToString(selectedRow.Cells["Rol"].Value);
+                string question = Convert.ToString(selectedRow.Cells["Seleccione pregunta"].Value);
+                string answer = Convert.ToString(selectedRow.Cells["Seleccione respuesta"].Value);
+
+
+
+                string nameUser = nameUserTxt.Text;
+                string username = usernameTxt.Text;
+                string password = passwordTxt.Text;
+                string userRole = (string)((userRolCbx.SelectedItem == null) ? "" : userRolCbx.SelectedItem);
+                string userQuestion = (string)((userQuestionCbx.SelectedItem == null) ? "" : userQuestionCbx.SelectedItem);
+                string userAnswer = userAnswerTxt.Text;
+
+                Boolean usernameFound = userManagmenteController.VerifyUsername(username);
+
+                if (!usernameFound)
+                {
+                    userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+                    outputUserLbl.Text = "";
+                    ClearForm();
+                    MessageBox.Show("Usuario modificado Correctamente");
+                }
+                else
+                {
+                    outputUserLbl.Text = "Nombre de usuario ya existe";
+                }
+            }
 
         }
     }

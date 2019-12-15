@@ -68,7 +68,7 @@
             // 
             this.nameUserTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameUserTxt.Location = new System.Drawing.Point(584, 72);
-            this.nameUserTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameUserTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nameUserTxt.Name = "nameUserTxt";
             this.nameUserTxt.Size = new System.Drawing.Size(216, 26);
             this.nameUserTxt.TabIndex = 1;
@@ -82,7 +82,7 @@
             "Profesor",
             "Recopilador"});
             this.userRolCbx.Location = new System.Drawing.Point(584, 292);
-            this.userRolCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userRolCbx.Margin = new System.Windows.Forms.Padding(2);
             this.userRolCbx.Name = "userRolCbx";
             this.userRolCbx.Size = new System.Drawing.Size(216, 28);
             this.userRolCbx.TabIndex = 4;
@@ -91,7 +91,7 @@
             // 
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTxt.Location = new System.Drawing.Point(584, 218);
-            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(216, 26);
             this.passwordTxt.TabIndex = 3;
@@ -100,7 +100,7 @@
             // 
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTxt.Location = new System.Drawing.Point(584, 145);
-            this.usernameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(216, 26);
             this.usernameTxt.TabIndex = 2;
@@ -169,7 +169,7 @@
             this.roleDataGridViewTextBoxColumn});
             this.usersTable.DataSource = this.userEntitiesBindingSource;
             this.usersTable.Location = new System.Drawing.Point(54, 74);
-            this.usersTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usersTable.Margin = new System.Windows.Forms.Padding(2);
             this.usersTable.Name = "usersTable";
             this.usersTable.ReadOnly = true;
             this.usersTable.RowHeadersWidth = 51;
@@ -285,7 +285,7 @@
             this.removeUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EliminarBtn;
             this.removeUserBtn.Location = new System.Drawing.Point(216, 451);
-            this.removeUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.removeUserBtn.Name = "removeUserBtn";
             this.removeUserBtn.Size = new System.Drawing.Size(106, 41);
             this.removeUserBtn.TabIndex = 13;
@@ -298,11 +298,12 @@
             this.editUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
             this.editUserBtn.Location = new System.Drawing.Point(584, 521);
-            this.editUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editUserBtn.Name = "editUserBtn";
             this.editUserBtn.Size = new System.Drawing.Size(106, 41);
             this.editUserBtn.TabIndex = 12;
             this.editUserBtn.UseVisualStyleBackColor = true;
+            this.editUserBtn.Click += new System.EventHandler(this.editUserBtn_Click);
             // 
             // addUserBtn
             // 
@@ -310,7 +311,7 @@
             this.addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
             this.addUserBtn.Location = new System.Drawing.Point(693, 521);
-            this.addUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addUserBtn.Name = "addUserBtn";
             this.addUserBtn.Size = new System.Drawing.Size(106, 41);
             this.addUserBtn.TabIndex = 9;
@@ -423,7 +424,7 @@
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.nameUserTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserManagment";
             this.Text = "UserManagment";
             this.Load += new System.EventHandler(this.UserManagment_Load);

@@ -370,7 +370,7 @@
             this.editAssestBtn.Size = new System.Drawing.Size(141, 52);
             this.editAssestBtn.TabIndex = 29;
             this.editAssestBtn.UseVisualStyleBackColor = true;
-            this.editAssestBtn.Click += new System.EventHandler(this.editAssestBtn_Click);
+            
             // 
             // addAssestBtn
             // 

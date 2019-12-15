@@ -10,35 +10,21 @@ namespace ManejoDeActivos.Controller
 {
     class UserManagmentController
     {
-        //Allows to create user entity according to the role and then add it to the database
-        public void CreateUser(string nameUser, string username, string password, string userRole, string userQuestion, string userAnswer)
+        //Creates a new user calling the Admin.CreateUser method. It will return boolean if new user was able to create 
+        public bool CreateUser(string nameUser, string username, string password, string userRole, string userQuestion, string userAnswer)
         {
-            switch (userRole)
+            bool userCreated = false;
+
+            if (!VerifyUsername(username))
             {
-                case "Administrador":
-                    //Creates the user
-                    UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Administrador, username, EncryptPassword(password), userQuestion, userAnswer);
+                UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, mapInputToEnumRole(userRole), username, EncryptPassword(password), userQuestion, userAnswer);
+                UserEntity.CreateUserToDB(userentityAdmin);
 
-                    //Adds user to the database
-                    UserEntity.CreateUserToDB(userentityAdmin);
-                    break;
-                case "Profesor":
-                    //Creates the user
-                    UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Profesor, username, EncryptPassword(password), userQuestion, userAnswer);
-
-                    //Adds user to the database
-                    UserEntity.CreateUserToDB(userentityTeacher);
-                    break;
-                case "Observador":
-                    //Creates the user
-                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Recopilador, username, EncryptPassword(password), userQuestion, userAnswer);
-
-                    //Adds user to the database
-                    UserEntity.CreateUserToDB(userentityGatherer);
-                    break;
-                default:
-                    break;
+                userCreated = true;
             }
+
+            return userCreated;
+
         }
         public static string EncryptPassword(string passwordEncryted)
         {

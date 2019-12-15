@@ -60,9 +60,9 @@ namespace ManejoDeActivos
             string userQuestion = (string) ((userQuestionCbx.SelectedItem == null)? "": userQuestionCbx.SelectedItem);
             string userAnswer = userAnswerTxt.Text;
 
-            Boolean usernameFound = userManagmenteController.VerifyUsername(username);
+            Boolean userCreated = userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
 
-            if (!usernameFound)
+            if (userCreated)
             {
                 userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
                 outputUserLbl.Text = "";

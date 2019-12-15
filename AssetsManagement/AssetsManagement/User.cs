@@ -82,5 +82,10 @@ namespace AssetsManagement
             }
             return user;
         }
+
+        public static UserEntity ModifyUser(UserEntity userentity)
+        {
+            return userentity;
+        }
     }
 }

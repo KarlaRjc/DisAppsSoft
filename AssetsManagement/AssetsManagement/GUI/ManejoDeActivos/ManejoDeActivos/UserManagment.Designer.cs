@@ -304,6 +304,7 @@
             this.editUserBtn.Size = new System.Drawing.Size(106, 41);
             this.editUserBtn.TabIndex = 12;
             this.editUserBtn.UseVisualStyleBackColor = true;
+            this.editUserBtn.Click += new System.EventHandler(this.editUserBtn_Click);
             // 
             // addUserBtn
             // 

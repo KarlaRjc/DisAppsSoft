@@ -87,5 +87,19 @@ namespace AssetsManagement
         {
             return userentity;
         }
+
+
+        public static void TransferAsset(string serial, string username, int idLab, int toLab)
+        {
+            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(serial);
+            UserEntity user = UserEntity.GetUserByUsername(username);
+            string description = asset.description;
+            LabEntity fromLab = Lab.GetLabById(idLab);
+            LabEntity tolabtransf = Lab.GetLabById(toLab);
+
+            AssetTransferHistoryEntity assettransferred = AssetTransferHistory.CreateAssetTransferHistory(asset, DateTime.Now, fromLab, tolabtransf, user, description);
+
+            AssetTransferHistoryEntity.CreateAssetTransferHistoryEntityToDB(assettransferred);
+        }
     }
 }

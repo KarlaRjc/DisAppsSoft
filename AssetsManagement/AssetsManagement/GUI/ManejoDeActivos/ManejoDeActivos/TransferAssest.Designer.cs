@@ -95,10 +95,10 @@
             this.TransferAssetBtn.FlatAppearance.BorderSize = 0;
             this.TransferAssetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TransferAssetBtn.Image = global::ManejoDeActivos.Properties.Resources.TransferirBtn;
-            this.TransferAssetBtn.Location = new System.Drawing.Point(888, 429);
+            this.TransferAssetBtn.Location = new System.Drawing.Point(908, 434);
             this.TransferAssetBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TransferAssetBtn.Name = "TransferAssetBtn";
-            this.TransferAssetBtn.Size = new System.Drawing.Size(184, 65);
+            this.TransferAssetBtn.Size = new System.Drawing.Size(149, 59);
             this.TransferAssetBtn.TabIndex = 13;
             this.TransferAssetBtn.UseVisualStyleBackColor = true;
             this.TransferAssetBtn.Click += new System.EventHandler(this.TransferAssetBtn_Click);

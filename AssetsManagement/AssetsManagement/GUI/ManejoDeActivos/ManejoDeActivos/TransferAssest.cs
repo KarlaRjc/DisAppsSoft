@@ -42,13 +42,16 @@ namespace ManejoDeActivos
 
         private void TransferAssetBtn_Click(object sender, EventArgs e)
         {
-            var destinationlab = labCbx.SelectedValue;
+            int labid = labCbx.SelectedIndex;
             int selectedrowindex = assetsTransferTable.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = assetsTransferTable.Rows[selectedrowindex];
             string id = Convert.ToString(selectedRow.Cells[0].Value);
-            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(id);
-            
+            int fromlab = 0;
+            string username = LoginController.currentUser.username;
 
+            User.TransferAsset(id, username, fromlab, labid);
+
+            MessageBox.Show("Activo Transferido Correctamente");
 
 
         }

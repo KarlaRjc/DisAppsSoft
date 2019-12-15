@@ -90,6 +90,7 @@ namespace AssetsManagement
             }
             return wasSuccessful;
         }
+
         //Checks if serial number already exists
         public static Boolean VerifySerialNumber(string serial)
         {

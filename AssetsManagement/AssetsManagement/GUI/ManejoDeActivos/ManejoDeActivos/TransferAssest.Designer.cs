@@ -43,6 +43,8 @@
             this.transferDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assetsTransferTable = new System.Windows.Forms.DataGridView();
+            this.transferDescriptionTxt = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.assetTransferHistoryEntitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetsTransferTable)).BeginInit();
@@ -63,12 +65,11 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(632, 126);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(864, 164);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(90, 20);
+            this.label1.Size = new System.Drawing.Size(208, 25);
             this.label1.TabIndex = 7;
-            this.label1.Text = "Laboratorio";
+            this.label1.Text = "Laboratorio de Destino";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // labCbx
@@ -83,10 +84,10 @@
             "4",
             "5",
             "6"});
-            this.labCbx.Location = new System.Drawing.Point(631, 156);
-            this.labCbx.Margin = new System.Windows.Forms.Padding(2);
+            this.labCbx.Location = new System.Drawing.Point(812, 192);
+            this.labCbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labCbx.Name = "labCbx";
-            this.labCbx.Size = new System.Drawing.Size(89, 28);
+            this.labCbx.Size = new System.Drawing.Size(321, 33);
             this.labCbx.TabIndex = 8;
             // 
             // TransferAssetBtn
@@ -94,10 +95,10 @@
             this.TransferAssetBtn.FlatAppearance.BorderSize = 0;
             this.TransferAssetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TransferAssetBtn.Image = global::ManejoDeActivos.Properties.Resources.TransferirBtn;
-            this.TransferAssetBtn.Location = new System.Drawing.Point(605, 202);
-            this.TransferAssetBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.TransferAssetBtn.Location = new System.Drawing.Point(888, 429);
+            this.TransferAssetBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TransferAssetBtn.Name = "TransferAssetBtn";
-            this.TransferAssetBtn.Size = new System.Drawing.Size(138, 53);
+            this.TransferAssetBtn.Size = new System.Drawing.Size(184, 65);
             this.TransferAssetBtn.TabIndex = 13;
             this.TransferAssetBtn.UseVisualStyleBackColor = true;
             this.TransferAssetBtn.Click += new System.EventHandler(this.TransferAssetBtn_Click);
@@ -183,27 +184,49 @@
             this.transferedFromLabidDataGridViewTextBoxColumn,
             this.transferedToLabidDataGridViewTextBoxColumn});
             this.assetsTransferTable.DataSource = this.assetTransferHistoryEntitiesBindingSource;
-            this.assetsTransferTable.Location = new System.Drawing.Point(57, 90);
-            this.assetsTransferTable.Margin = new System.Windows.Forms.Padding(2);
+            this.assetsTransferTable.Location = new System.Drawing.Point(76, 111);
+            this.assetsTransferTable.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.assetsTransferTable.Name = "assetsTransferTable";
             this.assetsTransferTable.ReadOnly = true;
             this.assetsTransferTable.RowHeadersWidth = 51;
             this.assetsTransferTable.RowTemplate.Height = 24;
-            this.assetsTransferTable.Size = new System.Drawing.Size(504, 321);
+            this.assetsTransferTable.Size = new System.Drawing.Size(672, 395);
             this.assetsTransferTable.TabIndex = 0;
+            // 
+            // transferDescriptionTxt
+            // 
+            this.transferDescriptionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.transferDescriptionTxt.Location = new System.Drawing.Point(812, 272);
+            this.transferDescriptionTxt.Multiline = true;
+            this.transferDescriptionTxt.Name = "transferDescriptionTxt";
+            this.transferDescriptionTxt.Size = new System.Drawing.Size(321, 136);
+            this.transferDescriptionTxt.TabIndex = 14;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(857, 244);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(220, 25);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Razón de Transferencia";
             // 
             // TransferAssest
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
-            this.ClientSize = new System.Drawing.Size(896, 605);
+            this.ClientSize = new System.Drawing.Size(1195, 745);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.transferDescriptionTxt);
             this.Controls.Add(this.TransferAssetBtn);
             this.Controls.Add(this.labCbx);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.assetsTransferTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TransferAssest";
             this.Text = "TransferAssest";
             this.Load += new System.EventHandler(this.TransferAssest_Load);
@@ -230,5 +253,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn transferDateDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridView assetsTransferTable;
+        private System.Windows.Forms.TextBox transferDescriptionTxt;
+        private System.Windows.Forms.Label label2;
     }
 }

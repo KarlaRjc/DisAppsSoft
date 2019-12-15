@@ -75,6 +75,7 @@
             // 
             // userRolCbx
             // 
+            this.userRolCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.userRolCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userRolCbx.FormattingEnabled = true;
             this.userRolCbx.Items.AddRange(new object[] {
@@ -176,6 +177,7 @@
             this.usersTable.RowTemplate.Height = 24;
             this.usersTable.Size = new System.Drawing.Size(428, 349);
             this.usersTable.TabIndex = 10;
+            this.usersTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersTable_CellClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 

@@ -162,5 +162,45 @@ namespace ManejoDeActivos
             }
 
         }
+
+        public void editUserBtn_Click(object sender, EventArgs e)
+        {
+
+            if (usersTable.SelectedCells.Count > 0)
+            {
+                string nameUser = nameUserTxt.Text;
+                string username = usernameTxt.Text;
+                string password = passwordTxt.Text;
+                string userRole = (string)((userRolCbx.SelectedItem == null) ? "" : userRolCbx.SelectedItem);
+                string userQuestion = (string)((userQuestionCbx.SelectedItem == null) ? "" : userQuestionCbx.SelectedItem);
+                string userAnswer = userAnswerTxt.Text;
+
+                Boolean usernameFound = userManagmenteController.VerifyUsername(username);
+
+                if (usernameFound)
+                {
+                    userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+                    outputUserLbl.Text = "";
+                    ClearForm();
+                    MessageBox.Show("Usuario modificado Correctamente");
+                }
+                else
+                {
+                    outputUserLbl.Text = "Nombre de usuario no existe";
+                }
+            }
+
+        }
+
+        private void usersTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+
+            nameUserTxt.Text = Convert.ToString(selectedRow.Cells[0].Value);
+            usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
+            passwordTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
+            userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
+        }
     }
 }

@@ -25,9 +25,9 @@ namespace AssetsManagement
 
         public string secretAnswer { get; set; }
 
-        
 
-       
+
+
         public static bool ChangePassword(string username, string secretAnswer, string newPassword)
         {
             try
@@ -40,11 +40,11 @@ namespace AssetsManagement
                 }
                 return true;
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
                 return false;
             }
-                
+
         }
 
         public void ChangePassword(UserEntity user, string newPassword)
@@ -82,24 +82,20 @@ namespace AssetsManagement
         /// Modifies an existing UserEntity in the Database, searches for the corresponding UserEntity and modifies it
         /// </summary>
         /// <param name="user"></param>
+
         public static void ModifyUserToDB(UserEntity user)
         {
             //Opens a conection with the DB
             using (DbModel db = new DbModel())
+
             {
-                //Searches for the userentity related to that user id
-                UserEntity userentity = db.User.SingleOrDefault(d => d.id == user.id);
-
-                //Calls ModifyUser function, assigns to userentity the new parameters
-                userentity = User.ModifyUser(userentity);
-
-                //Modifies the record in the DB
-                db.Entry(userentity).State = System.Data.Entity.EntityState.Modified;
-
-                //Saves the changes
+                db.Entry(user).State = System.Data.Entity.EntityState.Modified;
                 db.SaveChanges();
             }
+
+
         }
+
 
         /// <summary>
         /// Deletes an UserEntity from the Database, searches for the corresponding UserEntity and deletes it
@@ -132,3 +128,4 @@ namespace AssetsManagement
         }
     }
 }
+

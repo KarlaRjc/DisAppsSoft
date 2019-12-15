@@ -49,17 +49,40 @@ namespace AssetsManagement
             return userentity;
         }
 
+        public static UserEntity mapUserInputToUserEntity(string name, EnumRole role, string username, string password, string userQuestion, string userAnswer)
+        {
+            var user = GetUserByUsername(username);
+            user.name = name;
+            user.role = role;
+            user.username = username; // check if it exists
+            user.password = password;
+            user.secretQuestion = userQuestion;
+            user.secretAnswer = userAnswer;
+            return user;
+        }
+
         /// <summary>
         /// Modifies an existing UserEntity, receives as parameters the UserEntity that wants to be modified and a User with the updated information
         /// </summary>
         /// <param name="user"></param>
         /// <param name="userentity"></param>
         /// <returns></returns>
-        public static UserEntity ModifyUser(UserEntity userentity)
+        public static bool ModifyUser(string name, EnumRole role, string username, string password, string userQuestion, string userAnswer)
         {
-            return userentity;
-        }
+            bool wasSuccessful = false;
+            try
+            {
+                var user = mapUserInputToUserEntity(name, role, username, password, userQuestion, userAnswer);
+                UserEntity.ModifyUserToDB(user);
+                wasSuccessful = true;
+            }
+            catch (Exception)
+            {
 
+                wasSuccessful = false;
+            }
+            return wasSuccessful;
+        }
         public static string GetSecretQuestionByUsername(string username)
         {
             using (DbModel db = new DbModel())
@@ -77,6 +100,20 @@ namespace AssetsManagement
                 user = db.User.Where(x => x.username == username).FirstOrDefault();
             }
             return user;
+        }
+
+        public static void TransferAsset(string serial, string username, int idLab, int toLab)
+        {
+            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(serial);
+            UserEntity user = UserEntity.GetUserByUsername(username);
+            string description = asset.description;
+            LabEntity fromLab = Lab.GetLabById(idLab);
+            LabEntity tolabtransf = Lab.GetLabById(toLab);
+            AssetTransferHistoryEntity assettransferred = AssetTransferHistory.CreateAssetTransferHistory(asset, DateTime.Now, fromLab, tolabtransf, user, description);
+        }
+        public static UserEntity ModifyUser(UserEntity userentity)
+        {
+            return userentity;
         }
     }
 }

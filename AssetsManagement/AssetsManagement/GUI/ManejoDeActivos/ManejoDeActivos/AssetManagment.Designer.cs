@@ -54,8 +54,6 @@
             this.errorAssestStateLbl = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.errorAssestLocationLbl = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.assetLocationCbx = new System.Windows.Forms.ComboBox();
             this.assestModelTxt = new System.Windows.Forms.TextBox();
             this.assestStateCbx = new System.Windows.Forms.ComboBox();
             this.removeAssetBtn = new System.Windows.Forms.Button();
@@ -133,7 +131,7 @@
             this.stateDataGridViewTextBoxColumn});
             this.assetsManagmentTable.DataSource = this.assetEntitiesBindingSource;
             this.assetsManagmentTable.Location = new System.Drawing.Point(42, 60);
-            this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2);
+            this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assetsManagmentTable.Name = "assetsManagmentTable";
             this.assetsManagmentTable.ReadOnly = true;
             this.assetsManagmentTable.RowHeadersWidth = 51;
@@ -254,7 +252,7 @@
             // 
             this.assestBrandTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestBrandTxt.Location = new System.Drawing.Point(613, 206);
-            this.assestBrandTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.assestBrandTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assestBrandTxt.Name = "assestBrandTxt";
             this.assestBrandTxt.Size = new System.Drawing.Size(216, 26);
             this.assestBrandTxt.TabIndex = 21;
@@ -263,7 +261,7 @@
             // 
             this.assestDescriptionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestDescriptionTxt.Location = new System.Drawing.Point(613, 132);
-            this.assestDescriptionTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.assestDescriptionTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assestDescriptionTxt.Name = "assestDescriptionTxt";
             this.assestDescriptionTxt.Size = new System.Drawing.Size(216, 26);
             this.assestDescriptionTxt.TabIndex = 20;
@@ -295,7 +293,7 @@
             // 
             this.assestSerialNumberTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestSerialNumberTxt.Location = new System.Drawing.Point(613, 347);
-            this.assestSerialNumberTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.assestSerialNumberTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assestSerialNumberTxt.Name = "assestSerialNumberTxt";
             this.assestSerialNumberTxt.Size = new System.Drawing.Size(216, 26);
             this.assestSerialNumberTxt.TabIndex = 36;
@@ -334,52 +332,17 @@
             this.errorAssestLocationLbl.Size = new System.Drawing.Size(0, 17);
             this.errorAssestLocationLbl.TabIndex = 44;
             // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.White;
-            this.label10.Location = new System.Drawing.Point(682, 465);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(79, 20);
-            this.label10.TabIndex = 43;
-            this.label10.Text = "Ubicación";
-            // 
-            // assetLocationCbx
-            // 
-            this.assetLocationCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.assetLocationCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.assetLocationCbx.FormattingEnabled = true;
-            this.assetLocationCbx.Items.AddRange(new object[] {
-            "LAB1",
-            "LAB2",
-            "LAB3",
-            "LAB4",
-            "LAB5",
-            "LAB6",
-            "LAB7",
-            "LAB8",
-            "LAB9",
-            "LAB10"});
-            this.assetLocationCbx.Location = new System.Drawing.Point(610, 485);
-            this.assetLocationCbx.Margin = new System.Windows.Forms.Padding(2);
-            this.assetLocationCbx.Name = "assetLocationCbx";
-            this.assetLocationCbx.Size = new System.Drawing.Size(216, 28);
-            this.assetLocationCbx.TabIndex = 45;
-            // 
             // assestModelTxt
             // 
             this.assestModelTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestModelTxt.Location = new System.Drawing.Point(610, 280);
-            this.assestModelTxt.Margin = new System.Windows.Forms.Padding(2);
+            this.assestModelTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assestModelTxt.Name = "assestModelTxt";
             this.assestModelTxt.Size = new System.Drawing.Size(216, 26);
             this.assestModelTxt.TabIndex = 46;
             // 
             // assestStateCbx
             // 
-            this.assestStateCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.assestStateCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestStateCbx.FormattingEnabled = true;
             this.assestStateCbx.Items.AddRange(new object[] {
@@ -389,7 +352,7 @@
             "Reparación",
             "Otro"});
             this.assestStateCbx.Location = new System.Drawing.Point(610, 416);
-            this.assestStateCbx.Margin = new System.Windows.Forms.Padding(2);
+            this.assestStateCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.assestStateCbx.Name = "assestStateCbx";
             this.assestStateCbx.Size = new System.Drawing.Size(216, 28);
             this.assestStateCbx.TabIndex = 47;
@@ -400,7 +363,7 @@
             this.removeAssetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeAssetBtn.Image = global::ManejoDeActivos.Properties.Resources.EliminarBtn;
             this.removeAssetBtn.Location = new System.Drawing.Point(243, 544);
-            this.removeAssetBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.removeAssetBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.removeAssetBtn.Name = "removeAssetBtn";
             this.removeAssetBtn.Size = new System.Drawing.Size(106, 41);
             this.removeAssetBtn.TabIndex = 30;
@@ -413,7 +376,7 @@
             this.editAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
             this.editAssestBtn.Location = new System.Drawing.Point(614, 544);
-            this.editAssestBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.editAssestBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.editAssestBtn.Name = "editAssestBtn";
             this.editAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.editAssestBtn.TabIndex = 29;
@@ -426,7 +389,7 @@
             this.addAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
             this.addAssestBtn.Location = new System.Drawing.Point(722, 544);
-            this.addAssestBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.addAssestBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.addAssestBtn.Name = "addAssestBtn";
             this.addAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.addAssestBtn.TabIndex = 27;
@@ -515,9 +478,7 @@
             this.Controls.Add(this.assestIdNumberTxt_ErrorLabel);
             this.Controls.Add(this.assestStateCbx);
             this.Controls.Add(this.assestModelTxt);
-            this.Controls.Add(this.assetLocationCbx);
             this.Controls.Add(this.errorAssestLocationLbl);
-            this.Controls.Add(this.label10);
             this.Controls.Add(this.errorAssestStateLbl);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.errorAssestSerialNumLbl);
@@ -537,7 +498,7 @@
             this.Controls.Add(this.assestBrandTxt);
             this.Controls.Add(this.assestDescriptionTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "AssetManagment";
             this.Text = "AssetManagment";
             this.Load += new System.EventHandler(this.AssetManagment_Load);
@@ -570,8 +531,6 @@
         private System.Windows.Forms.Label errorAssestStateLbl;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label errorAssestLocationLbl;
-        private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.ComboBox assetLocationCbx;
         private System.Windows.Forms.TextBox assestModelTxt;
         private System.Windows.Forms.ComboBox assestStateCbx;
         private _AssetsManagement_DbModelDataSet1 _AssetsManagement_DbModelDataSet1;

@@ -159,6 +159,10 @@ namespace ManejoDeActivos
             usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
             passwordTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
             userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
+            userQuestionCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
+            userAnswerTxt.Text = Convert.ToString(selectedRow.Cells[5].Value);
         }
+
+
     }
 }

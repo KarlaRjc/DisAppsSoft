@@ -131,13 +131,14 @@
             this.stateDataGridViewTextBoxColumn});
             this.assetsManagmentTable.DataSource = this.assetEntitiesBindingSource;
             this.assetsManagmentTable.Location = new System.Drawing.Point(42, 60);
-            this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assetsManagmentTable.Margin = new System.Windows.Forms.Padding(2);
             this.assetsManagmentTable.Name = "assetsManagmentTable";
             this.assetsManagmentTable.ReadOnly = true;
             this.assetsManagmentTable.RowHeadersWidth = 51;
             this.assetsManagmentTable.RowTemplate.Height = 24;
             this.assetsManagmentTable.Size = new System.Drawing.Size(536, 452);
             this.assetsManagmentTable.TabIndex = 28;
+           // this.assetsManagmentTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.assetsManagmentTable_CellContentClick);
             // 
             // Column1
             // 
@@ -252,7 +253,7 @@
             // 
             this.assestBrandTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestBrandTxt.Location = new System.Drawing.Point(613, 206);
-            this.assestBrandTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestBrandTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestBrandTxt.Name = "assestBrandTxt";
             this.assestBrandTxt.Size = new System.Drawing.Size(216, 26);
             this.assestBrandTxt.TabIndex = 21;
@@ -261,7 +262,7 @@
             // 
             this.assestDescriptionTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestDescriptionTxt.Location = new System.Drawing.Point(613, 132);
-            this.assestDescriptionTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestDescriptionTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestDescriptionTxt.Name = "assestDescriptionTxt";
             this.assestDescriptionTxt.Size = new System.Drawing.Size(216, 26);
             this.assestDescriptionTxt.TabIndex = 20;
@@ -293,7 +294,7 @@
             // 
             this.assestSerialNumberTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestSerialNumberTxt.Location = new System.Drawing.Point(613, 347);
-            this.assestSerialNumberTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestSerialNumberTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestSerialNumberTxt.Name = "assestSerialNumberTxt";
             this.assestSerialNumberTxt.Size = new System.Drawing.Size(216, 26);
             this.assestSerialNumberTxt.TabIndex = 36;
@@ -336,7 +337,7 @@
             // 
             this.assestModelTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestModelTxt.Location = new System.Drawing.Point(610, 280);
-            this.assestModelTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestModelTxt.Margin = new System.Windows.Forms.Padding(2);
             this.assestModelTxt.Name = "assestModelTxt";
             this.assestModelTxt.Size = new System.Drawing.Size(216, 26);
             this.assestModelTxt.TabIndex = 46;
@@ -352,7 +353,7 @@
             "Reparación",
             "Otro"});
             this.assestStateCbx.Location = new System.Drawing.Point(610, 416);
-            this.assestStateCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assestStateCbx.Margin = new System.Windows.Forms.Padding(2);
             this.assestStateCbx.Name = "assestStateCbx";
             this.assestStateCbx.Size = new System.Drawing.Size(216, 28);
             this.assestStateCbx.TabIndex = 47;
@@ -363,7 +364,7 @@
             this.removeAssetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeAssetBtn.Image = global::ManejoDeActivos.Properties.Resources.EliminarBtn;
             this.removeAssetBtn.Location = new System.Drawing.Point(243, 544);
-            this.removeAssetBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeAssetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.removeAssetBtn.Name = "removeAssetBtn";
             this.removeAssetBtn.Size = new System.Drawing.Size(106, 41);
             this.removeAssetBtn.TabIndex = 30;
@@ -376,12 +377,12 @@
             this.editAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
             this.editAssestBtn.Location = new System.Drawing.Point(614, 544);
-            this.editAssestBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editAssestBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editAssestBtn.Name = "editAssestBtn";
             this.editAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.editAssestBtn.TabIndex = 29;
             this.editAssestBtn.UseVisualStyleBackColor = true;
-            this.editAssestBtn.Click += new System.EventHandler(this.editAssestBtn_Click);
+            this.editAssestBtn.Click += new System.EventHandler(this.editAssetBtn_Click);
             // 
             // addAssestBtn
             // 
@@ -389,7 +390,7 @@
             this.addAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
             this.addAssestBtn.Location = new System.Drawing.Point(722, 544);
-            this.addAssestBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addAssestBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addAssestBtn.Name = "addAssestBtn";
             this.addAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.addAssestBtn.TabIndex = 27;
@@ -498,7 +499,7 @@
             this.Controls.Add(this.assestBrandTxt);
             this.Controls.Add(this.assestDescriptionTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "AssetManagment";
             this.Text = "AssetManagment";
             this.Load += new System.EventHandler(this.AssetManagment_Load);

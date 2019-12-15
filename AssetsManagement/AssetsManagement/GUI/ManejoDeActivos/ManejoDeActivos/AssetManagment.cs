@@ -100,9 +100,35 @@ namespace ManejoDeActivos
             }
         }
 
-        private void editAssestBtn_Click(object sender, EventArgs e)
+        public void editAssetBtn_Click(object sender, EventArgs e)
         {
 
+            if (assetsManagmentTable.SelectedCells.Count > 0)
+            {
+                string description = assestDescriptionTxt.Text;
+                string brand = assestBrandTxt.Text;
+                string model = assestModelTxt.Text;
+                string serialNumber = assestSerialNumberTxt.Text;
+                string state = (string)assestStateCbx.SelectedItem;
+
+                Boolean usernameFound = assetManagmentController.VerifySerialNumber(serialNumber);
+
+                if (usernameFound)
+                {
+                    assetManagmentController.ModifyAsset(description, brand, model, serialNumber, state);
+                    ClearForm();
+                    MessageBox.Show("Activo modificado Correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Serial del activo no existe");
+                }
+            }
+
         }
+
+
+
+
     }
 }

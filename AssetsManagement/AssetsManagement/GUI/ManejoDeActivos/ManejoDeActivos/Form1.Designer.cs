@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
             this.transferHisotryBtn = new System.Windows.Forms.Button();
             this.transferAssestBtn = new System.Windows.Forms.Button();
             this.assestManagmentBtn = new System.Windows.Forms.Button();
@@ -94,8 +95,8 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
-            this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.homePanel);
+            this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(1, 2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1154, 710);
@@ -104,6 +105,7 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.transferHisotryBtn);
             this.panel3.Controls.Add(this.transferAssestBtn);
             this.panel3.Controls.Add(this.assestManagmentBtn);
@@ -114,6 +116,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(247, 741);
             this.panel3.TabIndex = 1;
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.Location = new System.Drawing.Point(25, 470);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(177, 60);
+            this.button1.TabIndex = 6;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // transferHisotryBtn
             // 
@@ -189,7 +201,7 @@
             // homePanel
             // 
             this.homePanel.Location = new System.Drawing.Point(245, 67);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(2);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(909, 643);
             this.homePanel.TabIndex = 2;
@@ -615,9 +627,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1028, 609);
-            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.LoginPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "CTP Mario Quiros Sasso";
@@ -698,6 +710,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label resetPassword_answer_error_label;
+        private System.Windows.Forms.Button button1;
     }
 }
 

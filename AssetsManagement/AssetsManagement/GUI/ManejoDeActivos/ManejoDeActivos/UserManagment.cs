@@ -109,13 +109,17 @@ namespace ManejoDeActivos
 
         private void RemoveUserBtn_Click(object sender, EventArgs e)
         {
-            if (usersTable.SelectedCells.Count > 0)
+
+            if(MessageBox.Show("¿Esta seguro(a) que desea eliminar el usuario?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes) 
             {
-                int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells[1].Value);
-                userManagmenteController.RemoveUser(a);
-                UpdateUsersTable();
+                if (usersTable.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+                    string a = Convert.ToString(selectedRow.Cells[1].Value);
+                    userManagmenteController.RemoveUser(a);
+                    UpdateUsersTable();
+                }
             }
         }
 

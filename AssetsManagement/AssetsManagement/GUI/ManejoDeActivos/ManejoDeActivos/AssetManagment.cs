@@ -90,14 +90,20 @@ namespace ManejoDeActivos
 
         private void RemoveAssetBtn_Click(object sender, EventArgs e)
         {
-            if (assetsManagmentTable.SelectedCells.Count > 0)
+
+            if (MessageBox.Show("¿Esta seguro(a) que desea eliminar el activo?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
-                string serial = Convert.ToString(selectedRow.Cells[5].Value);
-                assetManagmentController.RemoveAsset(serial);
-                UpdateAssetsTable();
+                if (assetsManagmentTable.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
+                    string serial = Convert.ToString(selectedRow.Cells[5].Value);
+                    assetManagmentController.RemoveAsset(serial);
+                    UpdateAssetsTable();
+                }
+
             }
+
         }
 
         private void editAssestBtn_Click(object sender, EventArgs e)

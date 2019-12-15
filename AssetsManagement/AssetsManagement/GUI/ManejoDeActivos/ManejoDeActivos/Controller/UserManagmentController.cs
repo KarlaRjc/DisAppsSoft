@@ -69,26 +69,26 @@ namespace ManejoDeActivos.Controller
             Admin.DeleteUser(username);
         }
 
-        //Allows to create user entity according to the role and then add it to the database
+        //Allows to modify user entity according to the role and then add it to the database
         public void ModifyUser(string nameUser, string username, string password, string userRole, string userQuestion, string userAnswer)
         {
             switch (userRole)
             {
                 case "Administrador":
                     //Creates the user
-                    UserEntity userAdmin = Admin.CreateUser(7, nameUser, EnumRole.Admin, username, EncryptPassword(password), userQuestion, userAnswer);
+                    UserEntity userAdmin = Admin.CreateUser(7, nameUser, EnumRole.Administrador, username, EncryptPassword(password), userQuestion, userAnswer);
                     UserEntity.ModifyUserToDB(userAdmin);
 
                     break;
                 case "Profesor":
                     //Creates the user
-                    UserEntity userTeacher = Admin.CreateUser(7, nameUser, EnumRole.Teacher, username, EncryptPassword(password), userQuestion, userAnswer);
+                    UserEntity userTeacher = Admin.CreateUser(7, nameUser, EnumRole.Profesor, username, EncryptPassword(password), userQuestion, userAnswer);
                     UserEntity.ModifyUserToDB(userTeacher);
 
                     break;
                 case "Observador":
                     //Creates the user
-                    UserEntity userGatherer = Admin.CreateUser(7, nameUser, EnumRole.Gatherer, username, EncryptPassword(password), userQuestion, userAnswer);
+                    UserEntity userGatherer = Admin.CreateUser(7, nameUser, EnumRole.Recopilador, username, EncryptPassword(password), userQuestion, userAnswer);
                     UserEntity.ModifyUserToDB(userGatherer);
 
                     break;

@@ -103,6 +103,16 @@ namespace ManejoDeActivos.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap LimpiarFormularioBtn {
+            get {
+                object obj = ResourceManager.GetObject("LimpiarFormularioBtn", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ManejoActivosBtn {
             get {
                 object obj = ResourceManager.GetObject("ManejoActivosBtn", resourceCulture);

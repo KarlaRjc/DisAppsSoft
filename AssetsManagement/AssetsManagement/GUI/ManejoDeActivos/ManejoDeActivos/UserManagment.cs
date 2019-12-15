@@ -67,6 +67,7 @@ namespace ManejoDeActivos
                 userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
                 outputUserLbl.Text = "";
                 ClearForm();
+                UpdateUsersTable();
                 MessageBox.Show("Usuario Agregado Correctamente");
             }
             else
@@ -78,14 +79,15 @@ namespace ManejoDeActivos
         //Allow to clear all text inputs and calls the UpdateUsersTable()
         private void ClearForm()
         {
-            nameUserTxt.Text = "";
-            usernameTxt.Text = "";
-            passwordTxt.Text = "";
+            nameUserTxt.ResetText();
+            usernameTxt.ResetText();
+            passwordTxt.ResetText();
             userRolCbx.ResetText();
             userRolCbx.SelectedItem = -1;
-            outputUserLbl.Text = "";
-
-            UpdateUsersTable();
+            userQuestionCbx.ResetText();
+            userQuestionCbx.SelectedItem = -1;
+            userAnswerTxt.ResetText();
+            outputUserLbl.ResetText();
 
         }
 
@@ -140,6 +142,7 @@ namespace ManejoDeActivos
                     userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
                     outputUserLbl.Text = "";
                     ClearForm();
+                    UpdateUsersTable();
                     MessageBox.Show("Usuario modificado Correctamente");
                 }
                 else
@@ -159,6 +162,11 @@ namespace ManejoDeActivos
             usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
             passwordTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
             userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
+        }
+
+        private void cleanFormBtn_Click(object sender, EventArgs e)
+        {
+            ClearForm();
         }
     }
 }

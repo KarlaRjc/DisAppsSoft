@@ -57,6 +57,7 @@ namespace ManejoDeActivos
                     assetManagmentController.CreateAsset(description, brand, model, serialNumber, state);
                     outputAssestLbl.Text = "";
                     ClearForm();
+                    UpdateAssetsTable();
                     MessageBox.Show("Activo Agregado Correctamente");
                 }
                 else
@@ -68,14 +69,13 @@ namespace ManejoDeActivos
         
         private void ClearForm()
         {
-            assestDescriptionTxt.Text = "";
-            assestBrandTxt.Text = "";
-            assestSerialNumberTxt.Text = "";
+            assestDescriptionTxt.ResetText();
+            assestBrandTxt.ResetText();
+            assestModelTxt.ResetText();
+            assestSerialNumberTxt.ResetText();
             assestStateCbx.ResetText();
             assestStateCbx.SelectedItem = -1;
-            outputAssestLbl.Text = "";
-
-            UpdateAssetsTable();
+            outputAssestLbl.ResetText();
 
         }
 
@@ -103,6 +103,11 @@ namespace ManejoDeActivos
         private void editAssestBtn_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void cleanFormBtn_Click(object sender, EventArgs e)
+        {
+            ClearForm();
         }
     }
 }

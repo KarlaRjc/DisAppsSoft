@@ -29,7 +29,7 @@ namespace ManejoDeActivos.Controller
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityTeacher);
                     break;
-                case "Observador":
+                case "Recopilador":
                     //Creates the user
                     UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Recopilador, username, EncryptPassword(password), userQuestion, userAnswer);
 

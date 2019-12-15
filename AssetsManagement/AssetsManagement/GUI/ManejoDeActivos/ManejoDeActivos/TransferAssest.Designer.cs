@@ -48,6 +48,92 @@
             ((System.ComponentModel.ISupportInitialize)(this.assetsTransferTable)).BeginInit();
             this.SuspendLayout();
             // 
+            // assetsTransferTable
+            // 
+            this.assetsTransferTable.AllowUserToDeleteRows = false;
+            this.assetsTransferTable.AutoGenerateColumns = false;
+            this.assetsTransferTable.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.assetsTransferTable.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDataGridViewTextBoxColumn,
+            this.transferDateDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.assetTransferedidDataGridViewTextBoxColumn,
+            this.transferedByUseridDataGridViewTextBoxColumn,
+            this.transferedFromLabidDataGridViewTextBoxColumn,
+            this.transferedToLabidDataGridViewTextBoxColumn});
+            this.assetsTransferTable.DataSource = this.assetTransferHistoryEntitiesBindingSource;
+            this.assetsTransferTable.Location = new System.Drawing.Point(57, 90);
+            this.assetsTransferTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.assetsTransferTable.Name = "assetsTransferTable";
+            this.assetsTransferTable.ReadOnly = true;
+            this.assetsTransferTable.RowHeadersWidth = 51;
+            this.assetsTransferTable.RowTemplate.Height = 24;
+            this.assetsTransferTable.Size = new System.Drawing.Size(504, 321);
+            this.assetsTransferTable.TabIndex = 0;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id Activo";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            this.idDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // transferDateDataGridViewTextBoxColumn
+            // 
+            this.transferDateDataGridViewTextBoxColumn.DataPropertyName = "transferDate";
+            this.transferDateDataGridViewTextBoxColumn.HeaderText = "Fecha Transferencia";
+            this.transferDateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.transferDateDataGridViewTextBoxColumn.Name = "transferDateDataGridViewTextBoxColumn";
+            this.transferDateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.transferDateDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // assetTransferedidDataGridViewTextBoxColumn
+            // 
+            this.assetTransferedidDataGridViewTextBoxColumn.DataPropertyName = "assetTransfered_id";
+            this.assetTransferedidDataGridViewTextBoxColumn.HeaderText = "Id ActivoTransferido";
+            this.assetTransferedidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.assetTransferedidDataGridViewTextBoxColumn.Name = "assetTransferedidDataGridViewTextBoxColumn";
+            this.assetTransferedidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.assetTransferedidDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // transferedByUseridDataGridViewTextBoxColumn
+            // 
+            this.transferedByUseridDataGridViewTextBoxColumn.DataPropertyName = "transferedByUser_id";
+            this.transferedByUseridDataGridViewTextBoxColumn.HeaderText = "Id Usuario Transferencia";
+            this.transferedByUseridDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.transferedByUseridDataGridViewTextBoxColumn.Name = "transferedByUseridDataGridViewTextBoxColumn";
+            this.transferedByUseridDataGridViewTextBoxColumn.ReadOnly = true;
+            this.transferedByUseridDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // transferedFromLabidDataGridViewTextBoxColumn
+            // 
+            this.transferedFromLabidDataGridViewTextBoxColumn.DataPropertyName = "transferedFromLab_id";
+            this.transferedFromLabidDataGridViewTextBoxColumn.HeaderText = "Id Laboratio Transferiencia";
+            this.transferedFromLabidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.transferedFromLabidDataGridViewTextBoxColumn.Name = "transferedFromLabidDataGridViewTextBoxColumn";
+            this.transferedFromLabidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.transferedFromLabidDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // transferedToLabidDataGridViewTextBoxColumn
+            // 
+            this.transferedToLabidDataGridViewTextBoxColumn.DataPropertyName = "transferedToLab_id";
+            this.transferedToLabidDataGridViewTextBoxColumn.HeaderText = "Id Laboratorio Transferido";
+            this.transferedToLabidDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.transferedToLabidDataGridViewTextBoxColumn.Name = "transferedToLabidDataGridViewTextBoxColumn";
+            this.transferedToLabidDataGridViewTextBoxColumn.ReadOnly = true;
+            this.transferedToLabidDataGridViewTextBoxColumn.Width = 125;
+            // 
             // assetTransferHistoryEntitiesBindingSource
             // 
             this.assetTransferHistoryEntitiesBindingSource.DataMember = "AssetTransferHistoryEntities";
@@ -83,8 +169,8 @@
             "4",
             "5",
             "6"});
-            this.labCbx.Location = new System.Drawing.Point(631, 156);
-            this.labCbx.Margin = new System.Windows.Forms.Padding(2);
+            this.labCbx.Location = new System.Drawing.Point(841, 192);
+            this.labCbx.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.labCbx.Name = "labCbx";
             this.labCbx.Size = new System.Drawing.Size(89, 28);
             this.labCbx.TabIndex = 8;
@@ -94,8 +180,8 @@
             this.TransferAssetBtn.FlatAppearance.BorderSize = 0;
             this.TransferAssetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TransferAssetBtn.Image = global::ManejoDeActivos.Properties.Resources.TransferirBtn;
-            this.TransferAssetBtn.Location = new System.Drawing.Point(605, 202);
-            this.TransferAssetBtn.Margin = new System.Windows.Forms.Padding(2);
+            this.TransferAssetBtn.Location = new System.Drawing.Point(807, 249);
+            this.TransferAssetBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.TransferAssetBtn.Name = "TransferAssetBtn";
             this.TransferAssetBtn.Size = new System.Drawing.Size(138, 53);
             this.TransferAssetBtn.TabIndex = 13;
@@ -203,7 +289,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.assetsTransferTable);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TransferAssest";
             this.Text = "TransferAssest";
             this.Load += new System.EventHandler(this.TransferAssest_Load);

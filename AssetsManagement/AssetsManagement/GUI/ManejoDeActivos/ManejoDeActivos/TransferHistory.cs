@@ -21,14 +21,6 @@ namespace ManejoDeActivos
             InitializeComponent();
         }
 
-        public void UpdateTransferHistoryTable()
-        {
-            using (DbModel db = new DbModel())
-            {
-                assestTransferHsitoryTable.DataSource = db.AssetTransferHistory.ToList<AssetTransferHistoryEntity>();
-            }
-        }
-
         private void TransferHistory_Load(object sender, EventArgs e)
         {
 

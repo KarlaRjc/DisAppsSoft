@@ -119,9 +119,8 @@ namespace ManejoDeActivos
 
         private void label6_Click(object sender, EventArgs e)
         {
-
+            
         }
-
         public void editUserBtn_Click(object sender, EventArgs e)
         {
 

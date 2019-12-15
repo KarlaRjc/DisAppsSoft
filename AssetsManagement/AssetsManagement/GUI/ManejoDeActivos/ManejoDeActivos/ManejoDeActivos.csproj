@@ -115,6 +115,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
     </Compile>
+    <Compile Include="_AssetsManagement_DbModelDataSet31.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AssetsManagement_DbModelDataSet31.xsd</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AssetManagment.resx">
       <DependentUpon>AssetManagment.cs</DependentUpon>
     </EmbeddedResource>
@@ -182,6 +187,17 @@
     </None>
     <None Include="_AssetsManagement_DbModelDataSet2.xss">
       <DependentUpon>_AssetsManagement_DbModelDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet31.xsc">
+      <DependentUpon>_AssetsManagement_DbModelDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet31.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_AssetsManagement_DbModelDataSet31.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet31.xss">
+      <DependentUpon>_AssetsManagement_DbModelDataSet31.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

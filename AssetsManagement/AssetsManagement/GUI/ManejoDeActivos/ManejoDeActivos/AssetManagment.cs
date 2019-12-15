@@ -28,16 +28,15 @@ namespace ManejoDeActivos
             this.assetEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet1.AssetEntities);
 
         }
-        private bool ValidateAssetManagementInputs (string description, string brand, string model, string serialNumber, string state, string location)
+        private bool ValidateAssetManagementInputs (string description, string brand, string model, string serialNumber, string state)
         {
             bool isDescriptionValid = Sanitizer.Sanitize(assestDescriptionTxt_ErrorLabel, new GeneralInputSanitizer(), description);
             bool isBrandValid = Sanitizer.Sanitize(assestBrandTxt_ErrorLabel, new GeneralInputSanitizer(), brand);
             bool isModelValid = Sanitizer.Sanitize(assestModelTxt_ErrorLabel, new GeneralInputSanitizer(), model);
             bool isSerialNumberValid = Sanitizer.Sanitize(assestSerialNumberTxt_ErrorLabel, new GeneralInputSanitizer(), serialNumber);
             bool isStateValid = Sanitizer.Sanitize(assestStateCbx_ErrorLabel, new GeneralInputSanitizer(), state);
-            bool isLocationValid = Sanitizer.Sanitize(assetLocationCbx_ErrorLabel, new GeneralInputSanitizer(), location);
 
-            return isDescriptionValid && isBrandValid && isModelValid && isSerialNumberValid && isStateValid && isLocationValid;
+            return isDescriptionValid && isBrandValid && isModelValid && isSerialNumberValid && isStateValid;
         }
         //Adds new asset
         private void addAssestBtn_Click(object sender, EventArgs e)
@@ -47,9 +46,8 @@ namespace ManejoDeActivos
             string model = assestModelTxt.Text;
             string serialNumber = assestSerialNumberTxt.Text;
             string state = (string)assestStateCbx.SelectedItem;
-            string location = (string)assetLocationCbx.SelectedItem;
 
-            bool areInputsValid = ValidateAssetManagementInputs(description, brand, model, serialNumber, state, location);
+            bool areInputsValid = ValidateAssetManagementInputs(description, brand, model, serialNumber, state);
             if (areInputsValid) 
             {
                 Boolean assetFound = assetManagmentController.VerifySerialNumber(serialNumber);
@@ -75,8 +73,6 @@ namespace ManejoDeActivos
             assestSerialNumberTxt.Text = "";
             assestStateCbx.ResetText();
             assestStateCbx.SelectedItem = -1;
-            assetLocationCbx.ResetText();
-            assetLocationCbx.SelectedItem = -1;
             outputAssestLbl.Text = "";
 
             UpdateAssetsTable();

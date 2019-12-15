@@ -35,10 +35,19 @@ namespace ManejoDeActivos
 
         private void TransferAssest_Load(object sender, EventArgs e)
         {
+            // TODO: esta línea de código carga datos en la tabla '_AssetsManagement_DbModelDataSet3.AssetEntities' Puede moverla o quitarla según sea necesario.
+            this.assetEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet3.AssetEntities);
             // TODO: This line of code loads data into the '_AssetsManagement_DbModelDataSet2.AssetTransferHistoryEntities' table. You can move, or remove it, as needed.
             this.assetTransferHistoryEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet2.AssetTransferHistoryEntities);
-
         }
+        private void UpdateTransferAssetsTable()
+        {
+            using (DbModel db = new DbModel())
+            {
+                assetsTransferTable.DataSource = db.Asset.ToList<AssetEntity>();
+            }
+        }
+
 
         private void TransferAssetBtn_Click(object sender, EventArgs e)
         {
@@ -52,8 +61,7 @@ namespace ManejoDeActivos
             User.TransferAsset(id, username, fromlab, labid);
 
             MessageBox.Show("Activo Transferido Correctamente");
-
-
+            
         }
     }
 }

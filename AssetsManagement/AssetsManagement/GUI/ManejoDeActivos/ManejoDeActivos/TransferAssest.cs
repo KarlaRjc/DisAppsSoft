@@ -47,7 +47,7 @@ namespace ManejoDeActivos
             DataGridViewRow selectedRow = assetsTransferTable.Rows[selectedrowindex];
             string id = Convert.ToString(selectedRow.Cells[0].Value);
             AssetEntity asset = AssetEntity.GetAssetBySerialNumber(id);
-            //asset.location = destinationlab;
+            
 
 
 

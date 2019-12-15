@@ -46,7 +46,6 @@
             this.Tipo,
             this.AnteriorLAB,
             this.actualLab});
-            this.assestTransferHsitoryTable.Enabled = false;
             this.assestTransferHsitoryTable.Location = new System.Drawing.Point(154, 54);
             this.assestTransferHsitoryTable.Margin = new System.Windows.Forms.Padding(2);
             this.assestTransferHsitoryTable.Name = "assestTransferHsitoryTable";

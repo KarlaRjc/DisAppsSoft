@@ -17,21 +17,21 @@ namespace ManejoDeActivos.Controller
             {
                 case "Administrador":
                     //Creates the user
-                    UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Admin, username, EncryptPassword(password), userQuestion, userAnswer);
+                    UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, EnumRole.Administrador, username, EncryptPassword(password), userQuestion, userAnswer);
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityAdmin);
                     break;
                 case "Profesor":
                     //Creates the user
-                    UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Teacher, username, EncryptPassword(password), userQuestion, userAnswer);
+                    UserEntity userentityTeacher = Admin.CreateUser(7, nameUser, EnumRole.Profesor, username, EncryptPassword(password), userQuestion, userAnswer);
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityTeacher);
                     break;
                 case "Observador":
                     //Creates the user
-                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Gatherer, username, EncryptPassword(password), userQuestion, userAnswer);
+                    UserEntity userentityGatherer = Admin.CreateUser(7, nameUser, EnumRole.Recopilador, username, EncryptPassword(password), userQuestion, userAnswer);
 
                     //Adds user to the database
                     UserEntity.CreateUserToDB(userentityGatherer);

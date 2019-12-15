@@ -31,11 +31,10 @@ namespace AssetsManagement
         /// <param name="series"></param>
         /// <param name="state"></param>
         /// <returns></returns>
-        public static AssetEntity CreateAsset(int id, string description, string brand, string model, string series, string state)
+        public static AssetEntity CreateAsset(string description, string brand, string model, string series, string state)
         {
 
             AssetEntity asset = new AssetEntity();
-            asset.id = id;
             asset.description = description;
             asset.brand = brand;
             asset.model = model;
@@ -44,6 +43,17 @@ namespace AssetsManagement
 
             return asset;
 
+        }
+
+        //Returns the assest if the serial number exists otherwise returns null
+        public static AssetEntity GetAssetBySerialNumber(string serial)
+        {
+            AssetEntity asset = null;
+            using (DbModel db = new DbModel())
+            {
+                asset = db.Asset.Where(x => x.series == serial).FirstOrDefault();
+            }
+            return asset;
         }
 
         /// <summary>

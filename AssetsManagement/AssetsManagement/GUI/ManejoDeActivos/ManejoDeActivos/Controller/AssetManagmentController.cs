@@ -9,19 +9,17 @@ namespace ManejoDeActivos.Controller
 {
     class AssetManagmentController
     {
-        public void CreateAsset(int id, string description, string brand, string model, string series, string state)
+        public void CreateAsset(string description, string brand, string model, string series, string state)
         {
-            AssetEntity assetentity = Asset.CreateAsset(id, description, brand, model, series, state);
+            AssetEntity assetentity = Asset.CreateAsset(description, brand, model, series, state);
 
             AssetEntity.CreateAssetToDB(assetentity);
         }
 
 
-        public Boolean VerifySerialNumber(string serial)
+        public bool VerifySerialNumber(string serial)
         {
-            Boolean assetFound = Asset.VerifySerialNumber(serial);
-
-            return assetFound;
+            return Asset.VerifySerialNumber(serial);
         }
 
         public void RemoveAsset(string asset)

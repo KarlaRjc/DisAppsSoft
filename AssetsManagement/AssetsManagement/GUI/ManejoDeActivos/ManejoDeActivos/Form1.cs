@@ -105,27 +105,28 @@ namespace ManejoDeActivos
             if (isPasswordInputValid && isUsernameInputValid)
             {
                 var result = LoginController.Login(UserNameInput.Text, passwordInput.Text);
-                var role = LoginController.currentUser.role;
-                switch (role)
-                {
-                    case AssetsManagement.EnumRole.Admin:
-                        break;
-                    case AssetsManagement.EnumRole.Teacher:
-                        assestManagmentBtn.Hide();
-                        userManagmentBtn.Hide();
-                        break;
-                    case AssetsManagement.EnumRole.Gatherer:
-                        assestManagmentBtn.Hide();
-                        userManagmentBtn.Hide();
-                        transferHisotryBtn.Hide();
-                        transferAssestBtn.Hide();
-                        break;
-                    default:
-                        break;
-                }
+
                 if (result.ContainsKey("Success"))
                     {
-                        LoginPanel.Hide();
+                    var role = LoginController.currentUser.role;
+                    switch (role)
+                    {
+                        case AssetsManagement.EnumRole.Administrador:
+                            break;
+                        case AssetsManagement.EnumRole.Profesor:
+                            assestManagmentBtn.Hide();
+                            userManagmentBtn.Hide();
+                            break;
+                        case AssetsManagement.EnumRole.Recopilador:
+                            assestManagmentBtn.Hide();
+                            userManagmentBtn.Hide();
+                            transferHisotryBtn.Hide();
+                            transferAssestBtn.Hide();
+                            break;
+                        default:
+                            break;
+                    }
+                    LoginPanel.Hide();
                         CurrentRoleText.Text = result["Role"];
                     } 
                     else 
@@ -235,10 +236,14 @@ namespace ManejoDeActivos
             resetPasswordPanel.Visible = true;
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void resetPasswordPanel_Paint(object sender, PaintEventArgs e)
         {
-            Form1 form = new Form1();
-            form.Show();
+
+        }
+
+        private void LoginPanel_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

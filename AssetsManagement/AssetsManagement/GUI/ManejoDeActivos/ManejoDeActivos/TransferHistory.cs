@@ -16,5 +16,11 @@ namespace ManejoDeActivos
         {
             InitializeComponent();
         }
+
+        private void TransferHistory_Load(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

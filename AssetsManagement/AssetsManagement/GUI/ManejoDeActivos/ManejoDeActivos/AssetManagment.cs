@@ -182,7 +182,7 @@ namespace ManejoDeActivos
             assestBrandTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
             assestModelTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
             assestSerialNumberTxt.Text = Convert.ToString(selectedRow.Cells[3].Value);
-            assestStateCbx.Text = Convert.ToString(assestStateCbx.SelectedItem != null ? assestStateCbx.SelectedItem.ToString() : "");
+            assestStateCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
             
         }
     }

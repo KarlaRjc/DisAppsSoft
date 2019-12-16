@@ -15,10 +15,19 @@ using System.Windows.Forms;
 namespace ManejoDeActivos
 {
     public partial class Reports : Form
+
     {
+        public List<AssetItem> Assets { get; set; }
+
         public Reports()
+
         {
-            InitializeComponent();
+                InitializeComponent();
+        }
+
+        public IteratorAssetItem ObtainIterator() {
+
+            return new IteratorAssetItem(Assets);
         }
 
         private void Reports_Load(object sender, EventArgs e)
@@ -26,15 +35,24 @@ namespace ManejoDeActivos
             ReportsController.AssetsByStateReport(assets_by_state_grid, "");
             ReportsController.TransfersByUserReport(tranfers_by_user_report, "");
             ReportsController.TransfersByAssetReport(transfers_by_asset_report, "");
+           
+
             foreach (var user in User.GetUsers())
             {
                 user_comboBox.Items.Add(user);
             }
             user_comboBox.ValueMember = "Id";
             user_comboBox.DisplayMember = "Name";
-            foreach (var asset in Asset.GetAssets())
+ 
+            Reports report = new Reports();
+            report.Assets = Asset.GetAssets();
+            IteratorAssetItem iterator = report.ObtainIterator();
+
+          
+            while(iterator.ElementsLeft())
             {
-                assets_comboBox.Items.Add(asset);
+                AssetItem assetItem = iterator.Next();
+                assets_comboBox.Items.Add(assetItem);
             }
             assets_comboBox.ValueMember = "Id";
             assets_comboBox.DisplayMember = "Name";

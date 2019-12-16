@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssetsManagement", "AssetsM
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ManejoDeActivos", "AssetsManagement\GUI\ManejoDeActivos\ManejoDeActivos\ManejoDeActivos.csproj", "{9816CF0E-4D6E-4C8D-9462-AB1D829DECF1}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UnitTest", "UnitTest\UnitTest.csproj", "{EA8F94F4-C898-4714-9894-F37491E677BA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{9816CF0E-4D6E-4C8D-9462-AB1D829DECF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9816CF0E-4D6E-4C8D-9462-AB1D829DECF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9816CF0E-4D6E-4C8D-9462-AB1D829DECF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8F94F4-C898-4714-9894-F37491E677BA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8F94F4-C898-4714-9894-F37491E677BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8F94F4-C898-4714-9894-F37491E677BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8F94F4-C898-4714-9894-F37491E677BA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

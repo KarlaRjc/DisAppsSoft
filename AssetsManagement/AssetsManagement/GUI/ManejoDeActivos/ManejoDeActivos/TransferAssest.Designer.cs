@@ -30,6 +30,14 @@
         {
             this.components = new System.ComponentModel.Container();
             this.assetsTransferTable = new System.Windows.Forms.DataGridView();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.series = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.assetEntitiesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this._AssetsManagement_assets = new ManejoDeActivos._AssetsManagement_assets();
             this.assetEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._AssetsManagement_DbModelDataSet3 = new ManejoDeActivos._AssetsManagement_DbModelDataSet3();
             this.assetTransferHistoryEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -49,17 +57,20 @@
             this._AssetsManagement_DbModelDataSet4 = new ManejoDeActivos._AssetsManagement_DbModelDataSet4();
             this.assetTransferHistoryEntitiesBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.assetTransferHistoryEntitiesTableAdapter1 = new ManejoDeActivos._AssetsManagement_DbModelDataSet4TableAdapters.AssetTransferHistoryEntitiesTableAdapter();
-            this._AssetsManagement_assets = new ManejoDeActivos._AssetsManagement_assets();
-            this.assetEntitiesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.assetEntitiesTableAdapter1 = new ManejoDeActivos._AssetsManagement_assetsTableAdapters.AssetEntitiesTableAdapter();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.description = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brand = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.model = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.series = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.state = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seriesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.labEntityidDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.trasnfer_comment_label = new System.Windows.Forms.Label();
+            this.cmbx_lab_error = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.assetsTransferTable)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_assets)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetTransferHistoryEntitiesBindingSource)).BeginInit();
@@ -67,8 +78,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.assetTransferHistoryEntitiesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetTransferHistoryEntitiesBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_assets)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,7 +93,14 @@
             this.brand,
             this.model,
             this.series,
-            this.state});
+            this.state,
+            this.idDataGridViewTextBoxColumn,
+            this.descriptionDataGridViewTextBoxColumn,
+            this.brandDataGridViewTextBoxColumn,
+            this.modelDataGridViewTextBoxColumn,
+            this.seriesDataGridViewTextBoxColumn,
+            this.stateDataGridViewTextBoxColumn,
+            this.labEntityidDataGridViewTextBoxColumn});
             this.assetsTransferTable.DataSource = this.assetEntitiesBindingSource1;
             this.assetsTransferTable.Location = new System.Drawing.Point(57, 90);
             this.assetsTransferTable.Margin = new System.Windows.Forms.Padding(2);
@@ -96,6 +112,59 @@
             this.assetsTransferTable.TabIndex = 0;
             this.assetsTransferTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.assetsTransferTable_CellClick);
             this.assetsTransferTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.assetsTransferTable_CellContentClick);
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            // 
+            // description
+            // 
+            this.description.DataPropertyName = "description";
+            this.description.HeaderText = "Activo";
+            this.description.Name = "description";
+            this.description.ReadOnly = true;
+            // 
+            // brand
+            // 
+            this.brand.DataPropertyName = "brand";
+            this.brand.HeaderText = "Marca";
+            this.brand.Name = "brand";
+            this.brand.ReadOnly = true;
+            // 
+            // model
+            // 
+            this.model.DataPropertyName = "model";
+            this.model.HeaderText = "Modelo";
+            this.model.Name = "model";
+            this.model.ReadOnly = true;
+            // 
+            // series
+            // 
+            this.series.DataPropertyName = "series";
+            this.series.HeaderText = "Serie";
+            this.series.Name = "series";
+            this.series.ReadOnly = true;
+            // 
+            // state
+            // 
+            this.state.DataPropertyName = "state";
+            this.state.HeaderText = "Estado";
+            this.state.Name = "state";
+            this.state.ReadOnly = true;
+            // 
+            // assetEntitiesBindingSource1
+            // 
+            this.assetEntitiesBindingSource1.DataMember = "AssetEntities";
+            this.assetEntitiesBindingSource1.DataSource = this._AssetsManagement_assets;
+            // 
+            // _AssetsManagement_assets
+            // 
+            this._AssetsManagement_assets.DataSetName = "_AssetsManagement_assets";
+            this._AssetsManagement_assets.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // assetEntitiesBindingSource
             // 
@@ -146,7 +215,7 @@
             this.TransferAssetBtn.FlatAppearance.BorderSize = 0;
             this.TransferAssetBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.TransferAssetBtn.Image = global::ManejoDeActivos.Properties.Resources.TransferirBtn;
-            this.TransferAssetBtn.Location = new System.Drawing.Point(664, 358);
+            this.TransferAssetBtn.Location = new System.Drawing.Point(664, 366);
             this.TransferAssetBtn.Margin = new System.Windows.Forms.Padding(2);
             this.TransferAssetBtn.Name = "TransferAssetBtn";
             this.TransferAssetBtn.Size = new System.Drawing.Size(142, 53);
@@ -239,66 +308,82 @@
             // 
             this.assetTransferHistoryEntitiesTableAdapter1.ClearBeforeFill = true;
             // 
-            // _AssetsManagement_assets
-            // 
-            this._AssetsManagement_assets.DataSetName = "_AssetsManagement_assets";
-            this._AssetsManagement_assets.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // assetEntitiesBindingSource1
-            // 
-            this.assetEntitiesBindingSource1.DataMember = "AssetEntities";
-            this.assetEntitiesBindingSource1.DataSource = this._AssetsManagement_assets;
-            // 
             // assetEntitiesTableAdapter1
             // 
             this.assetEntitiesTableAdapter1.ClearBeforeFill = true;
             // 
-            // id
-            // 
-            this.id.DataPropertyName = "id";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            // 
-            // description
-            // 
-            this.description.DataPropertyName = "description";
-            this.description.HeaderText = "Activo";
-            this.description.Name = "description";
-            this.description.ReadOnly = true;
-            // 
-            // brand
-            // 
-            this.brand.DataPropertyName = "brand";
-            this.brand.HeaderText = "Marca";
-            this.brand.Name = "brand";
-            this.brand.ReadOnly = true;
-            // 
-            // model
-            // 
-            this.model.DataPropertyName = "model";
-            this.model.HeaderText = "Modelo";
-            this.model.Name = "model";
-            this.model.ReadOnly = true;
-            // 
-            // series
-            // 
-            this.series.DataPropertyName = "series";
-            this.series.HeaderText = "Serie";
-            this.series.Name = "series";
-            this.series.ReadOnly = true;
-            // 
-            // state
-            // 
-            this.state.DataPropertyName = "state";
-            this.state.HeaderText = "Estado";
-            this.state.Name = "state";
-            this.state.ReadOnly = true;
-            // 
             // bindingSource1
             // 
             this.bindingSource1.DataSource = this.assetTransferHistoryEntitiesBindingSource;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "id";
+            this.idDataGridViewTextBoxColumn.HeaderText = "id";
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "description";
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "brand";
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "model";
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // seriesDataGridViewTextBoxColumn
+            // 
+            this.seriesDataGridViewTextBoxColumn.DataPropertyName = "series";
+            this.seriesDataGridViewTextBoxColumn.HeaderText = "series";
+            this.seriesDataGridViewTextBoxColumn.Name = "seriesDataGridViewTextBoxColumn";
+            this.seriesDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "state";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "state";
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // labEntityidDataGridViewTextBoxColumn
+            // 
+            this.labEntityidDataGridViewTextBoxColumn.DataPropertyName = "LabEntity_id";
+            this.labEntityidDataGridViewTextBoxColumn.HeaderText = "LabEntity_id";
+            this.labEntityidDataGridViewTextBoxColumn.Name = "labEntityidDataGridViewTextBoxColumn";
+            this.labEntityidDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // trasnfer_comment_label
+            // 
+            this.trasnfer_comment_label.AutoSize = true;
+            this.trasnfer_comment_label.ForeColor = System.Drawing.Color.Red;
+            this.trasnfer_comment_label.Location = new System.Drawing.Point(620, 345);
+            this.trasnfer_comment_label.Name = "trasnfer_comment_label";
+            this.trasnfer_comment_label.Size = new System.Drawing.Size(0, 16);
+            this.trasnfer_comment_label.TabIndex = 21;
+            this.trasnfer_comment_label.UseCompatibleTextRendering = true;
+            // 
+            // cmbx_lab_error
+            // 
+            this.cmbx_lab_error.AutoSize = true;
+            this.cmbx_lab_error.ForeColor = System.Drawing.Color.Red;
+            this.cmbx_lab_error.Location = new System.Drawing.Point(716, 124);
+            this.cmbx_lab_error.Name = "cmbx_lab_error";
+            this.cmbx_lab_error.Size = new System.Drawing.Size(0, 16);
+            this.cmbx_lab_error.TabIndex = 22;
+            this.cmbx_lab_error.UseCompatibleTextRendering = true;
             // 
             // TransferAssest
             // 
@@ -306,6 +391,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(896, 605);
+            this.Controls.Add(this.cmbx_lab_error);
+            this.Controls.Add(this.trasnfer_comment_label);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.asset_to_transfer_label);
@@ -321,6 +408,8 @@
             this.Text = "TransferAssest";
             this.Load += new System.EventHandler(this.TransferAssest_Load);
             ((System.ComponentModel.ISupportInitialize)(this.assetsTransferTable)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_assets)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetTransferHistoryEntitiesBindingSource)).EndInit();
@@ -328,8 +417,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.assetTransferHistoryEntitiesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetTransferHistoryEntitiesBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_assets)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -368,5 +455,14 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn series;
         private System.Windows.Forms.DataGridViewTextBoxColumn state;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descriptionDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn brandDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn modelDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn seriesDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn labEntityidDataGridViewTextBoxColumn;
+        private System.Windows.Forms.Label trasnfer_comment_label;
+        private System.Windows.Forms.Label cmbx_lab_error;
     }
 }

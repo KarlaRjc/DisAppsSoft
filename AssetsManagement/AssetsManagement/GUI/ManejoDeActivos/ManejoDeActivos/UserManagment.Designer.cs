@@ -62,6 +62,8 @@
             this.removeUserBtn = new System.Windows.Forms.Button();
             this.editUserBtn = new System.Windows.Forms.Button();
             this.addUserBtn = new System.Windows.Forms.Button();
+            this.errorSecretQuestionlbl = new System.Windows.Forms.Label();
+            this.errorSecretAnswerLbl = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.usersTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userEntitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet)).BeginInit();
@@ -71,7 +73,7 @@
             // 
             this.nameUserTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameUserTxt.Location = new System.Drawing.Point(538, 46);
-            this.nameUserTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.nameUserTxt.Margin = new System.Windows.Forms.Padding(2);
             this.nameUserTxt.Name = "nameUserTxt";
             this.nameUserTxt.Size = new System.Drawing.Size(262, 26);
             this.nameUserTxt.TabIndex = 1;
@@ -87,7 +89,7 @@
             "Profesor",
             "Recopilador"});
             this.userRolCbx.Location = new System.Drawing.Point(538, 266);
-            this.userRolCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userRolCbx.Margin = new System.Windows.Forms.Padding(2);
             this.userRolCbx.Name = "userRolCbx";
             this.userRolCbx.Size = new System.Drawing.Size(262, 28);
             this.userRolCbx.TabIndex = 4;
@@ -96,7 +98,7 @@
             // 
             this.passwordTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.passwordTxt.Location = new System.Drawing.Point(538, 192);
-            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.passwordTxt.Margin = new System.Windows.Forms.Padding(2);
             this.passwordTxt.Name = "passwordTxt";
             this.passwordTxt.Size = new System.Drawing.Size(262, 26);
             this.passwordTxt.TabIndex = 3;
@@ -105,7 +107,7 @@
             // 
             this.usernameTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernameTxt.Location = new System.Drawing.Point(538, 119);
-            this.usernameTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usernameTxt.Margin = new System.Windows.Forms.Padding(2);
             this.usernameTxt.Name = "usernameTxt";
             this.usernameTxt.Size = new System.Drawing.Size(262, 26);
             this.usernameTxt.TabIndex = 2;
@@ -176,7 +178,7 @@
             this.secretAnswer});
             this.usersTable.DataSource = this.userEntitiesBindingSource;
             this.usersTable.Location = new System.Drawing.Point(54, 74);
-            this.usersTable.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.usersTable.Margin = new System.Windows.Forms.Padding(2);
             this.usersTable.Name = "usersTable";
             this.usersTable.ReadOnly = true;
             this.usersTable.RowHeadersWidth = 51;
@@ -254,7 +256,7 @@
             this.errorNameUserLbl.AutoSize = true;
             this.errorNameUserLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorNameUserLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorNameUserLbl.Location = new System.Drawing.Point(587, 73);
+            this.errorNameUserLbl.Location = new System.Drawing.Point(542, 78);
             this.errorNameUserLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorNameUserLbl.Name = "errorNameUserLbl";
             this.errorNameUserLbl.Size = new System.Drawing.Size(0, 17);
@@ -265,7 +267,7 @@
             this.errorUsernameLbl.AutoSize = true;
             this.errorUsernameLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorUsernameLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorUsernameLbl.Location = new System.Drawing.Point(587, 145);
+            this.errorUsernameLbl.Location = new System.Drawing.Point(542, 151);
             this.errorUsernameLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorUsernameLbl.Name = "errorUsernameLbl";
             this.errorUsernameLbl.Size = new System.Drawing.Size(0, 17);
@@ -276,7 +278,7 @@
             this.errorPasswordLbl.AutoSize = true;
             this.errorPasswordLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorPasswordLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorPasswordLbl.Location = new System.Drawing.Point(587, 218);
+            this.errorPasswordLbl.Location = new System.Drawing.Point(543, 224);
             this.errorPasswordLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorPasswordLbl.Name = "errorPasswordLbl";
             this.errorPasswordLbl.Size = new System.Drawing.Size(0, 17);
@@ -287,7 +289,7 @@
             this.errorUserRoleLbl.AutoSize = true;
             this.errorUserRoleLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.errorUserRoleLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
-            this.errorUserRoleLbl.Location = new System.Drawing.Point(587, 295);
+            this.errorUserRoleLbl.Location = new System.Drawing.Point(543, 300);
             this.errorUserRoleLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.errorUserRoleLbl.Name = "errorUserRoleLbl";
             this.errorUserRoleLbl.Size = new System.Drawing.Size(0, 17);
@@ -345,7 +347,7 @@
             "¿Cuál es el nombre de tu mascota?",
             "¿Quién era el héroe de tu infancia?"});
             this.userQuestionCbx.Location = new System.Drawing.Point(538, 344);
-            this.userQuestionCbx.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userQuestionCbx.Margin = new System.Windows.Forms.Padding(2);
             this.userQuestionCbx.Name = "userQuestionCbx";
             this.userQuestionCbx.Size = new System.Drawing.Size(262, 28);
             this.userQuestionCbx.TabIndex = 19;
@@ -377,7 +379,7 @@
             // 
             this.userAnswerTxt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.userAnswerTxt.Location = new System.Drawing.Point(538, 419);
-            this.userAnswerTxt.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.userAnswerTxt.Margin = new System.Windows.Forms.Padding(2);
             this.userAnswerTxt.Name = "userAnswerTxt";
             this.userAnswerTxt.Size = new System.Drawing.Size(262, 26);
             this.userAnswerTxt.TabIndex = 22;
@@ -389,7 +391,7 @@
             this.cleanFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cleanFormBtn.Image = global::ManejoDeActivos.Properties.Resources.LimpiarFormularioBtn;
             this.cleanFormBtn.Location = new System.Drawing.Point(584, 540);
-            this.cleanFormBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cleanFormBtn.Margin = new System.Windows.Forms.Padding(2);
             this.cleanFormBtn.Name = "cleanFormBtn";
             this.cleanFormBtn.Size = new System.Drawing.Size(215, 44);
             this.cleanFormBtn.TabIndex = 25;
@@ -402,7 +404,7 @@
             this.removeUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.removeUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EliminarBtn;
             this.removeUserBtn.Location = new System.Drawing.Point(216, 451);
-            this.removeUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.removeUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.removeUserBtn.Name = "removeUserBtn";
             this.removeUserBtn.Size = new System.Drawing.Size(106, 41);
             this.removeUserBtn.TabIndex = 13;
@@ -415,7 +417,7 @@
             this.editUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
             this.editUserBtn.Location = new System.Drawing.Point(584, 495);
-            this.editUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.editUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editUserBtn.Name = "editUserBtn";
             this.editUserBtn.Size = new System.Drawing.Size(106, 41);
             this.editUserBtn.TabIndex = 12;
@@ -428,12 +430,34 @@
             this.addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
             this.addUserBtn.Location = new System.Drawing.Point(693, 495);
-            this.addUserBtn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.addUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addUserBtn.Name = "addUserBtn";
             this.addUserBtn.Size = new System.Drawing.Size(106, 41);
             this.addUserBtn.TabIndex = 9;
             this.addUserBtn.UseVisualStyleBackColor = true;
             this.addUserBtn.Click += new System.EventHandler(this.addUserBtn_Click);
+            // 
+            // errorSecretQuestionlbl
+            // 
+            this.errorSecretQuestionlbl.AutoSize = true;
+            this.errorSecretQuestionlbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorSecretQuestionlbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.errorSecretQuestionlbl.Location = new System.Drawing.Point(542, 377);
+            this.errorSecretQuestionlbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.errorSecretQuestionlbl.Name = "errorSecretQuestionlbl";
+            this.errorSecretQuestionlbl.Size = new System.Drawing.Size(0, 17);
+            this.errorSecretQuestionlbl.TabIndex = 26;
+            // 
+            // errorSecretAnswerLbl
+            // 
+            this.errorSecretAnswerLbl.AutoSize = true;
+            this.errorSecretAnswerLbl.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.errorSecretAnswerLbl.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.errorSecretAnswerLbl.Location = new System.Drawing.Point(542, 451);
+            this.errorSecretAnswerLbl.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.errorSecretAnswerLbl.Name = "errorSecretAnswerLbl";
+            this.errorSecretAnswerLbl.Size = new System.Drawing.Size(0, 17);
+            this.errorSecretAnswerLbl.TabIndex = 27;
             // 
             // UserManagment
             // 
@@ -441,6 +465,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(164)))), ((int)(((byte)(191)))));
             this.ClientSize = new System.Drawing.Size(909, 640);
+            this.Controls.Add(this.errorSecretAnswerLbl);
+            this.Controls.Add(this.errorSecretQuestionlbl);
             this.Controls.Add(this.cleanFormBtn);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label8);
@@ -466,7 +492,7 @@
             this.Controls.Add(this.usernameTxt);
             this.Controls.Add(this.nameUserTxt);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "UserManagment";
             this.Text = "UserManagment";
             this.Load += new System.EventHandler(this.UserManagment_Load);
@@ -512,5 +538,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn secretQuestion;
         private System.Windows.Forms.DataGridViewTextBoxColumn secretAnswer;
         private System.Windows.Forms.Button cleanFormBtn;
+        private System.Windows.Forms.Label errorSecretQuestionlbl;
+        private System.Windows.Forms.Label errorSecretAnswerLbl;
     }
 }

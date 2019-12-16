@@ -57,17 +57,32 @@ namespace ManejoDeActivos
 
         private void TransferAssetBtn_Click(object sender, EventArgs e)
         {
-            int labid = (labCbx.SelectedItem as LabItem).LabId;
-            int selectedrowindex = assetsTransferTable.SelectedCells[0].RowIndex;
-            string transferComment = transfer_comment_text.Text;
-            DataGridViewRow selectedRow = assetsTransferTable.Rows[selectedrowindex];
-            string series = (selectedRow.Cells[4].Value.ToString());
+            cmbx_lab_error.ResetText();
+            if (labCbx.SelectedItem != null)
+            {
+                int labid = (labCbx.SelectedItem as LabItem).LabId;
+                int selectedrowindex = assetsTransferTable.SelectedCells[0].RowIndex;
+                string transferComment = transfer_comment_text.Text;
+                bool isInputValid = Sanitizer.Sanitize(trasnfer_comment_label, new GeneralInputSanitizer(), transferComment);
+                if (isInputValid)
+                {
+                    DataGridViewRow selectedRow = assetsTransferTable.Rows[selectedrowindex];
+                    string series = (selectedRow.Cells[4].Value.ToString());
 
-            string username = LoginController.currentUser.username;
+                    string username = LoginController.currentUser.username;
 
-            User.TransferAsset(series, username, labid, transferComment);
+                    User.TransferAsset(series, username, labid, transferComment);
 
-            MessageBox.Show("Activo Transferido Correctamente");
+                    MessageBox.Show("Activo Transferido Correctamente");
+                }
+            }
+            else
+            {
+                cmbx_lab_error.Text = "Valor requerido"; 
+            } 
+            
+
+
             
         }
 

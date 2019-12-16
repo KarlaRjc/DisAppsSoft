@@ -34,6 +34,12 @@
             this.errorAssestDescriptionLbl = new System.Windows.Forms.Label();
             this.errorAssestModelLbl = new System.Windows.Forms.Label();
             this.assetsManagmentTable = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.seriesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.assetEntitiesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this._AssetsManagement_DbModelDataSet1 = new ManejoDeActivos._AssetsManagement_DbModelDataSet1();
             this.label4 = new System.Windows.Forms.Label();
@@ -61,12 +67,6 @@
             this.assestStateCbx_ErrorLabel = new System.Windows.Forms.Label();
             this.assetLocationCbx_ErrorLabel = new System.Windows.Forms.Label();
             this.cleanFormBtn = new System.Windows.Forms.Button();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descriptionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.brandDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.modelDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.seriesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.assetsManagmentTable)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.assetEntitiesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this._AssetsManagement_DbModelDataSet1)).BeginInit();
@@ -139,6 +139,61 @@
             this.assetsManagmentTable.RowTemplate.Height = 24;
             this.assetsManagmentTable.Size = new System.Drawing.Size(536, 452);
             this.assetsManagmentTable.TabIndex = 28;
+            // 
+            // Column1
+            // 
+            this.Column1.DataPropertyName = "id";
+            this.Column1.HeaderText = "No. Identificación";
+            this.Column1.MinimumWidth = 6;
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            this.Column1.Width = 125;
+            // 
+            // descriptionDataGridViewTextBoxColumn
+            // 
+            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
+            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descripción";
+            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
+            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
+            this.descriptionDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // brandDataGridViewTextBoxColumn
+            // 
+            this.brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
+            this.brandDataGridViewTextBoxColumn.HeaderText = "Marca";
+            this.brandDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
+            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
+            this.brandDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // modelDataGridViewTextBoxColumn
+            // 
+            this.modelDataGridViewTextBoxColumn.DataPropertyName = "model";
+            this.modelDataGridViewTextBoxColumn.HeaderText = "Modelo";
+            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
+            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
+            this.modelDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // seriesDataGridViewTextBoxColumn
+            // 
+            this.seriesDataGridViewTextBoxColumn.DataPropertyName = "series";
+            this.seriesDataGridViewTextBoxColumn.HeaderText = "Serie";
+            this.seriesDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.seriesDataGridViewTextBoxColumn.Name = "seriesDataGridViewTextBoxColumn";
+            this.seriesDataGridViewTextBoxColumn.ReadOnly = true;
+            this.seriesDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // stateDataGridViewTextBoxColumn
+            // 
+            this.stateDataGridViewTextBoxColumn.DataPropertyName = "state";
+            this.stateDataGridViewTextBoxColumn.HeaderText = "Estado";
+            this.stateDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
+            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.stateDataGridViewTextBoxColumn.Width = 125;
             // 
             // assetEntitiesBindingSource
             // 
@@ -319,6 +374,7 @@
             this.editAssestBtn.Size = new System.Drawing.Size(106, 42);
             this.editAssestBtn.TabIndex = 29;
             this.editAssestBtn.UseVisualStyleBackColor = true;
+            this.editAssestBtn.Click += new System.EventHandler(this.editAssestBtn_Click);
             // 
             // addAssestBtn
             // 
@@ -413,61 +469,6 @@
             this.cleanFormBtn.TabIndex = 55;
             this.cleanFormBtn.UseVisualStyleBackColor = true;
             this.cleanFormBtn.Click += new System.EventHandler(this.cleanFormBtn_Click);
-            // 
-            // Column1
-            // 
-            this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "No. Identificación";
-            this.Column1.MinimumWidth = 6;
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
-            this.Column1.Width = 125;
-            // 
-            // descriptionDataGridViewTextBoxColumn
-            // 
-            this.descriptionDataGridViewTextBoxColumn.DataPropertyName = "description";
-            this.descriptionDataGridViewTextBoxColumn.HeaderText = "Descripción";
-            this.descriptionDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.descriptionDataGridViewTextBoxColumn.Name = "descriptionDataGridViewTextBoxColumn";
-            this.descriptionDataGridViewTextBoxColumn.ReadOnly = true;
-            this.descriptionDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // brandDataGridViewTextBoxColumn
-            // 
-            this.brandDataGridViewTextBoxColumn.DataPropertyName = "brand";
-            this.brandDataGridViewTextBoxColumn.HeaderText = "Marca";
-            this.brandDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.brandDataGridViewTextBoxColumn.Name = "brandDataGridViewTextBoxColumn";
-            this.brandDataGridViewTextBoxColumn.ReadOnly = true;
-            this.brandDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // modelDataGridViewTextBoxColumn
-            // 
-            this.modelDataGridViewTextBoxColumn.DataPropertyName = "model";
-            this.modelDataGridViewTextBoxColumn.HeaderText = "Modelo";
-            this.modelDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.modelDataGridViewTextBoxColumn.Name = "modelDataGridViewTextBoxColumn";
-            this.modelDataGridViewTextBoxColumn.ReadOnly = true;
-            this.modelDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // seriesDataGridViewTextBoxColumn
-            // 
-            this.seriesDataGridViewTextBoxColumn.DataPropertyName = "series";
-            this.seriesDataGridViewTextBoxColumn.HeaderText = "Serie";
-            this.seriesDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.seriesDataGridViewTextBoxColumn.Name = "seriesDataGridViewTextBoxColumn";
-            this.seriesDataGridViewTextBoxColumn.ReadOnly = true;
-            this.seriesDataGridViewTextBoxColumn.Width = 125;
-            // 
-            // stateDataGridViewTextBoxColumn
-            // 
-            this.stateDataGridViewTextBoxColumn.DataPropertyName = "state";
-            this.stateDataGridViewTextBoxColumn.HeaderText = "Estado";
-            this.stateDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.stateDataGridViewTextBoxColumn.Name = "stateDataGridViewTextBoxColumn";
-            this.stateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.stateDataGridViewTextBoxColumn.Width = 125;
             // 
             // AssetManagment
             // 

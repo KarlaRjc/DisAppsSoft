@@ -153,5 +153,10 @@ namespace ManejoDeActivos
         {
             ClearForm();
         }
+
+        private void editAssestBtn_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

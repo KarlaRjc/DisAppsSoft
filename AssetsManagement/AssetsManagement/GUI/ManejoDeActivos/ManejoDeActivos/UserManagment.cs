@@ -1,5 +1,7 @@
 ﻿using AssetsManagement;
 using ManejoDeActivos.Controller;
+using ManejoDeActivos.Controller.Sanitize;
+using ManejoDeActivos.Controller.Sanitize.DefinedSanitizers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -54,6 +56,18 @@ namespace ManejoDeActivos
 
         }
 
+        private bool ValidateUserManagementInputs(string nameUser, string username, string password, string userRole, string userQuestion, string userAnswer)
+        {
+            bool isNameUserValid = Sanitizer.Sanitize(errorNameUserLbl, new GeneralInputSanitizer(), nameUser);
+            bool isUsernameValid = Sanitizer.Sanitize(errorUsernameLbl, new UsernameSanitizer(), username);
+            bool isPasswordValid = Sanitizer.Sanitize(errorPasswordLbl, new PasswordSanitizer(), password);
+            bool isUserRoleValid = Sanitizer.Sanitize(errorUserRoleLbl, new GeneralInputSanitizer(), userRole); 
+            bool isUserQuestionValid = Sanitizer.Sanitize(errorSecretQuestionlbl, new GeneralInputSanitizer(), userQuestion);
+            bool isUserAnswerValid = Sanitizer.Sanitize(errorSecretAnswerLbl, new GeneralInputSanitizer(), userAnswer);
+
+            return isNameUserValid && isUsernameValid & isPasswordValid && isUserRoleValid && isUserQuestionValid && isUserAnswerValid;
+        }
+
         //Gets the information from the text inputs to then add a new user
         private void addUserBtn_Click(object sender, EventArgs e)
         {
@@ -65,20 +79,26 @@ namespace ManejoDeActivos
             string userQuestion = (string) ((userQuestionCbx.SelectedItem == null)? "": userQuestionCbx.SelectedItem);
             string userAnswer = userAnswerTxt.Text;
 
-            Boolean userCreated = userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+            bool areInputsValid = ValidateUserManagementInputs(nameUser, username, password, userRole, userQuestion, userAnswer);
 
-            if (userCreated)
+            if (areInputsValid)
             {
-                userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
-                outputUserLbl.Text = "";
-                ClearForm();
-                UpdateUsersTable();
-                MessageBox.Show("Usuario Agregado Correctamente");
+                Boolean userCreated = userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+
+                if (userCreated)
+                {
+                    userManagmenteController.CreateUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+                    outputUserLbl.Text = "";
+                    ClearForm();
+                    UpdateUsersTable();
+                    MessageBox.Show("Usuario Agregado Correctamente");
+                }
+                else
+                {
+                    outputUserLbl.Text = "Nombre de usuario ya existe";
+                }
             }
-            else
-            {
-                outputUserLbl.Text = "Nombre de usuario ya existe";
-            }    
+            
         }
 
         //Clears all inputs from the form
@@ -146,21 +166,25 @@ namespace ManejoDeActivos
                 string userRole = (string)((userRolCbx.SelectedItem == null) ? "" : userRolCbx.SelectedItem);
                 string userQuestion = (string)((userQuestionCbx.SelectedItem == null) ? "" : userQuestionCbx.SelectedItem);
                 string userAnswer = userAnswerTxt.Text;
+                bool areInputsValid = ValidateUserManagementInputs(nameUser, username, password, userRole, userQuestion, userAnswer);
+                if (areInputsValid)
+                {
+                    Boolean usernameFound = userManagmenteController.VerifyUsername(username);
 
-                Boolean usernameFound = userManagmenteController.VerifyUsername(username);
-                
-                if (usernameFound)
-                {
-                    userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
-                    outputUserLbl.Text = "";
-                    ClearForm();
-                    UpdateUsersTable();
-                    MessageBox.Show("Usuario modificado Correctamente");
+                    if (usernameFound)
+                    {
+                        userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+                        outputUserLbl.Text = "";
+                        ClearForm();
+                        UpdateUsersTable();
+                        MessageBox.Show("Usuario modificado Correctamente");
+                    }
+                    else
+                    {
+                        outputUserLbl.Text = "Nombre de usuario no existe";
+                    }
                 }
-                else
-                {
-                    outputUserLbl.Text = "Nombre de usuario no existe";
-                }
+
             }
 
         }

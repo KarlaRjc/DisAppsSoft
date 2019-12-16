@@ -102,14 +102,13 @@ namespace AssetsManagement
             return user;
         }
 
-        public static void TransferAsset(string serial, string username, int idLab, int toLab)
+        public static void TransferAsset(string assetSeries, string username, int toLab, string transferComment)
         {
-            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(serial);
+            AssetEntity asset = AssetEntity.GetAssetBySerialNumber(assetSeries);
             UserEntity user = UserEntity.GetUserByUsername(username);
-            string description = asset.description;
-            LabEntity fromLab = Lab.GetLabById(idLab);
+            string fromLab = AssetTransferHistory.GetCurrentLabForAsset(assetSeries);
             LabEntity tolabtransf = Lab.GetLabById(toLab);
-            AssetTransferHistoryEntity assettransferred = AssetTransferHistory.CreateAssetTransferHistory(asset, DateTime.Now, fromLab, tolabtransf, user, description);
+            AssetTransferHistory.CreateAssetTransferHistory(asset, DateTime.Now, fromLab, tolabtransf, user, transferComment);
         }
         public static UserEntity ModifyUser(UserEntity userentity)
         {

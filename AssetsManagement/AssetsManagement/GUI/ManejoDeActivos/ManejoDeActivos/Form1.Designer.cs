@@ -189,7 +189,7 @@
             // homePanel
             // 
             this.homePanel.Location = new System.Drawing.Point(245, 67);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(2);
             this.homePanel.Name = "homePanel";
             this.homePanel.Size = new System.Drawing.Size(909, 643);
             this.homePanel.TabIndex = 2;
@@ -614,7 +614,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 609);
+            this.ClientSize = new System.Drawing.Size(1153, 700);
             this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);

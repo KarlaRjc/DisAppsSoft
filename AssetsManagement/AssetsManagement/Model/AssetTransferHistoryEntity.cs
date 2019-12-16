@@ -12,15 +12,17 @@ namespace AssetsManagement
         [Key]
         public int id { get; set; }
 
-        public AssetEntity assetTransfered { get; set; }
+        public string assetTransfered { get; set; }
+        public string series { get; set; }
 
         public DateTime transferDate { get; set; }
 
-        public LabEntity transferedFromLab { get; set; }
+        public string transferedFromLab { get; set; }
 
-        public LabEntity transferedToLab { get; set; }
+        public string transferedToLab { get; set; }
 
-        public UserEntity transferedByUser { get; set; }
+        public string transferedByUser { get; set; }
+        public string tranferedByUsername { get; set; }
 
         public string description { get; set; }
 

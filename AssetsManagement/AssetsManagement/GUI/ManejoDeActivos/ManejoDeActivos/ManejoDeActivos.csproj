@@ -100,6 +100,11 @@
     <Compile Include="UserManagment.Designer.cs">
       <DependentUpon>UserManagment.cs</DependentUpon>
     </Compile>
+    <Compile Include="_AssetsManagement_assets.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AssetsManagement_assets.xsd</DependentUpon>
+    </Compile>
     <Compile Include="_AssetsManagement_DbModelDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -119,6 +124,11 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>_AssetsManagement_DbModelDataSet31.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="_AssetsManagement_DbModelDataSet41.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>_AssetsManagement_DbModelDataSet41.xsd</DependentUpon>
     </Compile>
     <EmbeddedResource Include="AssetManagment.resx">
       <DependentUpon>AssetManagment.cs</DependentUpon>
@@ -155,6 +165,17 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="_AssetsManagement_assets.xsc">
+      <DependentUpon>_AssetsManagement_assets.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_assets.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_AssetsManagement_assets.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_AssetsManagement_assets.xss">
+      <DependentUpon>_AssetsManagement_assets.xsd</DependentUpon>
+    </None>
     <None Include="_AssetsManagement_DbModelDataSet.xsc">
       <DependentUpon>_AssetsManagement_DbModelDataSet.xsd</DependentUpon>
     </None>
@@ -198,6 +219,17 @@
     </None>
     <None Include="_AssetsManagement_DbModelDataSet31.xss">
       <DependentUpon>_AssetsManagement_DbModelDataSet31.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet41.xsc">
+      <DependentUpon>_AssetsManagement_DbModelDataSet41.xsd</DependentUpon>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet41.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>_AssetsManagement_DbModelDataSet41.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="_AssetsManagement_DbModelDataSet41.xss">
+      <DependentUpon>_AssetsManagement_DbModelDataSet41.xsd</DependentUpon>
     </None>
   </ItemGroup>
   <ItemGroup>

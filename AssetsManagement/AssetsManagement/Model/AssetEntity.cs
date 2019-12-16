@@ -94,6 +94,14 @@ namespace AssetsManagement
             }
             return asset;
         }
-
+        public static AssetEntity GetAssetById(int id)
+        {
+            AssetEntity asset = null;
+            using (DbModel db = new DbModel())
+            {
+                asset = db.Asset.Where(x => x.id == id).FirstOrDefault();
+            }
+            return asset;
+        }
     }
 }

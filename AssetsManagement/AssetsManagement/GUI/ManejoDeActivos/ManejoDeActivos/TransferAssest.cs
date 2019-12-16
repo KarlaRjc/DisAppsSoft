@@ -1,4 +1,5 @@
 ﻿using AssetsManagement;
+using AssetsManagement.DTO.TransferAsset;
 using ManejoDeActivos.Controller;
 using ManejoDeActivos.Controller.Sanitize;
 using ManejoDeActivos.Controller.Sanitize.DefinedSanitizers;
@@ -35,10 +36,15 @@ namespace ManejoDeActivos
 
         private void TransferAssest_Load(object sender, EventArgs e)
         {
-            // TODO: esta línea de código carga datos en la tabla '_AssetsManagement_DbModelDataSet3.AssetEntities' Puede moverla o quitarla según sea necesario.
-            this.assetEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet3.AssetEntities);
-            // TODO: This line of code loads data into the '_AssetsManagement_DbModelDataSet2.AssetTransferHistoryEntities' table. You can move, or remove it, as needed.
-            this.assetTransferHistoryEntitiesTableAdapter.Fill(this._AssetsManagement_DbModelDataSet2.AssetTransferHistoryEntities);
+            // TODO: This line of code loads data into the '_AssetsManagement_assets.AssetEntities' table. You can move, or remove it, as needed.
+            this.assetEntitiesTableAdapter1.Fill(this._AssetsManagement_assets.AssetEntities);
+            foreach (var lab in AssetTransferHistory.GetLabs())
+            {
+                labCbx.Items.Add(lab);
+            }
+            
+            labCbx.ValueMember = "LabId";
+            labCbx.DisplayMember = "LabName";
         }
         private void UpdateTransferAssetsTable()
         {
@@ -51,17 +57,31 @@ namespace ManejoDeActivos
 
         private void TransferAssetBtn_Click(object sender, EventArgs e)
         {
-            int labid = labCbx.SelectedIndex;
+            int labid = (labCbx.SelectedItem as LabItem).LabId;
             int selectedrowindex = assetsTransferTable.SelectedCells[0].RowIndex;
+            string transferComment = transfer_comment_text.Text;
             DataGridViewRow selectedRow = assetsTransferTable.Rows[selectedrowindex];
-            string id = Convert.ToString(selectedRow.Cells[0].Value);
-            int fromlab = 0;
+            string series = (selectedRow.Cells[4].Value.ToString());
+
             string username = LoginController.currentUser.username;
 
-            User.TransferAsset(id, username, fromlab, labid);
+            User.TransferAsset(series, username, labid, transferComment);
 
             MessageBox.Show("Activo Transferido Correctamente");
             
+        }
+
+        private void assetsTransferTable_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void assetsTransferTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedrowindex = assetsTransferTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = assetsTransferTable.Rows[selectedrowindex];
+
+            asset_to_transfer_label.Text = Convert.ToString(selectedRow.Cells[1].Value);
         }
     }
 }

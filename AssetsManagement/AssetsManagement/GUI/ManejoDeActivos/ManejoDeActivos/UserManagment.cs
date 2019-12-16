@@ -20,6 +20,7 @@ namespace ManejoDeActivos
         public UserManagment()
         {
             InitializeComponent();
+            UpdateUsersTable();
         }
         
 

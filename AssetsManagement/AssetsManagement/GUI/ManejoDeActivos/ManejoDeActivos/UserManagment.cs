@@ -222,6 +222,17 @@ namespace ManejoDeActivos
             ClearForm();
         }
 
-       
+        private void usersTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+
+            nameUserTxt.Text = Convert.ToString(selectedRow.Cells[0].Value);
+            usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
+            passwordTxt.Text = Convert.ToString(ASTERISK);
+            userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
+            userQuestionCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
+            userAnswerTxt.Text = Convert.ToString(selectedRow.Cells[5].Value);
+        }
     }
 }

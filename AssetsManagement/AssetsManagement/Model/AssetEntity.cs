@@ -22,7 +22,6 @@ namespace AssetsManagement
 
         public string state { get; set; }
 
-
         /// <summary>
         /// Adds a new AssetEntity to the Database
         /// </summary>

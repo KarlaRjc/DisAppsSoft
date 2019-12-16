@@ -65,6 +65,10 @@
     <Compile Include="DTO\TransferAsset\LabItem.cs" />
     <Compile Include="Gatherer.cs" />
     <Compile Include="Lab.cs" />
+    <Compile Include="Migrations\201912130659358_test.cs" />
+    <Compile Include="Migrations\201912130659358_test.designer.cs">
+      <DependentUpon>201912130659358_test.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Model\AssetEntity.cs" />
     <Compile Include="Model\AssetTransferHistoryEntity.cs" />
@@ -87,6 +91,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201912130659358_test.resx">
+      <DependentUpon>201912130659358_test.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -240,7 +240,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(616, 90);
+            this.label1.Location = new System.Drawing.Point(619, 95);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(170, 20);
@@ -253,10 +253,10 @@
             this.labCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.labCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labCbx.FormattingEnabled = true;
-            this.labCbx.Location = new System.Drawing.Point(620, 117);
+            this.labCbx.Location = new System.Drawing.Point(631, 124);
             this.labCbx.Margin = new System.Windows.Forms.Padding(2);
             this.labCbx.Name = "labCbx";
-            this.labCbx.Size = new System.Drawing.Size(89, 28);
+            this.labCbx.Size = new System.Drawing.Size(158, 28);
             this.labCbx.TabIndex = 8;
             this.labCbx.SelectedIndexChanged += new System.EventHandler(this.labCbx_SelectedIndexChanged);
             // 
@@ -288,7 +288,7 @@
             // 
             // transfer_comment_text
             // 
-            this.transfer_comment_text.Location = new System.Drawing.Point(620, 247);
+            this.transfer_comment_text.Location = new System.Drawing.Point(610, 247);
             this.transfer_comment_text.Name = "transfer_comment_text";
             this.transfer_comment_text.Size = new System.Drawing.Size(217, 96);
             this.transfer_comment_text.TabIndex = 16;
@@ -299,7 +299,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(616, 156);
+            this.label2.Location = new System.Drawing.Point(636, 156);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(132, 20);
@@ -320,7 +320,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(616, 224);
+            this.label4.Location = new System.Drawing.Point(619, 224);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(190, 20);

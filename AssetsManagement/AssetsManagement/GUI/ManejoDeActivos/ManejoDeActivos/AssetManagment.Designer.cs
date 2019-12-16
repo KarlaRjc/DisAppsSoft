@@ -337,6 +337,7 @@
             // 
             // assestStateCbx
             // 
+            this.assestStateCbx.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.assestStateCbx.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.assestStateCbx.FormattingEnabled = true;
             this.assestStateCbx.Items.AddRange(new object[] {

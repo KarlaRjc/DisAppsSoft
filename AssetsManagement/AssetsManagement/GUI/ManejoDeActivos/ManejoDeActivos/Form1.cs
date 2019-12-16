@@ -37,7 +37,7 @@ namespace ManejoDeActivos
 
         private void button5_Click(object sender, EventArgs e)
         {
-            openUserManagment(new Reports());
+            ChangeView(new Reports());
         }
 
         private void assestManagmentBtn_Click(object sender, EventArgs e)

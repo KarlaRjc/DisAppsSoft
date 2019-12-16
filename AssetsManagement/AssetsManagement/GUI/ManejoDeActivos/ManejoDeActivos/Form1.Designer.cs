@@ -32,7 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
-            this.transferHisotryBtn = new System.Windows.Forms.Button();
             this.transferAssestBtn = new System.Windows.Forms.Button();
             this.assestManagmentBtn = new System.Windows.Forms.Button();
             this.userManagmentBtn = new System.Windows.Forms.Button();
@@ -105,7 +104,6 @@
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
             this.panel3.Controls.Add(this.button1);
-            this.panel3.Controls.Add(this.transferHisotryBtn);
             this.panel3.Controls.Add(this.transferAssestBtn);
             this.panel3.Controls.Add(this.assestManagmentBtn);
             this.panel3.Controls.Add(this.userManagmentBtn);
@@ -127,24 +125,12 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
-            // transferHisotryBtn
-            // 
-            this.transferHisotryBtn.FlatAppearance.BorderSize = 0;
-            this.transferHisotryBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.transferHisotryBtn.Image = global::ManejoDeActivos.Properties.Resources.HistorialTransferenciasBtn;
-            this.transferHisotryBtn.Location = new System.Drawing.Point(13, 159);
-            this.transferHisotryBtn.Name = "transferHisotryBtn";
-            this.transferHisotryBtn.Size = new System.Drawing.Size(215, 80);
-            this.transferHisotryBtn.TabIndex = 4;
-            this.transferHisotryBtn.UseVisualStyleBackColor = true;
-            this.transferHisotryBtn.Click += new System.EventHandler(this.transferHisotryBtn_Click);
-            // 
             // transferAssestBtn
             // 
             this.transferAssestBtn.FlatAppearance.BorderSize = 0;
             this.transferAssestBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.transferAssestBtn.Image = global::ManejoDeActivos.Properties.Resources.RealizarTransferenciasBtn;
-            this.transferAssestBtn.Location = new System.Drawing.Point(14, 80);
+            this.transferAssestBtn.Location = new System.Drawing.Point(14, 89);
             this.transferAssestBtn.Name = "transferAssestBtn";
             this.transferAssestBtn.Size = new System.Drawing.Size(215, 80);
             this.transferAssestBtn.TabIndex = 3;
@@ -156,7 +142,7 @@
             this.assestManagmentBtn.FlatAppearance.BorderSize = 0;
             this.assestManagmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.assestManagmentBtn.Image = global::ManejoDeActivos.Properties.Resources.ManejoActivosBtn;
-            this.assestManagmentBtn.Location = new System.Drawing.Point(13, 235);
+            this.assestManagmentBtn.Location = new System.Drawing.Point(3, 163);
             this.assestManagmentBtn.Name = "assestManagmentBtn";
             this.assestManagmentBtn.Size = new System.Drawing.Size(219, 73);
             this.assestManagmentBtn.TabIndex = 2;
@@ -168,7 +154,7 @@
             this.userManagmentBtn.FlatAppearance.BorderSize = 0;
             this.userManagmentBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.userManagmentBtn.Image = global::ManejoDeActivos.Properties.Resources.ManejoUsuariosBtn;
-            this.userManagmentBtn.Location = new System.Drawing.Point(13, 307);
+            this.userManagmentBtn.Location = new System.Drawing.Point(3, 226);
             this.userManagmentBtn.Name = "userManagmentBtn";
             this.userManagmentBtn.Size = new System.Drawing.Size(215, 78);
             this.userManagmentBtn.TabIndex = 2;
@@ -621,7 +607,7 @@
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "CTP Mario Quiros Sasso";
+            this.Text = "CTP Mario Quirós Sasso";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
@@ -658,7 +644,6 @@
         private System.Windows.Forms.Label CurrentRoleText;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button reportsBtn;
-        private System.Windows.Forms.Button transferHisotryBtn;
         private System.Windows.Forms.Button transferAssestBtn;
         private System.Windows.Forms.Button userManagmentBtn;
         private System.Windows.Forms.Button assestManagmentBtn;

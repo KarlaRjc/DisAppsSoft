@@ -390,7 +390,7 @@
             this.cleanFormBtn.FlatAppearance.BorderSize = 0;
             this.cleanFormBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cleanFormBtn.Image = global::ManejoDeActivos.Properties.Resources.LimpiarFormularioBtn;
-            this.cleanFormBtn.Location = new System.Drawing.Point(584, 540);
+            this.cleanFormBtn.Location = new System.Drawing.Point(556, 522);
             this.cleanFormBtn.Margin = new System.Windows.Forms.Padding(2);
             this.cleanFormBtn.Name = "cleanFormBtn";
             this.cleanFormBtn.Size = new System.Drawing.Size(215, 44);
@@ -416,7 +416,7 @@
             this.editUserBtn.FlatAppearance.BorderSize = 0;
             this.editUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.editUserBtn.Image = global::ManejoDeActivos.Properties.Resources.EdiarBtn;
-            this.editUserBtn.Location = new System.Drawing.Point(584, 495);
+            this.editUserBtn.Location = new System.Drawing.Point(555, 477);
             this.editUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.editUserBtn.Name = "editUserBtn";
             this.editUserBtn.Size = new System.Drawing.Size(106, 41);
@@ -429,7 +429,7 @@
             this.addUserBtn.FlatAppearance.BorderSize = 0;
             this.addUserBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addUserBtn.Image = global::ManejoDeActivos.Properties.Resources.AgregarBtn;
-            this.addUserBtn.Location = new System.Drawing.Point(693, 495);
+            this.addUserBtn.Location = new System.Drawing.Point(665, 477);
             this.addUserBtn.Margin = new System.Windows.Forms.Padding(2);
             this.addUserBtn.Name = "addUserBtn";
             this.addUserBtn.Size = new System.Drawing.Size(106, 41);

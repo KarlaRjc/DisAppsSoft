@@ -68,10 +68,7 @@ namespace ManejoDeActivos
             ChangeView(new TransferAssest());
         }
 
-        private void transferHisotryBtn_Click(object sender, EventArgs e)
-        {
-            ChangeView(new TransferHistory());
-        }
+     
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -120,7 +117,6 @@ namespace ManejoDeActivos
                         case AssetsManagement.EnumRole.Recopilador:
                             assestManagmentBtn.Hide();
                             userManagmentBtn.Hide();
-                            transferHisotryBtn.Hide();
                             transferAssestBtn.Hide();
                             break;
                         default:

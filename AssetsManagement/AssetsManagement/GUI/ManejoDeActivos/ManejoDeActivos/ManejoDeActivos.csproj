@@ -95,12 +95,6 @@
     <Compile Include="TransferAssest.Designer.cs">
       <DependentUpon>TransferAssest.cs</DependentUpon>
     </Compile>
-    <Compile Include="TransferHistory.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="TransferHistory.Designer.cs">
-      <DependentUpon>TransferHistory.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserManagment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,9 +147,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TransferAssest.resx">
       <DependentUpon>TransferAssest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="TransferHistory.resx">
-      <DependentUpon>TransferHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserManagment.resx">
       <DependentUpon>UserManagment.cs</DependentUpon>

@@ -17,15 +17,14 @@ namespace ManejoDeActivos.Controller
 
             if (!VerifyUsername(username))
             {
-                UserEntity userentityAdmin = Admin.CreateUser(7, nameUser, mapInputToEnumRole(userRole), username, EncryptPassword(password), userQuestion, userAnswer);
-                UserEntity.CreateUserToDB(userentityAdmin);
-
+                Admin.CreateUser(nameUser, mapInputToEnumRole(userRole), username, EncryptPassword(password), userQuestion, userAnswer);
                 userCreated = true;
             }
 
             return userCreated;
 
         }
+
         public static string EncryptPassword(string passwordEncryted)
         {
 
@@ -43,6 +42,7 @@ namespace ManejoDeActivos.Controller
             */
         }
 
+        //Verifies if the username already exists
         public Boolean VerifyUsername(string username)
         {
             Boolean usernameFound = Admin.CheckUsername(username);

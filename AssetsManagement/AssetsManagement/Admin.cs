@@ -8,17 +8,19 @@ namespace AssetsManagement
 {
     public class Admin : User
     {
-
-        public static UserEntity CreateUser(int id, string name, EnumRole role, string username, string password, string secretQuestion, string secretAnswer)
+        //Creates a new userEntity and then calls the method UserEntity.CreateUserToDB
+        public static UserEntity CreateUser(string name, EnumRole role, string username, string password, string secretQuestion, string secretAnswer)
         {
             UserEntity userentity = new UserEntity();
-            userentity.id = id;
+            
             userentity.name = name;
             userentity.role = role;
             userentity.username = username;
             userentity.password = password;
             userentity.secretQuestion = secretQuestion;
             userentity.secretAnswer = secretAnswer;
+
+            UserEntity.CreateUserToDB(userentity);
 
             return userentity;
         }
@@ -74,6 +76,22 @@ namespace AssetsManagement
             }
 
             return userFound;
+        }
+
+        //Creates a new assetEntity and then calls the method AssetEntity.CreateAssetToDB
+        public static AssetEntity CreateAsset(string description, string brand, string model, string series, string state)
+        {
+
+            AssetEntity asset = new AssetEntity();
+            asset.description = description;
+            asset.brand = brand;
+            asset.model = model;
+            asset.series = series;
+            asset.state = state;
+
+            AssetEntity.CreateAssetToDB(asset);
+
+            return asset;
         }
     }
 }

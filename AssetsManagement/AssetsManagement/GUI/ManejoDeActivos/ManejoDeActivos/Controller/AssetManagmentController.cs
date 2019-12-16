@@ -31,12 +31,12 @@ namespace ManejoDeActivos.Controller
 
         public void RemoveAsset(string asset)
         {
-            AdminAsset.DeleteAsset(asset);
+            Admin.DeleteAsset(asset);
         }
 
         public void ModifyAsset(string description, string brand, string model, string series, string state)
         {
-            bool wasSuccessful = AdminAsset.ModifyAsset(description, brand, model, series, state);
+            bool wasSuccessful = Admin.ModifyAsset(description, brand, model, series, state);
             if (!wasSuccessful)
             {
                 throw new Exception();

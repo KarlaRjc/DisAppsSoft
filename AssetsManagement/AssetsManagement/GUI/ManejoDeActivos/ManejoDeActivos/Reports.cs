@@ -25,7 +25,7 @@ namespace ManejoDeActivos
                 InitializeComponent();
         }
 
-        public IteratorAssetItem ObtainIterator() {
+        public IIteratorAssetItem ObtainIterator() {
 
             return new IteratorAssetItem(Assets);
         }

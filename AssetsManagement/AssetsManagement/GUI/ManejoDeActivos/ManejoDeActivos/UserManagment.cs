@@ -132,6 +132,7 @@ namespace ManejoDeActivos
             }
         }
 
+        //Triggers the action for remove assets
         private void RemoveUserBtn_Click(object sender, EventArgs e)
         {
 
@@ -154,7 +155,7 @@ namespace ManejoDeActivos
             
         }
 
-        //Button that triggers the action of editing an user
+        //Button that triggers the action of editing an user, it validates if the user changed the password
         public void editUserBtn_Click(object sender, EventArgs e)
         {
 
@@ -222,6 +223,7 @@ namespace ManejoDeActivos
             ClearForm();
         }
 
+        //Event to auto fill the spaces where the attributes should go
         private void usersTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedrowindex = usersTable.SelectedCells[0].RowIndex;

@@ -63,6 +63,7 @@ namespace AssetsManagement
             return userentity;
         }
 
+        //Map the user inputs in the entity
         public static UserEntity MapUserInputToUserEntity(string name, EnumRole role, string username, string password, string userQuestion, string userAnswer)
         {
             var user = GetUserByUsername(username);
@@ -117,6 +118,7 @@ namespace AssetsManagement
             return user;
         }
 
+        //Method to transfer assets
         public static void TransferAsset(string assetSeries, string username, int toLab, string transferComment)
         {
             AssetEntity asset = AssetEntity.GetAssetBySerialNumber(assetSeries);

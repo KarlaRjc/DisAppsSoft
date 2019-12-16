@@ -76,6 +76,7 @@ namespace AssetsManagement
                 db.SaveChanges();
             }
         }
+
         //Returns the assest if the serial number exists otherwise returns null
         public static AssetEntity GetAssetBySerialNumber(string serial)
         {
@@ -86,6 +87,8 @@ namespace AssetsManagement
             }
             return asset;
         }
+
+        //Returns asset if ID exist
         public static AssetEntity GetAssetById(int id)
         {
             AssetEntity asset = null;

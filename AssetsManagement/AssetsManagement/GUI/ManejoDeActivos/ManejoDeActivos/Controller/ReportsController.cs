@@ -8,6 +8,8 @@ using System.Windows.Forms;
 
 namespace ManejoDeActivos.Controller
 {
+
+    //This class contains the querys to work the asset transfer
     class ReportsController
     {
         public static void AssetsByLabReport(DataGridView grid) 

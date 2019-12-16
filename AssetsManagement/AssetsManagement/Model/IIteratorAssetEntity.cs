@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
+    //This is the interface that contain the methods to work with the iterator
     interface IIteratorAssetEntity
     {
         void FirstAsset();

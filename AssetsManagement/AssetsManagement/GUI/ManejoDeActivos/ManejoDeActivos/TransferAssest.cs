@@ -54,7 +54,7 @@ namespace ManejoDeActivos
             }
         }
 
-
+        //Button that triggers the transfer of assets
         private void TransferAssetBtn_Click(object sender, EventArgs e)
         {
             cmbx_lab_error.ResetText();
@@ -91,6 +91,7 @@ namespace ManejoDeActivos
 
         }
 
+        //This is the table of transfer asset
         private void assetsTransferTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedrowindex = assetsTransferTable.SelectedCells[0].RowIndex;

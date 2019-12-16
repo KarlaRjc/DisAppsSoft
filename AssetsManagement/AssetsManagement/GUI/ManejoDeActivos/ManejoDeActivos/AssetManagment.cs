@@ -140,6 +140,8 @@ namespace ManejoDeActivos
             ClearForm();
         }
 
+
+        //Botton tho edit assets.
         private void editAssestBtn_Click(object sender, EventArgs e)
         {
             if (assetsManagmentTable.SelectedCells.Count > 0)

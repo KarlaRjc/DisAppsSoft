@@ -8,6 +8,8 @@ namespace UnitTest
     [TestClass]
     public class AssetTest
     {
+
+        //Create asset with correct information
         [TestMethod]
         public void CreateAssertWithDataOk()
         {
@@ -28,6 +30,7 @@ namespace UnitTest
 
         }
 
+        //Create asset to data empty
         [TestMethod]
         public void CreateAssertWithDataEmpty()
         {

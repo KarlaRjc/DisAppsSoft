@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement
 {
+
+    //Class inheriting from user, this is a type of user
+    //It contains the methods of the actions that this type of user can execute.
     public class Teacher : User
     {
 

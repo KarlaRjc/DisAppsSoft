@@ -34,6 +34,7 @@ namespace ManejoDeActivos.Controller
             Admin.DeleteAsset(asset);
         }
 
+        //Method to modify assets
         public void ModifyAsset(string description, string brand, string model, string series, string state)
         {
             bool wasSuccessful = Admin.ModifyAsset(description, brand, model, series, state);

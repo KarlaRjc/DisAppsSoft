@@ -42,6 +42,7 @@ namespace AssetsManagement
             return labentity;
         }
 
+        //Retruns lab by id from the entity
         public static LabEntity GetLabById(int id)
         {
             LabEntity lab = null;

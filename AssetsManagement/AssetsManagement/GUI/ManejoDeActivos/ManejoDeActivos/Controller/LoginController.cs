@@ -16,6 +16,7 @@ namespace ManejoDeActivos.Controller
         {
             var result = new Dictionary<string, string>();
 
+            //Validate if the password is correct or incorrect
             var user = UserEntity.GetUserByUsername(userName);
             if (user != null)
             {
@@ -36,10 +37,14 @@ namespace ManejoDeActivos.Controller
             }
             return result;
         }
+
+        //Method to change password
         public static bool ChangePassword(string username, string secretAnswer, string newPassword) 
         {
             return UserEntity.ChangePassword(username, secretAnswer, EncryptPassword(newPassword));
         }
+
+        //Method to verify if user exist
         public static bool VerifyIfUserExists(string username) 
         {
             return ((UserEntity.GetUserByUsername(username)) == null) ? false : true ;
@@ -49,6 +54,8 @@ namespace ManejoDeActivos.Controller
         {
             return User.GetSecretQuestionByUsername(username);
         }
+
+        //Method that received an encrypted password 
         public static string EncryptPassword(string passwordEncryted)
         {
            
@@ -66,6 +73,7 @@ namespace ManejoDeActivos.Controller
             */
         }
 
+        //Close the session
         public static void LogOut()
         {
             currentUser = null;

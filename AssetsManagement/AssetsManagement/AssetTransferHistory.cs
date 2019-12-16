@@ -9,18 +9,16 @@ namespace AssetsManagement
 {
     public class AssetTransferHistory
     {
+        //Attributes
         public int id { get; set; }
         public AssetEntity assetTansfered { get; set; }
         public DateTime transferDate { get; set; }
-
         public LabEntity transferedFromLab { get; set; }
-
         public LabEntity transferedToLab { get; set; }
-
         public UserEntity transferedByUser { get; set; }
-
         public string description { get; set; }
 
+        //Method to create a new asset transfer 
         public static void CreateAssetTransferHistory(AssetEntity assetTranfered, DateTime transferDate, string transferedFromLab, LabEntity transferedToLab, UserEntity transferedByUser, string description)
         {
             AssetTransferHistoryEntity assetTransferHistoryEntity = new AssetTransferHistoryEntity();
@@ -40,6 +38,7 @@ namespace AssetsManagement
             }
         }
 
+        //Method to modify a new asset transfer 
         public static AssetTransferHistoryEntity ModifyAssetTransferHistory(AssetTransferHistory assetTransferHistory, AssetTransferHistoryEntity assetTransferHistoryEntity)
         {
             assetTransferHistoryEntity.assetTransfered = assetTransferHistory.assetTansfered.description;
@@ -53,6 +52,7 @@ namespace AssetsManagement
             return assetTransferHistoryEntity;
         }
 
+        //Return the lab where is the asset
         public static string GetCurrentLabForAsset(string series) 
         {
             string lab = null;
@@ -64,6 +64,7 @@ namespace AssetsManagement
             return lab != null ? lab : "N/A";
         }
 
+        //Returns the list of labs
         public static List<LabItem> GetLabs() 
         {
             List<LabItem> labs = new List<LabItem>();

@@ -12,13 +12,8 @@ namespace AssetsManagement
     {
         [Key]
         public int id { get; set; }
-
         public string name { get; set; }
-
-
         public List<AssetEntity> Assets { get; set; }
-
-
 
         /// <summary>
         /// Adds a new LabEntity to the Database
@@ -82,6 +77,7 @@ namespace AssetsManagement
             }
         }
 
+        //This is the return of the itelator that return assets
         public IteratorAssetEntity ObtainIterator()
         {
             return new IteratorAssetEntity(Assets);

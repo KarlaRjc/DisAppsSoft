@@ -117,6 +117,7 @@ namespace AssetsManagement
             }
         }
 
+        //This method return users by user name
         public static UserEntity GetUserByUsername(string username)
         {
             UserEntity user = null;

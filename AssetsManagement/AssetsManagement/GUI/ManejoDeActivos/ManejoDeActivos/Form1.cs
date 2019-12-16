@@ -45,6 +45,7 @@ namespace ManejoDeActivos
             ChangeView(new AssetManagment());
         }
 
+        //Change the view between Loing and the main menu windows
         private void ChangeView(object childForm) 
         {
             if (this.homePanel.Controls.Count > 0)
@@ -198,6 +199,7 @@ namespace ManejoDeActivos
             }
         }
 
+        //Botton allows modify a password
         private void ChangePasswordButton_Click(object sender, EventArgs e)
         {
             resetPassword_answer_error_label.ResetText();

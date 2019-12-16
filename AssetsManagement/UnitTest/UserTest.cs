@@ -12,6 +12,8 @@ namespace UnitTest
     [TestClass]
     public class UserTest
         {
+            
+        //Create user with data ok
             [TestMethod]
             public void CreateUserWithDataOk()
             {
@@ -30,7 +32,8 @@ namespace UnitTest
                 Assert.AreNotEqual(expectedResult, result);
 
             }
-
+            
+            //Create asset with the id in negative 
             [TestMethod]
             public void CreateUserWithNegativeId()
             {
@@ -49,7 +52,8 @@ namespace UnitTest
                 Assert.AreNotEqual(expectedResult, result);
 
             }
-
+            
+        //Create asset with the data empty
             [TestMethod]
             public void CreateUserWithDataEmpty()
             {
@@ -69,6 +73,7 @@ namespace UnitTest
 
             }
 
+            //Create users with decimal numbers
             [TestMethod]
             public void CreateUserWithDecimal()
             {
@@ -88,7 +93,8 @@ namespace UnitTest
 
             }
 
-            [TestMethod]
+        //Arithmetic operations within the input
+        [TestMethod]
             public void CreateUserIdwithArithmeticOperations()
             {
                 //Arrange

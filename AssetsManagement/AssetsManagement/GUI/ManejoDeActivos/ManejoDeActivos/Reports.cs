@@ -30,13 +30,14 @@ namespace ManejoDeActivos
             return new IteratorAssetItem(Assets);
         }
 
+        //In this method you can find the return of the itelators
         private void Reports_Load(object sender, EventArgs e)
         {
             ReportsController.AssetsByStateReport(assets_by_state_grid, "");
             ReportsController.TransfersByUserReport(tranfers_by_user_report, "");
             ReportsController.TransfersByAssetReport(transfers_by_asset_report, "");
            
-
+           
             foreach (var user in User.GetUsers())
             {
                 user_comboBox.Items.Add(user);
@@ -63,6 +64,7 @@ namespace ManejoDeActivos
 
         }
 
+        //Bottons to transfer assets by atribbutes
         private void assets_by_state_btn_Click(object sender, EventArgs e)
         {
             string state = (state_ComboBox.SelectedItem != null ? state_ComboBox.SelectedItem.ToString(): (state_ComboBox.Text != "" ? state_ComboBox.Text:""));

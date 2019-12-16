@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement.DTO.Reports
 {
+    //This is the interface that contain the methods to work with the iterator
     public interface IIteratorAssetItem
     {
         void FirstAsset();

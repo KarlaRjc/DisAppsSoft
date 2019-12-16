@@ -30,6 +30,8 @@ namespace AssetsManagement
             return false;
         }
 
+
+
         public static void DeleteUser(string username)
         {
             UserEntity user = User.GetUserByUsername(username);

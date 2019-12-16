@@ -65,6 +65,11 @@ namespace ManejoDeActivos.Controller
              * line4 Converts the 8 bits value into 64 digits
             */
         }
+
+        public static void LogOut()
+        {
+            currentUser = null;
+        }
         
     }
 }

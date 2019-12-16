@@ -172,5 +172,18 @@ namespace ManejoDeActivos
                 
             }
         }
+
+        private void assetsManagmentTable_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
+            DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
+
+            assestDescriptionTxt.Text = Convert.ToString(selectedRow.Cells[0].Value);
+            assestBrandTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
+            assestModelTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
+            assestSerialNumberTxt.Text = Convert.ToString(selectedRow.Cells[3].Value);
+            assestStateCbx.Text = Convert.ToString(assestStateCbx.SelectedItem != null ? assestStateCbx.SelectedItem.ToString() : "");
+            
+        }
     }
 }

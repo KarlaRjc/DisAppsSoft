@@ -208,5 +208,7 @@ namespace ManejoDeActivos
         {
             ClearForm();
         }
+
+       
     }
 }

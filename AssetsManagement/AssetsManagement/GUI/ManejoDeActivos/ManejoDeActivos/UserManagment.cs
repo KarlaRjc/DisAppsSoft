@@ -18,7 +18,7 @@ namespace ManejoDeActivos
     {
         UserManagmentController userManagmenteController = new UserManagmentController();
 
-        string asterisk = "**********";
+        const string ASTERISK = "**********";
 
         public UserManagment()
         {
@@ -139,7 +139,7 @@ namespace ManejoDeActivos
                 string userAnswer = userAnswerTxt.Text;
 
                 Boolean usernameFound = userManagmenteController.VerifyUsername(username);
-
+                
                 if (usernameFound)
                 {
                     userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
@@ -163,7 +163,7 @@ namespace ManejoDeActivos
 
             nameUserTxt.Text = Convert.ToString(selectedRow.Cells[0].Value);
             usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
-            passwordTxt.Text = Convert.ToString(asterisk);
+            passwordTxt.Text = Convert.ToString(ASTERISK);
             userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
             userQuestionCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
             userAnswerTxt.Text = Convert.ToString(selectedRow.Cells[5].Value);

@@ -20,6 +20,7 @@ namespace ManejoDeActivos
         public AssetManagment()
         {
             InitializeComponent();
+            UpdateAssetsTable();
         }
 
         private void AssetManagment_Load(object sender, EventArgs e)

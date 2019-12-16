@@ -61,7 +61,6 @@ namespace AssetsManagement
             return user;
         }
 
-        //CAMBIAR A ADMIN
         /// <summary>
         /// Modifies an existing UserEntity, receives as parameters the UserEntity that wants to be modified and a User with the updated information
         /// </summary>

@@ -70,8 +70,9 @@ namespace ManejoDeActivos.Controller
             }
         }
         //Allows to modify user entity according to the role and then add it to the database
-        public void ModifyUser(string nameUser, string username, string password, string userRole, string userQuestion, string userAnswer)
+        public void ModifyUser(string nameUser, string username, String password, string userRole, string userQuestion, string userAnswer)
         {    
+            
            bool wasSuccessful = Admin.ModifyUser(nameUser, mapInputToEnumRole(userRole), username, EncryptPassword(password), userQuestion, userAnswer);
             if (!wasSuccessful) 
             {

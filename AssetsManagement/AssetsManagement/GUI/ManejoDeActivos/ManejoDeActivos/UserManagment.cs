@@ -17,6 +17,9 @@ namespace ManejoDeActivos
     public partial class UserManagment:Form
     {
         UserManagmentController userManagmenteController = new UserManagmentController();
+
+        const string ASTERISK = "**********";
+
         public UserManagment()
         {
             InitializeComponent();
@@ -130,6 +133,8 @@ namespace ManejoDeActivos
         {
             
         }
+
+        //Button that triggers the action of editing an user
         public void editUserBtn_Click(object sender, EventArgs e)
         {
 
@@ -143,7 +148,7 @@ namespace ManejoDeActivos
                 string userAnswer = userAnswerTxt.Text;
 
                 Boolean usernameFound = userManagmenteController.VerifyUsername(username);
-
+                
                 if (usernameFound)
                 {
                     userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
@@ -160,6 +165,7 @@ namespace ManejoDeActivos
 
         }
 
+        //This method is responsible for putting the data of the selected row in its respective text field
         private void usersTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
@@ -167,7 +173,7 @@ namespace ManejoDeActivos
 
             nameUserTxt.Text = Convert.ToString(selectedRow.Cells[0].Value);
             usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
-            passwordTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
+            passwordTxt.Text = Convert.ToString(ASTERISK);
             userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
             userQuestionCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
             userAnswerTxt.Text = Convert.ToString(selectedRow.Cells[5].Value);

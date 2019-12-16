@@ -20,7 +20,8 @@ namespace ManejoDeActivos
         public UserManagment()
         {
             InitializeComponent();
-            UpdateUsersTable();
+
+            UpdateUsersTable(); // updates the information from the data base
         }
         
 

@@ -20,6 +20,8 @@ namespace ManejoDeActivos
         public UserManagment()
         {
             InitializeComponent();
+
+            UpdateUsersTable(); // updates the information from the data base
         }
         
 
@@ -76,7 +78,7 @@ namespace ManejoDeActivos
             }    
         }
 
-        //Allow to clear all text inputs and calls the UpdateUsersTable()
+        //Clears all inputs from the form
         private void ClearForm()
         {
             nameUserTxt.ResetText();
@@ -98,7 +100,7 @@ namespace ManejoDeActivos
 
         }
 
-        // Allows to refresh the datagrid after inserting new record
+        // Updates the datagrid after CRUD new record
         private void UpdateUsersTable()
         {
             using (DbModel db = new DbModel())
@@ -109,13 +111,18 @@ namespace ManejoDeActivos
 
         private void RemoveUserBtn_Click(object sender, EventArgs e)
         {
-            if (usersTable.SelectedCells.Count > 0)
+
+            if(MessageBox.Show("¿Esta seguro(a) que desea eliminar el usuario?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes) 
             {
-                int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
-                string a = Convert.ToString(selectedRow.Cells[1].Value);
-                userManagmenteController.RemoveUser(a);
-                UpdateUsersTable();
+                if (usersTable.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
+                    string a = Convert.ToString(selectedRow.Cells[1].Value);
+                    userManagmenteController.RemoveUser(a);
+                    UpdateUsersTable();
+                    ClearForm();
+                }
             }
         }
 
@@ -162,8 +169,11 @@ namespace ManejoDeActivos
             usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
             passwordTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
             userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
+            userQuestionCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
+            userAnswerTxt.Text = Convert.ToString(selectedRow.Cells[5].Value);
         }
 
+        //Calls the ClearForm method
         private void cleanFormBtn_Click(object sender, EventArgs e)
         {
             ClearForm();

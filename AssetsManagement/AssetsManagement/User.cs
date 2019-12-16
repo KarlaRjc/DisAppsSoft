@@ -49,7 +49,7 @@ namespace AssetsManagement
             return userentity;
         }
 
-        public static UserEntity mapUserInputToUserEntity(string name, EnumRole role, string username, string password, string userQuestion, string userAnswer)
+        public static UserEntity MapUserInputToUserEntity(string name, EnumRole role, string username, string password, string userQuestion, string userAnswer)
         {
             var user = GetUserByUsername(username);
             user.name = name;
@@ -61,6 +61,7 @@ namespace AssetsManagement
             return user;
         }
 
+        //CAMBIAR A ADMIN
         /// <summary>
         /// Modifies an existing UserEntity, receives as parameters the UserEntity that wants to be modified and a User with the updated information
         /// </summary>
@@ -72,7 +73,7 @@ namespace AssetsManagement
             bool wasSuccessful = false;
             try
             {
-                var user = mapUserInputToUserEntity(name, role, username, password, userQuestion, userAnswer);
+                var user = MapUserInputToUserEntity(name, role, username, password, userQuestion, userAnswer);
                 UserEntity.ModifyUserToDB(user);
                 wasSuccessful = true;
             }
@@ -83,6 +84,7 @@ namespace AssetsManagement
             }
             return wasSuccessful;
         }
+
         public static string GetSecretQuestionByUsername(string username)
         {
             using (DbModel db = new DbModel())

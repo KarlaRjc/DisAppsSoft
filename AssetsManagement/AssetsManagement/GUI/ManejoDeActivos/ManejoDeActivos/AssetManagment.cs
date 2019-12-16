@@ -20,6 +20,7 @@ namespace ManejoDeActivos
         public AssetManagment()
         {
             InitializeComponent();
+            UpdateAssetsTable();
         }
 
         private void AssetManagment_Load(object sender, EventArgs e)
@@ -38,7 +39,7 @@ namespace ManejoDeActivos
 
             return isDescriptionValid && isBrandValid && isModelValid && isSerialNumberValid && isStateValid;
         }
-        //Adds new asset
+        //Captures all values from the form to create a new asset 
         private void addAssestBtn_Click(object sender, EventArgs e)
         {
             string description = assestDescriptionTxt.Text;
@@ -50,12 +51,10 @@ namespace ManejoDeActivos
             bool areInputsValid = ValidateAssetManagementInputs(description, brand, model, serialNumber, state);
             if (areInputsValid) 
             {
-                Boolean assetFound = assetManagmentController.VerifySerialNumber(serialNumber);
+                Boolean assetCreated = assetManagmentController.CreateAsset(description, brand, model, serialNumber, state);
 
-                if (!assetFound)
+                if (assetCreated)
                 {
-                    assetManagmentController.CreateAsset(description, brand, model, serialNumber, state);
-                    outputAssestLbl.Text = "";
                     ClearForm();
                     UpdateAssetsTable();
                     MessageBox.Show("Activo Agregado Correctamente");
@@ -67,6 +66,7 @@ namespace ManejoDeActivos
             }
         }
         
+        //Clears all text fields from the form 
         private void ClearForm()
         {
             assestDescriptionTxt.ResetText();
@@ -76,10 +76,9 @@ namespace ManejoDeActivos
             assestStateCbx.ResetText();
             assestStateCbx.SelectedItem = -1;
             outputAssestLbl.ResetText();
-
         }
 
-        //Updates all records from the database
+        //Updates all records from the database to the DataGridView
         private void UpdateAssetsTable()
         {
             using (DbModel db = new DbModel())
@@ -90,21 +89,49 @@ namespace ManejoDeActivos
 
         private void RemoveAssetBtn_Click(object sender, EventArgs e)
         {
-            if (assetsManagmentTable.SelectedCells.Count > 0)
+
+            if (MessageBox.Show("¿Esta seguro(a) que desea eliminar el activo?", "Alerta", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
-                int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
-                DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
-                string serial = Convert.ToString(selectedRow.Cells[5].Value);
-                assetManagmentController.RemoveAsset(serial);
-                UpdateAssetsTable();
+                if (assetsManagmentTable.SelectedCells.Count > 0)
+                {
+                    int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
+                    DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
+                    string serial = Convert.ToString(selectedRow.Cells[5].Value);
+                    assetManagmentController.RemoveAsset(serial);
+                    UpdateAssetsTable();
+                    ClearForm();
+                }
             }
         }
 
-        private void editAssestBtn_Click(object sender, EventArgs e)
+        public void editAssetBtn_Click(object sender, EventArgs e)
         {
+
+            if (assetsManagmentTable.SelectedCells.Count > 0)
+            {
+                string description = assestDescriptionTxt.Text;
+                string brand = assestBrandTxt.Text;
+                string model = assestModelTxt.Text;
+                string serialNumber = assestSerialNumberTxt.Text;
+                string state = (string)assestStateCbx.SelectedItem;
+
+                Boolean usernameFound = assetManagmentController.VerifySerialNumber(serialNumber);
+
+                if (usernameFound)
+                {
+                    assetManagmentController.ModifyAsset(description, brand, model, serialNumber, state);
+                    ClearForm();
+                    MessageBox.Show("Activo modificado Correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Serial del activo no existe");
+                }
+            }
 
         }
 
+        //Calls the ClearForm method which allows to clear all inputs from the form
         private void cleanFormBtn_Click(object sender, EventArgs e)
         {
             ClearForm();

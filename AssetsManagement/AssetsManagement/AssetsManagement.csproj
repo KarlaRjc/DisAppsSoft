@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin.cs" />
+    <Compile Include="AdminAsset.cs" />
     <Compile Include="Asset.cs" />
     <Compile Include="AssetTransferHistory.cs" />
     <Compile Include="DTO\TransferAsset\LabItem.cs" />

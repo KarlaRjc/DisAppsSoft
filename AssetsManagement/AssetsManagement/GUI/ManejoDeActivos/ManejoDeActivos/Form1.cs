@@ -42,10 +42,10 @@ namespace ManejoDeActivos
 
         private void assestManagmentBtn_Click(object sender, EventArgs e)
         {
-            openUserManagment(new AssetManagment());
+            ChangeView(new AssetManagment());
         }
 
-        private void openUserManagment(object childForm) 
+        private void ChangeView(object childForm) 
         {
             if (this.homePanel.Controls.Count > 0)
                 this.homePanel.Controls.RemoveAt(0);
@@ -60,17 +60,17 @@ namespace ManejoDeActivos
 
         private void userManagmentBtn_Click(object sender, EventArgs e)
         {
-            openUserManagment(new UserManagment());
+            ChangeView(new UserManagment());
         }
 
         private void transferAssestBtn_Click(object sender, EventArgs e)
         {
-            openUserManagment(new TransferAssest());
+            ChangeView(new TransferAssest());
         }
 
         private void transferHisotryBtn_Click(object sender, EventArgs e)
         {
-            openUserManagment(new TransferHistory());
+            ChangeView(new TransferHistory());
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -248,8 +248,10 @@ namespace ManejoDeActivos
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Form1 form1 = new Form1();
-            form1.Show();
+            LoginController.LogOut();
+            LoginPanel.Show();
+            
         }
+
     }
 }

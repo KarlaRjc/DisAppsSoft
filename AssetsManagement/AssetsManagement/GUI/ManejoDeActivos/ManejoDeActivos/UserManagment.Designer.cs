@@ -185,7 +185,6 @@
             this.usersTable.RowTemplate.Height = 24;
             this.usersTable.Size = new System.Drawing.Size(428, 349);
             this.usersTable.TabIndex = 10;
-            this.usersTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.usersTable_CellClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 

@@ -133,20 +133,6 @@ namespace ManejoDeActivos
 
         }
 
-        //This method is responsible for putting the data of the selected row in its respective text field
-        private void assetsManagmentTable_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int selectedrowindex = assetsManagmentTable.SelectedCells[0].RowIndex;
-            DataGridViewRow selectedRow = assetsManagmentTable.Rows[selectedrowindex];
-
-            assestDescriptionTxt.Text = Convert.ToString(selectedRow.Cells[0].Value);
-            assestBrandTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
-            assestModelTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
-            assestSerialNumberTxt.Text = Convert.ToString(selectedRow.Cells[3].Value);
-            assestStateCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
-            
-        }
-
         
         //Calls the ClearForm method which allows to clear all inputs from the form
         private void cleanFormBtn_Click(object sender, EventArgs e)

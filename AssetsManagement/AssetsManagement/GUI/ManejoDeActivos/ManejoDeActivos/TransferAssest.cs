@@ -98,5 +98,10 @@ namespace ManejoDeActivos
 
             asset_to_transfer_label.Text = Convert.ToString(selectedRow.Cells[1].Value);
         }
+
+        private void labCbx_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

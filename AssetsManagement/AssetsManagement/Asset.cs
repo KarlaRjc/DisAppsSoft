@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssetsManagement.DTO.Reports;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -43,6 +44,21 @@ namespace AssetsManagement
 
             return asset;
 
+        }
+
+        public static List<AssetItem> GetAssets() 
+        {
+            List<AssetItem> result = new List<AssetItem>();
+            using (DbModel db = new DbModel()) 
+            {
+                var assets = db.Asset.ToList();
+                foreach (var asset in assets)
+                {
+                    result.Add(new AssetItem() { Id = asset.id, Name= asset.description });
+                }
+                
+            }
+            return result;
         }
 
         //Returns the assest if the serial number exists otherwise returns null

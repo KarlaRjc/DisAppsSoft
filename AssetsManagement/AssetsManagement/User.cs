@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AssetsManagement.DTO.TransferAsset;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,19 @@ namespace AssetsManagement
 
         public abstract bool ChangePassword();
 
+        public static List<UserItem> GetUsers() 
+        {
+            List<UserItem> result = new List<UserItem>();
+            using (DbModel db = new DbModel())
+            {
+                var userEntitites = db.User.ToList();
+                foreach (var user in userEntitites)
+                {
+                    result.Add(new UserItem() { Id = user.id, Name = user.name });
+                }
+                return result;
+            }
+        }
         public User GetUserById(int id)
         {
             return null;

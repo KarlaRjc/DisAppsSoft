@@ -1,4 +1,7 @@
-﻿using ManejoDeActivos.Controller;
+﻿using AssetsManagement;
+using AssetsManagement.DTO.Reports;
+using AssetsManagement.DTO.TransferAsset;
+using ManejoDeActivos.Controller;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -20,10 +23,47 @@ namespace ManejoDeActivos
 
         private void Reports_Load(object sender, EventArgs e)
         {
-            ReportsController.AssetsByLabReport(assetsByLab_Grid);
+            ReportsController.AssetsByStateReport(assets_by_state_grid, "");
+            ReportsController.TransfersByUserReport(tranfers_by_user_report, "");
+            ReportsController.TransfersByAssetReport(transfers_by_asset_report, "");
+            foreach (var user in User.GetUsers())
+            {
+                user_comboBox.Items.Add(user);
+            }
+            user_comboBox.ValueMember = "Id";
+            user_comboBox.DisplayMember = "Name";
+            foreach (var asset in Asset.GetAssets())
+            {
+                assets_comboBox.Items.Add(asset);
+            }
+            assets_comboBox.ValueMember = "Id";
+            assets_comboBox.DisplayMember = "Name";
         }
 
         private void assetsByLab_Grid_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void assets_by_state_btn_Click(object sender, EventArgs e)
+        {
+            string state = (state_ComboBox.SelectedItem != null ? state_ComboBox.SelectedItem.ToString(): (state_ComboBox.Text != "" ? state_ComboBox.Text:""));
+            ReportsController.AssetsByStateReport(assets_by_state_grid, state);
+        }
+
+        private void tranfers_by_user_btn_Click(object sender, EventArgs e)
+        {
+            string userName = (user_comboBox.SelectedItem != null ? (user_comboBox.SelectedItem as UserItem).Name : (user_comboBox.Text != "" ? user_comboBox.Text : ""));;
+            ReportsController.TransfersByUserReport(tranfers_by_user_report, userName);
+        }
+
+        private void transfers_by_asset_Click(object sender, EventArgs e)
+        {
+            string asset = (assets_comboBox.SelectedItem != null ? (assets_comboBox.SelectedItem as AssetItem).Name : (assets_comboBox.Text != "" ? assets_comboBox.Text : ""));
+            ReportsController.TransfersByAssetReport(transfers_by_asset_report, asset);
+        }
+
+        private void state_ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

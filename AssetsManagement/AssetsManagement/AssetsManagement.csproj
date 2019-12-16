@@ -61,7 +61,9 @@
     <Compile Include="Admin.cs" />
     <Compile Include="Asset.cs" />
     <Compile Include="AssetTransferHistory.cs" />
+    <Compile Include="DTO\Reports\AssetItem.cs" />
     <Compile Include="DTO\TransferAsset\LabItem.cs" />
+    <Compile Include="DTO\Reports\UserItem.cs" />
     <Compile Include="Gatherer.cs" />
     <Compile Include="Lab.cs" />
     <Compile Include="Migrations\201912130659358_test.cs" />

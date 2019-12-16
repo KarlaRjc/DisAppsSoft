@@ -46,7 +46,7 @@ namespace ManejoDeActivos
             string brand = assestBrandTxt.Text;
             string model = assestModelTxt.Text;
             string serialNumber = assestSerialNumberTxt.Text;
-            string state = (string)assestStateCbx.SelectedItem;
+            string state = (assestStateCbx.SelectedItem != null ? assestStateCbx.SelectedItem.ToString() : "");
 
             bool areInputsValid = ValidateAssetManagementInputs(description, brand, model, serialNumber, state);
             if (areInputsValid) 
@@ -156,7 +156,35 @@ namespace ManejoDeActivos
 
         private void editAssestBtn_Click(object sender, EventArgs e)
         {
+            if (assetsManagmentTable.SelectedCells.Count > 0)
+            {
+                string description = assestDescriptionTxt.Text;
+                string brand = assestBrandTxt.Text;
+                string model = assestModelTxt.Text;
+                string serialNumber = assestSerialNumberTxt.Text;
+                string state = (assestStateCbx.SelectedItem != null ? assestStateCbx.SelectedItem.ToString() : "");
 
+                bool areInputsValid = ValidateAssetManagementInputs(description, brand, model, serialNumber, state);
+
+                if (areInputsValid)
+                {
+                    Boolean usernameFound = assetManagmentController.VerifySerialNumber(serialNumber);
+
+                    if (usernameFound)
+                    {
+                        assetManagmentController.ModifyAsset(description, brand, model, serialNumber, state);
+                        outputAssestLbl.Text = "";
+                        ClearForm();
+                        MessageBox.Show("Activo modificado Correctamente");
+                    }
+                    else
+                    {
+                        outputAssestLbl.Text = "El activo no existe";
+                    }
+                }
+
+                
+            }
         }
     }
 }

@@ -17,6 +17,9 @@ namespace ManejoDeActivos
     public partial class UserManagment:Form
     {
         UserManagmentController userManagmenteController = new UserManagmentController();
+
+        string asterisk = "**********";
+
         public UserManagment()
         {
             InitializeComponent();
@@ -160,12 +163,11 @@ namespace ManejoDeActivos
 
             nameUserTxt.Text = Convert.ToString(selectedRow.Cells[0].Value);
             usernameTxt.Text = Convert.ToString(selectedRow.Cells[1].Value);
-            passwordTxt.Text = Convert.ToString(selectedRow.Cells[2].Value);
+            passwordTxt.Text = Convert.ToString(asterisk);
             userRolCbx.Text = Convert.ToString(selectedRow.Cells[3].Value);
             userQuestionCbx.Text = Convert.ToString(selectedRow.Cells[4].Value);
             userAnswerTxt.Text = Convert.ToString(selectedRow.Cells[5].Value);
         }
-
 
     }
 }

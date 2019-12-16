@@ -58,7 +58,6 @@ namespace AssetsManagement
 
         }
 
-
         /// <summary>
         /// Deletes an AssetEntity from the Database, searches for the corresponding AssetEntity and deletes it
         /// </summary>

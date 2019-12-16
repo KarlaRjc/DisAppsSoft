@@ -123,18 +123,6 @@
             this.panel3.Size = new System.Drawing.Size(247, 741);
             this.panel3.TabIndex = 1;
             // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Location = new System.Drawing.Point(25, 470);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(177, 60);
-            this.button1.TabIndex = 6;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // transferHisotryBtn
             // 
             this.transferHisotryBtn.FlatAppearance.BorderSize = 0;

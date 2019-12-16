@@ -30,14 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.homePanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.transferHisotryBtn = new System.Windows.Forms.Button();
             this.transferAssestBtn = new System.Windows.Forms.Button();
             this.assestManagmentBtn = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
             this.userManagmentBtn = new System.Windows.Forms.Button();
             this.reportsBtn = new System.Windows.Forms.Button();
+            this.homePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CurrentRoleText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -76,6 +75,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -101,21 +101,13 @@
             this.panel1.Size = new System.Drawing.Size(1154, 710);
             this.panel1.TabIndex = 0;
             // 
-            // homePanel
-            // 
-            this.homePanel.Location = new System.Drawing.Point(245, 67);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(2);
-            this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(909, 643);
-            this.homePanel.TabIndex = 2;
-            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
+            this.panel3.Controls.Add(this.button1);
             this.panel3.Controls.Add(this.transferHisotryBtn);
             this.panel3.Controls.Add(this.transferAssestBtn);
             this.panel3.Controls.Add(this.assestManagmentBtn);
-            this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.userManagmentBtn);
             this.panel3.Controls.Add(this.reportsBtn);
             this.panel3.Location = new System.Drawing.Point(0, 65);
@@ -159,17 +151,6 @@
             this.assestManagmentBtn.UseVisualStyleBackColor = true;
             this.assestManagmentBtn.Click += new System.EventHandler(this.assestManagmentBtn_Click);
             // 
-            // button6
-            // 
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Image = global::ManejoDeActivos.Properties.Resources.SalirBtn;
-            this.button6.Location = new System.Drawing.Point(13, 574);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(145, 60);
-            this.button6.TabIndex = 5;
-            this.button6.UseVisualStyleBackColor = true;
-            // 
             // userManagmentBtn
             // 
             this.userManagmentBtn.FlatAppearance.BorderSize = 0;
@@ -193,6 +174,14 @@
             this.reportsBtn.TabIndex = 2;
             this.reportsBtn.UseVisualStyleBackColor = true;
             this.reportsBtn.Click += new System.EventHandler(this.button5_Click);
+            // 
+            // homePanel
+            // 
+            this.homePanel.Location = new System.Drawing.Point(245, 67);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.homePanel.Name = "homePanel";
+            this.homePanel.Size = new System.Drawing.Size(909, 643);
+            this.homePanel.TabIndex = 2;
             // 
             // panel2
             // 
@@ -610,14 +599,26 @@
             this.label3.Text = "Login";
             this.label3.Click += new System.EventHandler(this.label3_Click_1);
             // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Location = new System.Drawing.Point(26, 576);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(176, 56);
+            this.button1.TabIndex = 5;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 711);
-            this.Controls.Add(this.LoginPanel);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.LoginPanel);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "CTP Mario Quiros Sasso";
@@ -656,7 +657,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label CurrentRoleText;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button reportsBtn;
         private System.Windows.Forms.Button transferHisotryBtn;
         private System.Windows.Forms.Button transferAssestBtn;
@@ -698,6 +698,7 @@
         private System.Windows.Forms.Panel panel10;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label resetPassword_answer_error_label;
+        private System.Windows.Forms.Button button1;
     }
 }
 

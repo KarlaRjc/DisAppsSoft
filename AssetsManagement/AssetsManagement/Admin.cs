@@ -28,7 +28,7 @@ namespace AssetsManagement
             return false;
         }
 
-        public static void DeleteUser(string username)
+    public static void DeleteUser(string username)
         {
             UserEntity user = User.GetUserByUsername(username);
             UserEntity.DeleteUserToDB(user);
@@ -67,13 +67,81 @@ namespace AssetsManagement
                 }
 
             }
-            catch (Exception e) 
+            catch (Exception e)
             {
 
                 userFound = false;
             }
 
             return userFound;
+        }
+
+        /// <summary>
+        /// Modifies an existing UserEntity, receives as parameters the UserEntity that wants to be modified and a User with the updated information
+        /// </summary>
+        /// <param name="user"></param>
+        /// <param name="userentity"></param>
+        /// <returns></returns>
+        public static bool ModifyUser(string name, EnumRole role, string username, string password, string userQuestion, string userAnswer)
+        {
+            bool wasSuccessful = false;
+            try
+            {
+                var user = MapUserInputToUserEntity(name, role, username, password, userQuestion, userAnswer);
+                UserEntity.ModifyUserToDB(user);
+                wasSuccessful = true;
+            }
+            catch (Exception)
+            {
+
+                wasSuccessful = false;
+            }
+            return wasSuccessful;
+        }
+
+        public bool EditAsset(AssetEntity asset)
+        {
+            return false;
+        }
+
+        public bool CreateAsset(AssetEntity asset)
+        {
+            return false;
+        }
+
+        public static void DeleteAsset(string serial)
+        {
+            AssetEntity asset = Asset.GetAssetBySerialNumber(serial);
+            AssetEntity.DeleteAssetToDB(asset);
+        }
+
+
+        private UserEntity MapAssetToEntity(Asset asset)
+        {
+            return null;
+        }
+
+        /// <summary>
+        /// Modifies an existing AssetEntity, receives as parameters the AssetEntity that wants to be modified and an Asset with the updated information
+        /// </summary>
+        /// <param name="asset"></param>
+        /// <param name="assetentity"></param>
+        /// <returns></returns>
+        public static bool ModifyAsset(string description, string brand, string model, string series, string state)
+        {
+            bool wasSuccessful = false;
+            try
+            {
+                var asset = Asset.mapAssetInputToAssetEntity(description, brand, model, series, state);
+                AssetEntity.ModifyAssetToDB(asset);
+                wasSuccessful = true;
+            }
+            catch (Exception)
+            {
+
+                wasSuccessful = false;
+            }
+            return wasSuccessful;
         }
     }
 }

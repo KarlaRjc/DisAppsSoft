@@ -121,6 +121,8 @@ namespace ManejoDeActivos
         {
             
         }
+
+        //Button that triggers the action of editing an user
         public void editUserBtn_Click(object sender, EventArgs e)
         {
 
@@ -150,6 +152,7 @@ namespace ManejoDeActivos
 
         }
 
+        //This method is responsible for putting the data of the selected row in its respective text field
         private void usersTable_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             int selectedrowindex = usersTable.SelectedCells[0].RowIndex;

@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.homePanel = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
             this.transferHisotryBtn = new System.Windows.Forms.Button();
@@ -38,7 +39,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.userManagmentBtn = new System.Windows.Forms.Button();
             this.reportsBtn = new System.Windows.Forms.Button();
-            this.homePanel = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CurrentRoleText = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -102,6 +102,14 @@
             this.panel1.Size = new System.Drawing.Size(1154, 710);
             this.panel1.TabIndex = 0;
             // 
+            // homePanel
+            // 
+            this.homePanel.Location = new System.Drawing.Point(245, 67);
+            this.homePanel.Margin = new System.Windows.Forms.Padding(2);
+            this.homePanel.Name = "homePanel";
+            this.homePanel.Size = new System.Drawing.Size(909, 643);
+            this.homePanel.TabIndex = 2;
+            // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(73)))), ((int)(((byte)(63)))), ((int)(((byte)(140)))));
@@ -120,6 +128,8 @@
             // button1
             // 
             this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Location = new System.Drawing.Point(25, 470);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(177, 60);
@@ -197,14 +207,6 @@
             this.reportsBtn.TabIndex = 2;
             this.reportsBtn.UseVisualStyleBackColor = true;
             this.reportsBtn.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // homePanel
-            // 
-            this.homePanel.Location = new System.Drawing.Point(245, 67);
-            this.homePanel.Margin = new System.Windows.Forms.Padding(2);
-            this.homePanel.Name = "homePanel";
-            this.homePanel.Size = new System.Drawing.Size(909, 643);
-            this.homePanel.TabIndex = 2;
             // 
             // panel2
             // 

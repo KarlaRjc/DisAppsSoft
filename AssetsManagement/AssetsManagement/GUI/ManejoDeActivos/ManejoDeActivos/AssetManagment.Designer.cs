@@ -138,7 +138,7 @@
             this.assetsManagmentTable.RowTemplate.Height = 24;
             this.assetsManagmentTable.Size = new System.Drawing.Size(536, 452);
             this.assetsManagmentTable.TabIndex = 28;
-           // this.assetsManagmentTable.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.assetsManagmentTable_CellContentClick);
+            this.assetsManagmentTable.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.assetsManagmentTable_CellClick);
             // 
             // Column1
             // 

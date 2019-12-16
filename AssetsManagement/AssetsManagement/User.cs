@@ -61,29 +61,6 @@ namespace AssetsManagement
             return user;
         }
 
-        /// <summary>
-        /// Modifies an existing UserEntity, receives as parameters the UserEntity that wants to be modified and a User with the updated information
-        /// </summary>
-        /// <param name="user"></param>
-        /// <param name="userentity"></param>
-        /// <returns></returns>
-        public static bool ModifyUser(string name, EnumRole role, string username, string password, string userQuestion, string userAnswer)
-        {
-            bool wasSuccessful = false;
-            try
-            {
-                var user = MapUserInputToUserEntity(name, role, username, password, userQuestion, userAnswer);
-                UserEntity.ModifyUserToDB(user);
-                wasSuccessful = true;
-            }
-            catch (Exception)
-            {
-
-                wasSuccessful = false;
-            }
-            return wasSuccessful;
-        }
-
         public static string GetSecretQuestionByUsername(string username)
         {
             using (DbModel db = new DbModel())

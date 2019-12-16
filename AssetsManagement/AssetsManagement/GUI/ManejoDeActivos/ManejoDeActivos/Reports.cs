@@ -46,7 +46,7 @@ namespace ManejoDeActivos
  
             Reports report = new Reports();
             report.Assets = Asset.GetAssets();
-            IteratorAssetItem iterator = report.ObtainIterator();
+            IIteratorAssetItem iterator = report.ObtainIterator();
 
           
             while(iterator.ElementsLeft())

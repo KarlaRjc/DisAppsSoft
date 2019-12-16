@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AssetsManagement.DTO.Reports
 {
-    interface IIteratorAssetItem
+    public interface IIteratorAssetItem
     {
         void FirstAsset();
         AssetItem Actual();

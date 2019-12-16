@@ -167,24 +167,51 @@ namespace ManejoDeActivos
                 string userQuestion = (string)((userQuestionCbx.SelectedItem == null) ? "" : userQuestionCbx.SelectedItem);
                 string userAnswer = userAnswerTxt.Text;
                 bool areInputsValid = ValidateUserManagementInputs(nameUser, username, password, userRole, userQuestion, userAnswer);
-                if (areInputsValid)
-                {
-                    Boolean usernameFound = userManagmenteController.VerifyUsername(username);
 
-                    if (usernameFound)
+                if (ASTERISK != password)
+                {
+
+                    if (areInputsValid)
                     {
-                        userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
-                        outputUserLbl.Text = "";
-                        ClearForm();
-                        UpdateUsersTable();
-                        MessageBox.Show("Usuario modificado Correctamente");
-                    }
-                    else
-                    {
-                        outputUserLbl.Text = "Nombre de usuario no existe";
+                        Boolean usernameFound = userManagmenteController.VerifyUsername(username);
+
+                        if (usernameFound)
+                        {
+                            userManagmenteController.ModifyUser(nameUser, username, password, userRole, userQuestion, userAnswer);
+                            outputUserLbl.Text = "";
+                            ClearForm();
+                            UpdateUsersTable();
+                            MessageBox.Show("Usuario modificado Correctamente");
+                        }
+                        else
+                        {
+                            outputUserLbl.Text = "Nombre de usuario no existe";
+                        }
                     }
                 }
+                else
+                {
+                    if (areInputsValid)
+                    {
+                        Boolean usernameFound = userManagmenteController.VerifyUsername(username);
+                        int selectedrowindex = usersTable.SelectedCells[0].RowIndex;
+                        DataGridViewRow selectedRow = usersTable.Rows[selectedrowindex];
 
+                        if (usernameFound)
+                        {
+                            string newPassword = Convert.ToString(selectedRow.Cells[2].Value);
+                            userManagmenteController.ModifyUser(nameUser, username, newPassword, userRole, userQuestion, userAnswer);
+                            outputUserLbl.Text = "";
+                            ClearForm();
+                            UpdateUsersTable();
+                            MessageBox.Show("Usuario modificado Correctamente");
+                        }
+                        else
+                        {
+                            outputUserLbl.Text = "Nombre de usuario no existe";
+                        }
+                    }
+                }
             }
 
         }

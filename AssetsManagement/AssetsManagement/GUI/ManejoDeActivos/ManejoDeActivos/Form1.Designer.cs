@@ -494,6 +494,7 @@
             this.LoginButton.Name = "LoginButton";
             this.LoginButton.Size = new System.Drawing.Size(310, 55);
             this.LoginButton.TabIndex = 2;
+            this.LoginButton.Scroll += new System.Windows.Forms.ScrollEventHandler(this.LoginButton_Scroll);
             this.LoginButton.Paint += new System.Windows.Forms.PaintEventHandler(this.LoginButton_Paint);
             // 
             // label7

@@ -106,6 +106,9 @@ namespace ManejoDeActivos
 
                 if (result.ContainsKey("Success"))
                     {
+                    assestManagmentBtn.Show();
+                    userManagmentBtn.Show();
+                    transferAssestBtn.Show();
                     var role = LoginController.currentUser.role;
                     switch (role)
                     {
@@ -124,7 +127,7 @@ namespace ManejoDeActivos
                             break;
                     }
                     LoginPanel.Hide();
-                        CurrentRoleText.Text = result["Role"];
+                        CurrentRoleText.Text = LoginController.currentUser.role.ToString();
                     } 
                     else 
                     {
@@ -255,6 +258,11 @@ namespace ManejoDeActivos
         {
             LoginController.LogOut();
             LoginPanel.Show();
+        }
+
+        private void LoginButton_Scroll(object sender, ScrollEventArgs e)
+        {
+
         }
     }
 }
